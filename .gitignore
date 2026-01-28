@@ -70,3 +70,6 @@ wlp/
 .env.local 
 **/test.txt
 **/certs/
+
+# MkDocs
+**/site/

@@ -1,10 +1,10 @@
 site_name: Authentication Test API Documentation
 site_description: RESTful API server with OAuth 2.0 authentication via Keycloak
 site_author: Authentication Test API Team
-site_url: https://yourusername.github.io/authentication_test
+site_url: https://binnes.github.io/secureAPI-with-OAUTH-2/
 
-repo_name: authentication_test
-repo_url: https://github.com/yourusername/authentication_test
+repo_name: secureAPI-with-OAUTH-2
+repo_url: https://github.com/binnes/secureAPI-with-OAUTH-2
 edit_uri: edit/main/docs/
 
 theme:
