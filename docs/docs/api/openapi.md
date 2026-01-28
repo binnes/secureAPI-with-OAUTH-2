@@ -22,6 +22,99 @@ Raw OpenAPI 3.0 specification in JSON format:
 http://localhost:9080/openapi
 ```
 
+## Exporting the OpenAPI Specification
+
+To add this API to Orchestrate or other tools, you need to export the OpenAPI specification file.
+
+=== "curl"
+
+    Download the spec using curl (recommended):
+
+    ```bash
+    curl http://localhost:9080/openapi -o openapi.json
+    ```
+
+    This creates an `openapi.json` file in your current directory.
+
+=== "wget"
+
+    Download using wget:
+
+    ```bash
+    wget http://localhost:9080/openapi -O openapi.json
+    ```
+
+=== "Browser"
+
+    Download via web browser:
+
+    1. Start the server: `mvn liberty:dev`
+    2. Open your browser to: `http://localhost:9080/openapi`
+    3. Right-click and select "Save Page As..."
+    4. Save as `openapi.json`
+
+=== "Swagger UI"
+
+    Export from Swagger UI:
+
+    1. Navigate to `http://localhost:9080/openapi/ui`
+    2. Look for the OpenAPI spec link at the top of the page
+    3. Right-click and "Save Link As..."
+    4. Save as `openapi.json`
+
+=== "Automated Script"
+
+    Create a script to export automatically:
+
+    ```bash
+    #!/bin/bash
+    # export-openapi.sh
+
+    # Wait for server to be ready
+    echo "Waiting for server to start..."
+    until curl -s http://localhost:9080/openapi > /dev/null; do
+        sleep 2
+    done
+
+    # Export the spec
+    echo "Exporting OpenAPI specification..."
+    curl http://localhost:9080/openapi -o openapi.json
+
+    echo "OpenAPI spec exported to openapi.json"
+    ```
+
+    Make it executable and run:
+
+    ```bash
+    chmod +x export-openapi.sh
+    ./export-openapi.sh
+    ```
+
+### Verify the Export
+
+Check that the file contains valid JSON:
+
+```bash
+cat openapi.json | jq '.'
+```
+
+Or view the OpenAPI version:
+
+```bash
+cat openapi.json | jq '.openapi'
+```
+
+Expected output: `"3.0.3"` or similar.
+
+### Using the Spec with Orchestrate
+
+Once exported, you can:
+
+1. **Import to Orchestrate** - Use the `openapi.json` file to register your API
+2. **Version Control** - Commit the spec to your repository for tracking changes
+3. **API Documentation** - Share with team members or external consumers
+4. **Code Generation** - Use tools like OpenAPI Generator to create client SDKs
+
 ## Using Swagger UI
 
 1. **Open Swagger UI** at `http://localhost:9080/openapi/ui`

@@ -30,6 +30,7 @@ The Authentication Test API is a production-ready Java application built with:
 - [SSL Certificates](config/ssl-certificates.md) - Configure self-signed certificates
 - [Groups Mapper](keycloak/groups-mapper.md) - Configure role-based authorization
 - [API Reference](api/endpoints.md) - Complete API documentation
+- [OpenAPI Export](api/openapi.md#exporting-the-openapi-specification) - Export spec for Orchestrate
 - [Troubleshooting](troubleshooting/common-issues.md) - Solutions to common problems
 
 ## Architecture
