@@ -1,103 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://yourusername.github.io/authentication_test/</loc>
+         <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/</loc>
          <lastmod>2026-01-28</lastmod>
     </url>
     <url>
-         <loc>https://yourusername.github.io/authentication_test/api/authentication/</loc>
+         <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/api/authentication/</loc>
          <lastmod>2026-01-28</lastmod>
     </url>
     <url>
-         <loc>https://yourusername.github.io/authentication_test/api/endpoints/</loc>
+         <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/api/endpoints/</loc>
          <lastmod>2026-01-28</lastmod>
     </url>
     <url>
-         <loc>https://yourusername.github.io/authentication_test/api/errors/</loc>
+         <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/api/errors/</loc>
          <lastmod>2026-01-28</lastmod>
     </url>
     <url>
-         <loc>https://yourusername.github.io/authentication_test/api/openapi/</loc>
+         <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/api/openapi/</loc>
          <lastmod>2026-01-28</lastmod>
     </url>
     <url>
-         <loc>https://yourusername.github.io/authentication_test/build/containers/</loc>
+         <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/build/containers/</loc>
          <lastmod>2026-01-28</lastmod>
     </url>
     <url>
-         <loc>https://yourusername.github.io/authentication_test/build/maven/</loc>
+         <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/build/maven/</loc>
          <lastmod>2026-01-28</lastmod>
     </url>
     <url>
-         <loc>https://yourusername.github.io/authentication_test/build/running/</loc>
+         <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/build/running/</loc>
          <lastmod>2026-01-28</lastmod>
     </url>
     <url>
-         <loc>https://yourusername.github.io/authentication_test/config/environment/</loc>
+         <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/config/environment/</loc>
          <lastmod>2026-01-28</lastmod>
     </url>
     <url>
-         <loc>https://yourusername.github.io/authentication_test/config/security/</loc>
+         <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/config/security/</loc>
          <lastmod>2026-01-28</lastmod>
     </url>
     <url>
-         <loc>https://yourusername.github.io/authentication_test/config/server/</loc>
+         <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/config/server/</loc>
          <lastmod>2026-01-28</lastmod>
     </url>
     <url>
-         <loc>https://yourusername.github.io/authentication_test/config/ssl-certificates/</loc>
+         <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/config/ssl-certificates/</loc>
          <lastmod>2026-01-28</lastmod>
     </url>
     <url>
-         <loc>https://yourusername.github.io/authentication_test/deployment/github-pages/</loc>
+         <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/deployment/github-pages/</loc>
          <lastmod>2026-01-28</lastmod>
     </url>
     <url>
-         <loc>https://yourusername.github.io/authentication_test/development/contributing/</loc>
+         <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/development/contributing/</loc>
          <lastmod>2026-01-28</lastmod>
     </url>
     <url>
-         <loc>https://yourusername.github.io/authentication_test/development/structure/</loc>
+         <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/development/structure/</loc>
          <lastmod>2026-01-28</lastmod>
     </url>
     <url>
-         <loc>https://yourusername.github.io/authentication_test/getting-started/overview/</loc>
+         <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/getting-started/overview/</loc>
          <lastmod>2026-01-28</lastmod>
     </url>
     <url>
-         <loc>https://yourusername.github.io/authentication_test/getting-started/prerequisites/</loc>
+         <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/getting-started/prerequisites/</loc>
          <lastmod>2026-01-28</lastmod>
     </url>
     <url>
-         <loc>https://yourusername.github.io/authentication_test/getting-started/quick-start/</loc>
+         <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/getting-started/quick-start/</loc>
          <lastmod>2026-01-28</lastmod>
     </url>
     <url>
-         <loc>https://yourusername.github.io/authentication_test/keycloak/client-setup/</loc>
+         <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/keycloak/client-setup/</loc>
          <lastmod>2026-01-28</lastmod>
     </url>
     <url>
-         <loc>https://yourusername.github.io/authentication_test/keycloak/groups-mapper/</loc>
+         <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/keycloak/groups-mapper/</loc>
          <lastmod>2026-01-28</lastmod>
     </url>
     <url>
-         <loc>https://yourusername.github.io/authentication_test/keycloak/installation/</loc>
+         <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/keycloak/installation/</loc>
          <lastmod>2026-01-28</lastmod>
     </url>
     <url>
-         <loc>https://yourusername.github.io/authentication_test/keycloak/realm-setup/</loc>
+         <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/keycloak/realm-setup/</loc>
          <lastmod>2026-01-28</lastmod>
     </url>
     <url>
-         <loc>https://yourusername.github.io/authentication_test/keycloak/user-management/</loc>
+         <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/keycloak/user-management/</loc>
          <lastmod>2026-01-28</lastmod>
     </url>
     <url>
-         <loc>https://yourusername.github.io/authentication_test/troubleshooting/common-issues/</loc>
+         <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/troubleshooting/common-issues/</loc>
          <lastmod>2026-01-28</lastmod>
     </url>
     <url>
-         <loc>https://yourusername.github.io/authentication_test/troubleshooting/debugging/</loc>
+         <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/troubleshooting/debugging/</loc>
          <lastmod>2026-01-28</lastmod>
     </url>
 </urlset>
