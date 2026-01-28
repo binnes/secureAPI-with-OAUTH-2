@@ -803,101 +803,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Building Container Images">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#using-podman-recommended" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Using Podman (Recommended)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Using Podman (Recommended)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#build-image" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Build Image
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#build-with-custom-tag" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Build with Custom Tag
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#build-with-no-cache" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Build with No Cache
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#using-docker" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Using Docker
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Using Docker">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#build-image_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Build Image
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#build-with-build-args" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Build with Build Args
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -2325,101 +2230,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Building Container Images">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#using-podman-recommended" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Using Podman (Recommended)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Using Podman (Recommended)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#build-image" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Build Image
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#build-with-custom-tag" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Build with Custom Tag
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#build-with-no-cache" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Build with No Cache
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#using-docker" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Using Docker
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Using Docker">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#build-image_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Build Image
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#build-with-build-args" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Build with Build Args
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -2920,36 +2730,42 @@
 <li><strong>Exposed Ports</strong>: 9080 (HTTP), 9443 (HTTPS)</li>
 </ul>
 <h2 id="building-container-images">Building Container Images<a class="headerlink" href="#building-container-images" title="Permanent link">&para;</a></h2>
-<h3 id="using-podman-recommended">Using Podman (Recommended)<a class="headerlink" href="#using-podman-recommended" title="Permanent link">&para;</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Podman (Recommended)</label><label for="__tabbed_1_2">Docker</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>Podman is a daemonless container engine that's compatible with Docker.</p>
-<h4 id="build-image">Build Image<a class="headerlink" href="#build-image" title="Permanent link">&para;</a></h4>
+<p><strong>Build Image:</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">cd</span><span class="w"> </span>API_server
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>podman<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>authentication-test-api:1.0.0<span class="w"> </span>.
 </code></pre></div>
-<h4 id="build-with-custom-tag">Build with Custom Tag<a class="headerlink" href="#build-with-custom-tag" title="Permanent link">&para;</a></h4>
+<p><strong>Build with Custom Tag:</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">cd</span><span class="w"> </span>API_server
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>podman<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>authentication-test-api:latest<span class="w"> </span>.
 </code></pre></div>
-<h4 id="build-with-no-cache">Build with No Cache<a class="headerlink" href="#build-with-no-cache" title="Permanent link">&para;</a></h4>
+<p><strong>Build with No Cache:</strong></p>
 <p>Force rebuild without using cache:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">cd</span><span class="w"> </span>API_server
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>podman<span class="w"> </span>build<span class="w"> </span>--no-cache<span class="w"> </span>-t<span class="w"> </span>authentication-test-api:1.0.0<span class="w"> </span>.
 </code></pre></div>
-<h3 id="using-docker">Using Docker<a class="headerlink" href="#using-docker" title="Permanent link">&para;</a></h3>
-<h4 id="build-image_1">Build Image<a class="headerlink" href="#build-image_1" title="Permanent link">&para;</a></h4>
+</div>
+<div class="tabbed-block">
+<p><strong>Build Image:</strong></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">cd</span><span class="w"> </span>API_server
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>authentication-test-api:1.0.0<span class="w"> </span>.
 </code></pre></div>
-<h4 id="build-with-build-args">Build with Build Args<a class="headerlink" href="#build-with-build-args" title="Permanent link">&para;</a></h4>
+<p><strong>Build with Build Args:</strong></p>
 <p>Pass build-time variables:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">cd</span><span class="w"> </span>API_server
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>docker<span class="w"> </span>build<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span>--build-arg<span class="w"> </span><span class="nv">LIBERTY_VERSION</span><span class="o">=</span><span class="m">24</span>.0.0.1<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span>-t<span class="w"> </span>authentication-test-api:1.0.0<span class="w"> </span>.
 </code></pre></div>
+</div>
+</div>
+</div>
 <h2 id="running-containers">Running Containers<a class="headerlink" href="#running-containers" title="Permanent link">&para;</a></h2>
 <h3 id="basic-run">Basic Run<a class="headerlink" href="#basic-run" title="Permanent link">&para;</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Podman</label><label for="__tabbed_1_2">Docker</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Podman</label><label for="__tabbed_2_2">Docker</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>podman<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span><span class="se">\</span>
@@ -2971,7 +2787,7 @@
 </div>
 <h3 id="run-with-environment-variables">Run with Environment Variables<a class="headerlink" href="#run-with-environment-variables" title="Permanent link">&para;</a></h3>
 <p>Configure the application using environment variables:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Podman</label><label for="__tabbed_2_2">Docker</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Podman</label><label for="__tabbed_3_2">Docker</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>podman<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span><span class="se">\</span>
@@ -3010,7 +2826,7 @@
 <a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="nv">CORS_ALLOWED_HEADERS</span><span class="o">=</span>Authorization,Content-Type
 </code></pre></div>
 <p>Run with environment file:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Podman</label><label for="__tabbed_3_2">Docker</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Podman</label><label for="__tabbed_4_2">Docker</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>podman<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span><span class="se">\</span>
@@ -3032,7 +2848,7 @@
 </div>
 <h3 id="run-in-foreground">Run in Foreground<a class="headerlink" href="#run-in-foreground" title="Permanent link">&para;</a></h3>
 <p>Run with logs visible (useful for debugging):</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Podman</label><label for="__tabbed_4_2">Docker</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Podman</label><label for="__tabbed_5_2">Docker</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>podman<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span><span class="se">\</span>
@@ -3053,7 +2869,7 @@
 <p>Press <code>Ctrl+C</code> to stop.</p>
 <h2 id="container-management">Container Management<a class="headerlink" href="#container-management" title="Permanent link">&para;</a></h2>
 <h3 id="list-running-containers">List Running Containers<a class="headerlink" href="#list-running-containers" title="Permanent link">&para;</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Podman</label><label for="__tabbed_5_2">Docker</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Podman</label><label for="__tabbed_6_2">Docker</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>podman<span class="w"> </span>ps
@@ -3066,7 +2882,7 @@
 </div>
 </div>
 <h3 id="list-all-containers">List All Containers<a class="headerlink" href="#list-all-containers" title="Permanent link">&para;</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Podman</label><label for="__tabbed_6_2">Docker</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Podman</label><label for="__tabbed_7_2">Docker</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>podman<span class="w"> </span>ps<span class="w"> </span>-a
@@ -3079,7 +2895,7 @@
 </div>
 </div>
 <h3 id="view-container-logs">View Container Logs<a class="headerlink" href="#view-container-logs" title="Permanent link">&para;</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Podman</label><label for="__tabbed_7_2">Docker</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Podman</label><label for="__tabbed_8_2">Docker</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>podman<span class="w"> </span>logs<span class="w"> </span>auth-api
@@ -3104,7 +2920,7 @@
 </div>
 </div>
 <h3 id="stop-container">Stop Container<a class="headerlink" href="#stop-container" title="Permanent link">&para;</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><input id="__tabbed_8_2" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Podman</label><label for="__tabbed_8_2">Docker</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">Podman</label><label for="__tabbed_9_2">Docker</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>podman<span class="w"> </span>stop<span class="w"> </span>auth-api
@@ -3117,7 +2933,7 @@
 </div>
 </div>
 <h3 id="start-stopped-container">Start Stopped Container<a class="headerlink" href="#start-stopped-container" title="Permanent link">&para;</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">Podman</label><label for="__tabbed_9_2">Docker</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">Podman</label><label for="__tabbed_10_2">Docker</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>podman<span class="w"> </span>start<span class="w"> </span>auth-api
@@ -3130,7 +2946,7 @@
 </div>
 </div>
 <h3 id="restart-container">Restart Container<a class="headerlink" href="#restart-container" title="Permanent link">&para;</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">Podman</label><label for="__tabbed_10_2">Docker</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">Podman</label><label for="__tabbed_11_2">Docker</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>podman<span class="w"> </span>restart<span class="w"> </span>auth-api
@@ -3143,7 +2959,7 @@
 </div>
 </div>
 <h3 id="remove-container">Remove Container<a class="headerlink" href="#remove-container" title="Permanent link">&para;</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">Podman</label><label for="__tabbed_11_2">Docker</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">Podman</label><label for="__tabbed_12_2">Docker</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>podman<span class="w"> </span>rm<span class="w"> </span>auth-api
@@ -3162,7 +2978,7 @@
 </div>
 </div>
 <h3 id="execute-commands-in-container">Execute Commands in Container<a class="headerlink" href="#execute-commands-in-container" title="Permanent link">&para;</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">Podman</label><label for="__tabbed_12_2">Docker</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="13:2"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="__tabbed_13_1">Podman</label><label for="__tabbed_13_2">Docker</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="c1"># Open shell</span>
@@ -3184,7 +3000,7 @@
 </div>
 <h2 id="image-management">Image Management<a class="headerlink" href="#image-management" title="Permanent link">&para;</a></h2>
 <h3 id="list-images">List Images<a class="headerlink" href="#list-images" title="Permanent link">&para;</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="13:2"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="__tabbed_13_1">Podman</label><label for="__tabbed_13_2">Docker</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="14:2"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><div class="tabbed-labels"><label for="__tabbed_14_1">Podman</label><label for="__tabbed_14_2">Docker</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>podman<span class="w"> </span>images
@@ -3197,7 +3013,7 @@
 </div>
 </div>
 <h3 id="inspect-image">Inspect Image<a class="headerlink" href="#inspect-image" title="Permanent link">&para;</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="14:2"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><div class="tabbed-labels"><label for="__tabbed_14_1">Podman</label><label for="__tabbed_14_2">Docker</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="15:2"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><input id="__tabbed_15_2" name="__tabbed_15" type="radio" /><div class="tabbed-labels"><label for="__tabbed_15_1">Podman</label><label for="__tabbed_15_2">Docker</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>podman<span class="w"> </span>inspect<span class="w"> </span>authentication-test-api:1.0.0
@@ -3210,7 +3026,7 @@
 </div>
 </div>
 <h3 id="remove-image">Remove Image<a class="headerlink" href="#remove-image" title="Permanent link">&para;</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="15:2"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><input id="__tabbed_15_2" name="__tabbed_15" type="radio" /><div class="tabbed-labels"><label for="__tabbed_15_1">Podman</label><label for="__tabbed_15_2">Docker</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="16:2"><input checked="checked" id="__tabbed_16_1" name="__tabbed_16" type="radio" /><input id="__tabbed_16_2" name="__tabbed_16" type="radio" /><div class="tabbed-labels"><label for="__tabbed_16_1">Podman</label><label for="__tabbed_16_2">Docker</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>podman<span class="w"> </span>rmi<span class="w"> </span>authentication-test-api:1.0.0
@@ -3223,7 +3039,7 @@
 </div>
 </div>
 <h3 id="tag-image">Tag Image<a class="headerlink" href="#tag-image" title="Permanent link">&para;</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="16:2"><input checked="checked" id="__tabbed_16_1" name="__tabbed_16" type="radio" /><input id="__tabbed_16_2" name="__tabbed_16" type="radio" /><div class="tabbed-labels"><label for="__tabbed_16_1">Podman</label><label for="__tabbed_16_2">Docker</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="17:2"><input checked="checked" id="__tabbed_17_1" name="__tabbed_17" type="radio" /><input id="__tabbed_17_2" name="__tabbed_17" type="radio" /><div class="tabbed-labels"><label for="__tabbed_17_1">Podman</label><label for="__tabbed_17_2">Docker</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>podman<span class="w"> </span>tag<span class="w"> </span>authentication-test-api:1.0.0<span class="w"> </span>authentication-test-api:latest
@@ -3236,7 +3052,7 @@
 </div>
 </div>
 <h3 id="save-image-to-file">Save Image to File<a class="headerlink" href="#save-image-to-file" title="Permanent link">&para;</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="17:2"><input checked="checked" id="__tabbed_17_1" name="__tabbed_17" type="radio" /><input id="__tabbed_17_2" name="__tabbed_17" type="radio" /><div class="tabbed-labels"><label for="__tabbed_17_1">Podman</label><label for="__tabbed_17_2">Docker</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="18:2"><input checked="checked" id="__tabbed_18_1" name="__tabbed_18" type="radio" /><input id="__tabbed_18_2" name="__tabbed_18" type="radio" /><div class="tabbed-labels"><label for="__tabbed_18_1">Podman</label><label for="__tabbed_18_2">Docker</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>podman<span class="w"> </span>save<span class="w"> </span>-o<span class="w"> </span>auth-api.tar<span class="w"> </span>authentication-test-api:1.0.0
@@ -3249,7 +3065,7 @@
 </div>
 </div>
 <h3 id="load-image-from-file">Load Image from File<a class="headerlink" href="#load-image-from-file" title="Permanent link">&para;</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="18:2"><input checked="checked" id="__tabbed_18_1" name="__tabbed_18" type="radio" /><input id="__tabbed_18_2" name="__tabbed_18" type="radio" /><div class="tabbed-labels"><label for="__tabbed_18_1">Podman</label><label for="__tabbed_18_2">Docker</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="19:2"><input checked="checked" id="__tabbed_19_1" name="__tabbed_19" type="radio" /><input id="__tabbed_19_2" name="__tabbed_19" type="radio" /><div class="tabbed-labels"><label for="__tabbed_19_1">Podman</label><label for="__tabbed_19_2">Docker</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>podman<span class="w"> </span>load<span class="w"> </span>-i<span class="w"> </span>auth-api.tar
@@ -3264,7 +3080,7 @@
 <h2 id="container-networking">Container Networking<a class="headerlink" href="#container-networking" title="Permanent link">&para;</a></h2>
 <h3 id="connect-to-keycloak-container">Connect to Keycloak Container<a class="headerlink" href="#connect-to-keycloak-container" title="Permanent link">&para;</a></h3>
 <p>If running Keycloak in a container, create a network:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="19:2"><input checked="checked" id="__tabbed_19_1" name="__tabbed_19" type="radio" /><input id="__tabbed_19_2" name="__tabbed_19" type="radio" /><div class="tabbed-labels"><label for="__tabbed_19_1">Podman</label><label for="__tabbed_19_2">Docker</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="20:2"><input checked="checked" id="__tabbed_20_1" name="__tabbed_20" type="radio" /><input id="__tabbed_20_2" name="__tabbed_20" type="radio" /><div class="tabbed-labels"><label for="__tabbed_20_1">Podman</label><label for="__tabbed_20_2">Docker</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="c1"># Create network</span>
@@ -3317,7 +3133,7 @@
 <h2 id="health-checks">Health Checks<a class="headerlink" href="#health-checks" title="Permanent link">&para;</a></h2>
 <h3 id="container-health-check">Container Health Check<a class="headerlink" href="#container-health-check" title="Permanent link">&para;</a></h3>
 <p>Add health check to container:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="20:2"><input checked="checked" id="__tabbed_20_1" name="__tabbed_20" type="radio" /><input id="__tabbed_20_2" name="__tabbed_20" type="radio" /><div class="tabbed-labels"><label for="__tabbed_20_1">Podman</label><label for="__tabbed_20_2">Docker</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="21:2"><input checked="checked" id="__tabbed_21_1" name="__tabbed_21" type="radio" /><input id="__tabbed_21_2" name="__tabbed_21" type="radio" /><div class="tabbed-labels"><label for="__tabbed_21_1">Podman</label><label for="__tabbed_21_2">Docker</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>podman<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span><span class="se">\</span>
@@ -3344,7 +3160,7 @@
 </div>
 </div>
 <h3 id="check-container-health">Check Container Health<a class="headerlink" href="#check-container-health" title="Permanent link">&para;</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="21:2"><input checked="checked" id="__tabbed_21_1" name="__tabbed_21" type="radio" /><input id="__tabbed_21_2" name="__tabbed_21" type="radio" /><div class="tabbed-labels"><label for="__tabbed_21_1">Podman</label><label for="__tabbed_21_2">Docker</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="22:2"><input checked="checked" id="__tabbed_22_1" name="__tabbed_22" type="radio" /><input id="__tabbed_22_2" name="__tabbed_22" type="radio" /><div class="tabbed-labels"><label for="__tabbed_22_1">Podman</label><label for="__tabbed_22_2">Docker</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>podman<span class="w"> </span>inspect<span class="w"> </span>--format<span class="o">=</span><span class="s1">&#39;{{.State.Health.Status}}&#39;</span><span class="w"> </span>auth-api
@@ -3359,7 +3175,7 @@
 <h2 id="volume-mounts">Volume Mounts<a class="headerlink" href="#volume-mounts" title="Permanent link">&para;</a></h2>
 <h3 id="mount-configuration">Mount Configuration<a class="headerlink" href="#mount-configuration" title="Permanent link">&para;</a></h3>
 <p>Mount custom configuration:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="22:2"><input checked="checked" id="__tabbed_22_1" name="__tabbed_22" type="radio" /><input id="__tabbed_22_2" name="__tabbed_22" type="radio" /><div class="tabbed-labels"><label for="__tabbed_22_1">Podman</label><label for="__tabbed_22_2">Docker</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="23:2"><input checked="checked" id="__tabbed_23_1" name="__tabbed_23" type="radio" /><input id="__tabbed_23_2" name="__tabbed_23" type="radio" /><div class="tabbed-labels"><label for="__tabbed_23_1">Podman</label><label for="__tabbed_23_2">Docker</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>podman<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span><span class="se">\</span>
@@ -3381,7 +3197,7 @@
 </div>
 <h3 id="mount-logs">Mount Logs<a class="headerlink" href="#mount-logs" title="Permanent link">&para;</a></h3>
 <p>Persist logs outside container:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="23:2"><input checked="checked" id="__tabbed_23_1" name="__tabbed_23" type="radio" /><input id="__tabbed_23_2" name="__tabbed_23" type="radio" /><div class="tabbed-labels"><label for="__tabbed_23_1">Podman</label><label for="__tabbed_23_2">Docker</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="24:2"><input checked="checked" id="__tabbed_24_1" name="__tabbed_24" type="radio" /><input id="__tabbed_24_2" name="__tabbed_24" type="radio" /><div class="tabbed-labels"><label for="__tabbed_24_1">Podman</label><label for="__tabbed_24_2">Docker</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>podman<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span><span class="se">\</span>
@@ -3404,7 +3220,7 @@
 <h2 id="production-deployment">Production Deployment<a class="headerlink" href="#production-deployment" title="Permanent link">&para;</a></h2>
 <h3 id="resource-limits">Resource Limits<a class="headerlink" href="#resource-limits" title="Permanent link">&para;</a></h3>
 <p>Set CPU and memory limits:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="24:2"><input checked="checked" id="__tabbed_24_1" name="__tabbed_24" type="radio" /><input id="__tabbed_24_2" name="__tabbed_24" type="radio" /><div class="tabbed-labels"><label for="__tabbed_24_1">Podman</label><label for="__tabbed_24_2">Docker</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="25:2"><input checked="checked" id="__tabbed_25_1" name="__tabbed_25" type="radio" /><input id="__tabbed_25_2" name="__tabbed_25" type="radio" /><div class="tabbed-labels"><label for="__tabbed_25_1">Podman</label><label for="__tabbed_25_2">Docker</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a>podman<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span><span class="se">\</span>
@@ -3428,7 +3244,7 @@
 </div>
 <h3 id="restart-policy">Restart Policy<a class="headerlink" href="#restart-policy" title="Permanent link">&para;</a></h3>
 <p>Auto-restart on failure:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="25:2"><input checked="checked" id="__tabbed_25_1" name="__tabbed_25" type="radio" /><input id="__tabbed_25_2" name="__tabbed_25" type="radio" /><div class="tabbed-labels"><label for="__tabbed_25_1">Podman</label><label for="__tabbed_25_2">Docker</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="26:2"><input checked="checked" id="__tabbed_26_1" name="__tabbed_26" type="radio" /><input id="__tabbed_26_2" name="__tabbed_26" type="radio" /><div class="tabbed-labels"><label for="__tabbed_26_1">Podman</label><label for="__tabbed_26_2">Docker</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a>podman<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span><span class="se">\</span>
@@ -3451,7 +3267,7 @@
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <h3 id="container-wont-start">Container Won't Start<a class="headerlink" href="#container-wont-start" title="Permanent link">&para;</a></h3>
 <p>Check logs:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="26:2"><input checked="checked" id="__tabbed_26_1" name="__tabbed_26" type="radio" /><input id="__tabbed_26_2" name="__tabbed_26" type="radio" /><div class="tabbed-labels"><label for="__tabbed_26_1">Podman</label><label for="__tabbed_26_2">Docker</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="27:2"><input checked="checked" id="__tabbed_27_1" name="__tabbed_27" type="radio" /><input id="__tabbed_27_2" name="__tabbed_27" type="radio" /><div class="tabbed-labels"><label for="__tabbed_27_1">Podman</label><label for="__tabbed_27_2">Docker</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a>podman<span class="w"> </span>logs<span class="w"> </span>auth-api
@@ -3465,7 +3281,7 @@
 </div>
 <h3 id="port-already-in-use">Port Already in Use<a class="headerlink" href="#port-already-in-use" title="Permanent link">&para;</a></h3>
 <p>Find and stop conflicting container:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="27:2"><input checked="checked" id="__tabbed_27_1" name="__tabbed_27" type="radio" /><input id="__tabbed_27_2" name="__tabbed_27" type="radio" /><div class="tabbed-labels"><label for="__tabbed_27_1">Podman</label><label for="__tabbed_27_2">Docker</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="28:2"><input checked="checked" id="__tabbed_28_1" name="__tabbed_28" type="radio" /><input id="__tabbed_28_2" name="__tabbed_28" type="radio" /><div class="tabbed-labels"><label for="__tabbed_28_1">Podman</label><label for="__tabbed_28_2">Docker</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a>podman<span class="w"> </span>ps<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="m">9080</span>
@@ -3481,7 +3297,7 @@
 </div>
 <h3 id="image-build-fails">Image Build Fails<a class="headerlink" href="#image-build-fails" title="Permanent link">&para;</a></h3>
 <p>Build with verbose output:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="28:2"><input checked="checked" id="__tabbed_28_1" name="__tabbed_28" type="radio" /><input id="__tabbed_28_2" name="__tabbed_28" type="radio" /><div class="tabbed-labels"><label for="__tabbed_28_1">Podman</label><label for="__tabbed_28_2">Docker</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="29:2"><input checked="checked" id="__tabbed_29_1" name="__tabbed_29" type="radio" /><input id="__tabbed_29_2" name="__tabbed_29" type="radio" /><div class="tabbed-labels"><label for="__tabbed_29_1">Podman</label><label for="__tabbed_29_2">Docker</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a><span class="nb">cd</span><span class="w"> </span>API_server

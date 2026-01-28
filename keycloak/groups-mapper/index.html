@@ -1099,17 +1099,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#alternative-use-jwtio" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Alternative: Use jwt.io
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -2021,17 +2010,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#alternative-use-jwtio" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Alternative: Use jwt.io
-      
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -2257,6 +2235,9 @@
 </code></pre></div>
 <h3 id="decode-and-check-for-groups-claim">Decode and Check for Groups Claim<a class="headerlink" href="#decode-and-check-for-groups-claim" title="Permanent link">&para;</a></h3>
 <p>Decode the JWT token to verify it contains the <code>groups</code> claim:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Command Line</label><label for="__tabbed_2_2">jwt.io</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Decode the token payload</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>python3<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import sys, json, base64; \</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="s2">payload = sys.argv[1].split(&#39;.&#39;)[1]; \</span>
@@ -2274,13 +2255,17 @@
 <a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>  &quot;default-roles-secure-test&quot;
 <a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>]
 </code></pre></div>
-<h3 id="alternative-use-jwtio">Alternative: Use jwt.io<a class="headerlink" href="#alternative-use-jwtio" title="Permanent link">&para;</a></h3>
+</div>
+<div class="tabbed-block">
 <ol>
 <li>Copy the token</li>
 <li>Go to <a href="https://jwt.io">https://jwt.io</a></li>
 <li>Paste the token in the "Encoded" section</li>
 <li>Check the "Payload" section for the <code>groups</code> claim</li>
 </ol>
+</div>
+</div>
+</div>
 <h2 id="step-4-update-openliberty-configuration">Step 4: Update OpenLiberty Configuration<a class="headerlink" href="#step-4-update-openliberty-configuration" title="Permanent link">&para;</a></h2>
 <p>Ensure your <a href="../../config/server/"><code>server.xml</code></a> is configured to use the <code>groups</code> claim:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">&lt;mpJwt</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;jwtConfig&quot;</span>
