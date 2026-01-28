@@ -31,6 +31,7 @@ The Authentication Test API is a production-ready Java application built with:
 - [Groups Mapper](keycloak/groups-mapper.md) - Configure role-based authorization
 - [API Reference](api/endpoints.md) - Complete API documentation
 - [OpenAPI Export](api/openapi.md#exporting-the-openapi-specification) - Export spec for Orchestrate
+- [watsonx Orchestrate Setup](orchestrate/installation.md) - Set up IBM watsonx Orchestrate
 - [Troubleshooting](troubleshooting/common-issues.md) - Solutions to common problems
 
 ## Architecture

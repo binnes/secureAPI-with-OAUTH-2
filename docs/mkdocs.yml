@@ -87,6 +87,8 @@ nav:
     - Server Configuration: config/server.md
     - Security Settings: config/security.md
     - SSL Certificates: config/ssl-certificates.md
+  - watsonx Orchestrate:
+    - Installation: orchestrate/installation.md
   - Troubleshooting:
     - Common Issues: troubleshooting/common-issues.md
     - Debugging: troubleshooting/debugging.md

@@ -68,6 +68,8 @@ wlp/
 # Environment
 .env
 .env.local 
+**/.venv
+**/venv
 **/test.txt
 **/certs/
 
