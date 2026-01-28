@@ -35,8 +35,6 @@ A realm in Keycloak is an isolated space that manages:
         - **Enabled**: ✓ (checked)
     4. **Click "Create"**
 
-    ![Create Realm](../images/keycloak-create-realm.png)
-
     You should now see "secure-test" in the realm selector.
 
 === "REST API"
