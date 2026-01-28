@@ -14,139 +14,138 @@ Keycloak is an open-source Identity and Access Management solution that provides
 
 ## Installation Options
 
-### Option 1: Container (Recommended)
+=== "Container (Recommended)"
 
-The easiest way to run Keycloak for development and testing.
+    The easiest way to run Keycloak for development and testing.
 
-=== "Podman"
+    === "Podman"
+        ```bash
+        podman run -d \
+          --name keycloak \
+          -p 8080:8080 \
+          -e KEYCLOAK_ADMIN=admin \
+          -e KEYCLOAK_ADMIN_PASSWORD=admin \
+          quay.io/keycloak/keycloak:latest \
+          start-dev
+        ```
+
+    === "Docker"
+        ```bash
+        docker run -d \
+          --name keycloak \
+          -p 8080:8080 \
+          -e KEYCLOAK_ADMIN=admin \
+          -e KEYCLOAK_ADMIN_PASSWORD=admin \
+          quay.io/keycloak/keycloak:latest \
+          start-dev
+        ```
+
+    Wait for Keycloak to start (about 30 seconds):
+
     ```bash
-    podman run -d \
-      --name keycloak \
-      -p 8080:8080 \
-      -e KEYCLOAK_ADMIN=admin \
-      -e KEYCLOAK_ADMIN_PASSWORD=admin \
-      quay.io/keycloak/keycloak:latest \
-      start-dev
+    # Check logs
+    podman logs -f keycloak  # or docker logs -f keycloak
     ```
 
-=== "Docker"
+    Look for: `Keycloak 23.0.0 started`
+
+    Access Keycloak:
+    
+    - **URL**: `http://localhost:8080`
+    - **Admin Username**: `admin`
+    - **Admin Password**: `admin`
+
+=== "Standalone Server"
+
+    Download and run Keycloak as a standalone server.
+
+    **Download:**
+
     ```bash
-    docker run -d \
-      --name keycloak \
-      -p 8080:8080 \
-      -e KEYCLOAK_ADMIN=admin \
-      -e KEYCLOAK_ADMIN_PASSWORD=admin \
-      quay.io/keycloak/keycloak:latest \
-      start-dev
+    # Download Keycloak
+    wget https://github.com/keycloak/keycloak/releases/download/23.0.0/keycloak-23.0.0.zip
+
+    # Extract
+    unzip keycloak-23.0.0.zip
+    cd keycloak-23.0.0
     ```
 
-Wait for Keycloak to start (about 30 seconds):
+    **Start Server:**
 
-```bash
-# Check logs
-podman logs -f keycloak  # or docker logs -f keycloak
-```
-
-Look for: `Keycloak 23.0.0 started`
-
-Access Keycloak:
-- **URL**: `http://localhost:8080`
-- **Admin Username**: `admin`
-- **Admin Password**: `admin`
-
-### Option 2: Standalone Server
-
-Download and run Keycloak as a standalone server.
-
-#### Download
-
-```bash
-# Download Keycloak
-wget https://github.com/keycloak/keycloak/releases/download/23.0.0/keycloak-23.0.0.zip
-
-# Extract
-unzip keycloak-23.0.0.zip
-cd keycloak-23.0.0
-```
-
-#### Start Server
-
-```bash
-# Set admin credentials
-export KEYCLOAK_ADMIN=admin
-export KEYCLOAK_ADMIN_PASSWORD=admin
-
-# Start in development mode
-bin/kc.sh start-dev
-```
-
-Access at: `http://localhost:8080`
-
-### Option 3: Production Deployment
-
-For production, use a proper database and HTTPS.
-
-#### With PostgreSQL
-
-=== "Podman"
     ```bash
-    # Create network
-    podman network create keycloak-network
-    
-    # Start PostgreSQL
-    podman run -d \
-      --name postgres \
-      --network keycloak-network \
-      -e POSTGRES_DB=keycloak \
-      -e POSTGRES_USER=keycloak \
-      -e POSTGRES_PASSWORD=password \
-      postgres:15
-    
-    # Start Keycloak
-    podman run -d \
-      --name keycloak \
-      --network keycloak-network \
-      -p 8443:8443 \
-      -e KEYCLOAK_ADMIN=admin \
-      -e KEYCLOAK_ADMIN_PASSWORD=admin \
-      -e KC_DB=postgres \
-      -e KC_DB_URL=jdbc:postgresql://postgres:5432/keycloak \
-      -e KC_DB_USERNAME=keycloak \
-      -e KC_DB_PASSWORD=password \
-      -e KC_HOSTNAME=keycloak.example.com \
-      quay.io/keycloak/keycloak:latest \
-      start --optimized
+    # Set admin credentials
+    export KEYCLOAK_ADMIN=admin
+    export KEYCLOAK_ADMIN_PASSWORD=admin
+
+    # Start in development mode
+    bin/kc.sh start-dev
     ```
 
-=== "Docker"
-    ```bash
-    # Create network
-    docker network create keycloak-network
-    
-    # Start PostgreSQL
-    docker run -d \
-      --name postgres \
-      --network keycloak-network \
-      -e POSTGRES_DB=keycloak \
-      -e POSTGRES_USER=keycloak \
-      -e POSTGRES_PASSWORD=password \
-      postgres:15
-    
-    # Start Keycloak
-    docker run -d \
-      --name keycloak \
-      --network keycloak-network \
-      -p 8443:8443 \
-      -e KEYCLOAK_ADMIN=admin \
-      -e KEYCLOAK_ADMIN_PASSWORD=admin \
-      -e KC_DB=postgres \
-      -e KC_DB_URL=jdbc:postgresql://postgres:5432/keycloak \
-      -e KC_DB_USERNAME=keycloak \
-      -e KC_DB_PASSWORD=password \
-      -e KC_HOSTNAME=keycloak.example.com \
-      quay.io/keycloak/keycloak:latest \
-      start --optimized
-    ```
+    Access at: `http://localhost:8080`
+
+=== "Production with PostgreSQL"
+
+    For production, use a proper database and HTTPS.
+
+    === "Podman"
+        ```bash
+        # Create network
+        podman network create keycloak-network
+        
+        # Start PostgreSQL
+        podman run -d \
+          --name postgres \
+          --network keycloak-network \
+          -e POSTGRES_DB=keycloak \
+          -e POSTGRES_USER=keycloak \
+          -e POSTGRES_PASSWORD=password \
+          postgres:15
+        
+        # Start Keycloak
+        podman run -d \
+          --name keycloak \
+          --network keycloak-network \
+          -p 8443:8443 \
+          -e KEYCLOAK_ADMIN=admin \
+          -e KEYCLOAK_ADMIN_PASSWORD=admin \
+          -e KC_DB=postgres \
+          -e KC_DB_URL=jdbc:postgresql://postgres:5432/keycloak \
+          -e KC_DB_USERNAME=keycloak \
+          -e KC_DB_PASSWORD=password \
+          -e KC_HOSTNAME=keycloak.example.com \
+          quay.io/keycloak/keycloak:latest \
+          start --optimized
+        ```
+
+    === "Docker"
+        ```bash
+        # Create network
+        docker network create keycloak-network
+        
+        # Start PostgreSQL
+        docker run -d \
+          --name postgres \
+          --network keycloak-network \
+          -e POSTGRES_DB=keycloak \
+          -e POSTGRES_USER=keycloak \
+          -e POSTGRES_PASSWORD=password \
+          postgres:15
+        
+        # Start Keycloak
+        docker run -d \
+          --name keycloak \
+          --network keycloak-network \
+          -p 8443:8443 \
+          -e KEYCLOAK_ADMIN=admin \
+          -e KEYCLOAK_ADMIN_PASSWORD=admin \
+          -e KC_DB=postgres \
+          -e KC_DB_URL=jdbc:postgresql://postgres:5432/keycloak \
+          -e KC_DB_USERNAME=keycloak \
+          -e KC_DB_PASSWORD=password \
+          -e KC_HOSTNAME=keycloak.example.com \
+          quay.io/keycloak/keycloak:latest \
+          start --optimized
+        ```
 
 ## Verifying Installation
 

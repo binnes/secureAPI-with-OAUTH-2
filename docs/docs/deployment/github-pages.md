@@ -8,145 +8,147 @@ This guide explains how to deploy the MkDocs documentation to GitHub Pages.
 - Python 3.8+ installed
 - Write access to the repository
 
-## Option 1: Manual Deployment
+## Deployment Options
 
-### Step 1: Install MkDocs
+=== "Manual Deployment"
 
-```bash
-# Install MkDocs and dependencies
-pip install -r requirements.txt
+    **Step 1: Install MkDocs**
 
-# Verify installation
-mkdocs --version
-```
+    ```bash
+    # Install MkDocs and dependencies
+    pip install -r requirements.txt
 
-### Step 2: Build Documentation
+    # Verify installation
+    mkdocs --version
+    ```
 
-```bash
-# Build the documentation
-mkdocs build
+    **Step 2: Build Documentation**
 
-# This creates a 'site' directory with static HTML
-```
+    ```bash
+    # Build the documentation
+    mkdocs build
 
-### Step 3: Deploy to GitHub Pages
+    # This creates a 'site' directory with static HTML
+    ```
 
-```bash
-# Deploy to gh-pages branch
-mkdocs gh-deploy
+    **Step 3: Deploy to GitHub Pages**
 
-# This will:
-# 1. Build the documentation
-# 2. Push to gh-pages branch
-# 3. Make it available at https://yourusername.github.io/authentication_test
-```
+    ```bash
+    # Deploy to gh-pages branch
+    mkdocs gh-deploy
 
-### Step 4: Configure GitHub Pages
+    # This will:
+    # 1. Build the documentation
+    # 2. Push to gh-pages branch
+    # 3. Make it available at https://yourusername.github.io/authentication_test
+    ```
 
-1. Go to your repository on GitHub
-2. Click "Settings"
-3. Scroll to "Pages" section
-4. Under "Source", select:
-   - Branch: `gh-pages`
-   - Folder: `/ (root)`
-5. Click "Save"
+    **Step 4: Configure GitHub Pages**
 
-Your documentation will be available at:
-```
-https://yourusername.github.io/authentication_test
-```
+    1. Go to your repository on GitHub
+    2. Click "Settings"
+    3. Scroll to "Pages" section
+    4. Under "Source", select:
+       - Branch: `gh-pages`
+       - Folder: `/ (root)`
+    5. Click "Save"
 
-## Option 2: GitHub Actions (Automated)
+    Your documentation will be available at:
+    ```
+    https://yourusername.github.io/authentication_test
+    ```
 
-### Step 1: Create Workflow File
+=== "GitHub Actions (Automated)"
 
-Create `.github/workflows/docs.yml`:
+    **Step 1: Create Workflow File**
 
-```yaml
-name: Deploy Documentation
+    Create `.github/workflows/docs.yml`:
 
-on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'docs/**'
-      - 'mkdocs.yml'
-      - 'requirements.txt'
-      - '.github/workflows/docs.yml'
-  workflow_dispatch:
+    ```yaml
+    name: Deploy Documentation
 
-permissions:
-  contents: write
+    on:
+      push:
+        branches:
+          - main
+        paths:
+          - 'docs/**'
+          - 'mkdocs.yml'
+          - 'requirements.txt'
+          - '.github/workflows/docs.yml'
+      workflow_dispatch:
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+    permissions:
+      contents: write
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: 3.x
+    jobs:
+      deploy:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Checkout code
+            uses: actions/checkout@v4
+            with:
+              fetch-depth: 0
 
-      - name: Cache dependencies
-        uses: actions/cache@v3
-        with:
-          key: ${{ github.ref }}
-          path: .cache
+          - name: Setup Python
+            uses: actions/setup-python@v5
+            with:
+              python-version: 3.x
 
-      - name: Install dependencies
-        run: pip install -r requirements.txt
+          - name: Cache dependencies
+            uses: actions/cache@v3
+            with:
+              key: ${{ github.ref }}
+              path: .cache
 
-      - name: Build and deploy
-        run: mkdocs gh-deploy --force
-```
+          - name: Install dependencies
+            run: pip install -r requirements.txt
 
-### Step 2: Commit and Push
+          - name: Build and deploy
+            run: mkdocs gh-deploy --force
+    ```
 
-```bash
-git add .github/workflows/docs.yml
-git commit -m "Add GitHub Actions workflow for documentation"
-git push origin main
-```
+    **Step 2: Commit and Push**
 
-### Step 3: Verify Deployment
+    ```bash
+    git add .github/workflows/docs.yml
+    git commit -m "Add GitHub Actions workflow for documentation"
+    git push origin main
+    ```
 
-1. Go to "Actions" tab in your repository
-2. Watch the workflow run
-3. Once complete, visit your documentation site
+    **Step 3: Verify Deployment**
 
-## Option 3: Using Mike (Versioned Documentation)
+    1. Go to "Actions" tab in your repository
+    2. Watch the workflow run
+    3. Once complete, visit your documentation site
 
-Mike allows you to maintain multiple versions of documentation.
+=== "Mike (Versioned Documentation)"
 
-### Install Mike
+    Mike allows you to maintain multiple versions of documentation.
 
-```bash
-pip install mike
-```
+    **Install Mike:**
 
-### Deploy Version
+    ```bash
+    pip install mike
+    ```
 
-```bash
-# Deploy version 1.0
-mike deploy --push --update-aliases 1.0 latest
+    **Deploy Version:**
 
-# Set default version
-mike set-default --push latest
-```
+    ```bash
+    # Deploy version 1.0
+    mike deploy --push --update-aliases 1.0 latest
 
-### View Versions Locally
+    # Set default version
+    mike set-default --push latest
+    ```
 
-```bash
-mike serve
-```
+    **View Versions Locally:**
 
-Visit: `http://localhost:8000`
+    ```bash
+    mike serve
+    ```
+
+    Visit: `http://localhost:8000`
 
 ## Customizing Deployment
 

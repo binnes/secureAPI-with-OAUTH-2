@@ -15,52 +15,52 @@ The project includes a `Containerfile` in the `API_server/` directory (compatibl
 
 ## Building Container Images
 
-### Using Podman (Recommended)
+=== "Podman (Recommended)"
 
-Podman is a daemonless container engine that's compatible with Docker.
+    Podman is a daemonless container engine that's compatible with Docker.
 
-#### Build Image
+    **Build Image:**
 
-```bash
-cd API_server
-podman build -t authentication-test-api:1.0.0 .
-```
+    ```bash
+    cd API_server
+    podman build -t authentication-test-api:1.0.0 .
+    ```
 
-#### Build with Custom Tag
+    **Build with Custom Tag:**
 
-```bash
-cd API_server
-podman build -t authentication-test-api:latest .
-```
+    ```bash
+    cd API_server
+    podman build -t authentication-test-api:latest .
+    ```
 
-#### Build with No Cache
+    **Build with No Cache:**
 
-Force rebuild without using cache:
+    Force rebuild without using cache:
 
-```bash
-cd API_server
-podman build --no-cache -t authentication-test-api:1.0.0 .
-```
+    ```bash
+    cd API_server
+    podman build --no-cache -t authentication-test-api:1.0.0 .
+    ```
 
-### Using Docker
+=== "Docker"
 
-#### Build Image
+    **Build Image:**
 
-```bash
-cd API_server
-docker build -t authentication-test-api:1.0.0 .
-```
+    ```bash
+    cd API_server
+    docker build -t authentication-test-api:1.0.0 .
+    ```
 
-#### Build with Build Args
+    **Build with Build Args:**
 
-Pass build-time variables:
+    Pass build-time variables:
 
-```bash
-cd API_server
-docker build \
-  --build-arg LIBERTY_VERSION=24.0.0.1 \
-  -t authentication-test-api:1.0.0 .
-```
+    ```bash
+    cd API_server
+    docker build \
+      --build-arg LIBERTY_VERSION=24.0.0.1 \
+      -t authentication-test-api:1.0.0 .
+    ```
 
 ## Running Containers
 

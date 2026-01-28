@@ -2,50 +2,50 @@
 
 Guide for running the Authentication Test API server in different environments.
 
-## Development Mode
+## Running Options
 
-### Using Maven Liberty Plugin
+=== "Development Mode"
 
-The easiest way to run during development:
+    The easiest way to run during development with hot reload:
 
-```bash
-cd API_server
-mvn liberty:dev
-```
+    ```bash
+    cd API_server
+    mvn liberty:dev
+    ```
 
-Features:
-- Hot reload on code changes
-- Automatic test execution
-- Debug port on 7777
-- Interactive mode
+    **Features:**
+    
+    - Hot reload on code changes
+    - Automatic test execution
+    - Debug port on 7777
+    - Interactive mode
 
-Access the API at:
-- HTTP: `http://localhost:9080`
-- HTTPS: `https://localhost:9443`
+    **Access the API at:**
+    
+    - HTTP: `http://localhost:9080`
+    - HTTPS: `https://localhost:9443`
 
-Press `Ctrl+C` to stop.
+    Press `Ctrl+C` to stop.
 
-## Production Mode
+=== "Production Mode"
 
-### Using Maven
+    Start the server in background:
 
-Start the server in background:
+    ```bash
+    cd API_server
+    mvn liberty:start
+    ```
 
-```bash
-cd API_server
-mvn liberty:start
-```
+    Stop the server:
 
-Stop the server:
+    ```bash
+    cd API_server
+    mvn liberty:stop
+    ```
 
-```bash
-cd API_server
-mvn liberty:stop
-```
+=== "Container"
 
-### Using Container
-
-See [Containerization Guide](containers.md) for running in containers.
+    See [Containerization Guide](containers.md) for detailed instructions on running in containers with Podman or Docker.
 
 ## Configuration
 

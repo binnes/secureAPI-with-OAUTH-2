@@ -18,136 +18,136 @@ We'll create two test users as specified in the requirements:
 
 ## Step 1: Create First User (testuser1)
 
-### Using Admin Console
+=== "Admin Console"
 
-1. **Select "secure-test" realm** from dropdown
-2. **Go to "Users"** in left menu
-3. **Click "Create new user"**
-4. **Enter User Details**:
-   - **Username**: `testuser1` (required)
-   - **Email**: `testuser1@example.com`
-   - **Email verified**: ✓ ON
-   - **First name**: `Test`
-   - **Last name**: `User One`
-   - **Enabled**: ✓ ON (user can login)
-   - **Required user actions**: (leave empty)
+    **Create User:**
 
-5. **Click "Create"**
+    1. **Select "secure-test" realm** from dropdown
+    2. **Go to "Users"** in left menu
+    3. **Click "Create new user"**
+    4. **Enter User Details**:
+       - **Username**: `testuser1` (required)
+       - **Email**: `testuser1@example.com`
+       - **Email verified**: ✓ ON
+       - **First name**: `Test`
+       - **Last name**: `User One`
+       - **Enabled**: ✓ ON (user can login)
+       - **Required user actions**: (leave empty)
+    5. **Click "Create"**
 
-### Set Password
+    **Set Password:**
 
-1. **Go to "Credentials" tab**
-2. **Click "Set password"**
-3. **Enter Password Details**:
-   - **Password**: `password123`
-   - **Password confirmation**: `password123`
-   - **Temporary**: ✗ OFF (user won't need to change password)
-4. **Click "Save"**
-5. **Confirm** by clicking "Save password"
+    1. **Go to "Credentials" tab**
+    2. **Click "Set password"**
+    3. **Enter Password Details**:
+       - **Password**: `password123`
+       - **Password confirmation**: `password123`
+       - **Temporary**: ✗ OFF (user won't need to change password)
+    4. **Click "Save"**
+    5. **Confirm** by clicking "Save password"
 
-### Assign Role
+    **Assign Role:**
 
-1. **Go to "Role mapping" tab**
-2. **Click "Assign role"**
-3. **Filter by realm roles**
-4. **Select "schedule-user"**
-5. **Click "Assign"**
+    1. **Go to "Role mapping" tab**
+    2. **Click "Assign role"**
+    3. **Filter by realm roles**
+    4. **Select "schedule-user"**
+    5. **Click "Assign"**
 
-You should see `schedule-user` in the "Assigned roles" list.
+    You should see `schedule-user` in the "Assigned roles" list.
 
-### Using REST API
+=== "REST API"
 
-```bash
-# Get admin token
-TOKEN=$(curl -X POST http://localhost:8080/realms/master/protocol/openid-connect/token \
-  -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "username=admin" \
-  -d "password=admin" \
-  -d "grant_type=password" \
-  -d "client_id=admin-cli" \
-  | jq -r '.access_token')
+    ```bash
+    # Get admin token
+    TOKEN=$(curl -X POST http://localhost:8080/realms/master/protocol/openid-connect/token \
+      -H "Content-Type: application/x-www-form-urlencoded" \
+      -d "username=admin" \
+      -d "password=admin" \
+      -d "grant_type=password" \
+      -d "client_id=admin-cli" \
+      | jq -r '.access_token')
 
-# Create user
-curl -X POST http://localhost:8080/admin/realms/secure-test/users \
-  -H "Authorization: Bearer $TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "username": "testuser1",
-    "email": "testuser1@example.com",
-    "emailVerified": true,
-    "firstName": "Test",
-    "lastName": "User One",
-    "enabled": true,
-    "credentials": [{
-      "type": "password",
-      "value": "password123",
-      "temporary": false
-    }]
-  }'
+    # Create user
+    curl -X POST http://localhost:8080/admin/realms/secure-test/users \
+      -H "Authorization: Bearer $TOKEN" \
+      -H "Content-Type: application/json" \
+      -d '{
+        "username": "testuser1",
+        "email": "testuser1@example.com",
+        "emailVerified": true,
+        "firstName": "Test",
+        "lastName": "User One",
+        "enabled": true,
+        "credentials": [{
+          "type": "password",
+          "value": "password123",
+          "temporary": false
+        }]
+      }'
 
-# Get user ID
-USER_ID=$(curl -X GET "http://localhost:8080/admin/realms/secure-test/users?username=testuser1" \
-  -H "Authorization: Bearer $TOKEN" \
-  | jq -r '.[0].id')
+    # Get user ID
+    USER_ID=$(curl -X GET "http://localhost:8080/admin/realms/secure-test/users?username=testuser1" \
+      -H "Authorization: Bearer $TOKEN" \
+      | jq -r '.[0].id')
 
-# Get role ID
-ROLE_ID=$(curl -X GET http://localhost:8080/admin/realms/secure-test/roles/schedule-user \
-  -H "Authorization: Bearer $TOKEN" \
-  | jq -r '.id')
+    # Get role ID
+    ROLE_ID=$(curl -X GET http://localhost:8080/admin/realms/secure-test/roles/schedule-user \
+      -H "Authorization: Bearer $TOKEN" \
+      | jq -r '.id')
 
-# Assign role to user
-curl -X POST "http://localhost:8080/admin/realms/secure-test/users/$USER_ID/role-mappings/realm" \
-  -H "Authorization: Bearer $TOKEN" \
-  -H "Content-Type: application/json" \
-  -d "[{
-    \"id\": \"$ROLE_ID\",
-    \"name\": \"schedule-user\"
-  }]"
-```
+    # Assign role to user
+    curl -X POST "http://localhost:8080/admin/realms/secure-test/users/$USER_ID/role-mappings/realm" \
+      -H "Authorization: Bearer $TOKEN" \
+      -H "Content-Type: application/json" \
+      -d "[{
+        \"id\": \"$ROLE_ID\",
+        \"name\": \"schedule-user\"
+      }]"
+    ```
 
 ## Step 2: Create Second User (testuser2)
 
-### Using Admin Console
+=== "Admin Console"
 
-Repeat the same process for the second user:
+    Repeat the same process for the second user:
 
-1. **Go to "Users" → "Create new user"**
-2. **Enter User Details**:
-   - **Username**: `testuser2`
-   - **Email**: `testuser2@example.com`
-   - **Email verified**: ✓ ON
-   - **First name**: `Test`
-   - **Last name**: `User Two`
-   - **Enabled**: ✓ ON
-3. **Click "Create"**
+    1. **Go to "Users" → "Create new user"**
+    2. **Enter User Details**:
+       - **Username**: `testuser2`
+       - **Email**: `testuser2@example.com`
+       - **Email verified**: ✓ ON
+       - **First name**: `Test`
+       - **Last name**: `User Two`
+       - **Enabled**: ✓ ON
+    3. **Click "Create"**
+    4. **Set Password**:
+       - Password: `password123`
+       - Temporary: ✗ OFF
+    5. **Assign Role**:
+       - Assign `schedule-user` role
 
-4. **Set Password**:
-   - Password: `password123`
-   - Temporary: ✗ OFF
+=== "REST API"
 
-5. **Assign Role**:
-   - Assign `schedule-user` role
-
-### Using REST API
-
-```bash
-# Create second user
-curl -X POST http://localhost:8080/admin/realms/secure-test/users \
-  -H "Authorization: Bearer $TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "username": "testuser2",
-    "email": "testuser2@example.com",
-    "emailVerified": true,
-    "firstName": "Test",
-    "lastName": "User Two",
-    "enabled": true,
-    "credentials": [{
-      "type": "password",
-      "value": "password123",
-      "temporary": false
-    }]
-  }'
+    ```bash
+    # Create second user
+    curl -X POST http://localhost:8080/admin/realms/secure-test/users \
+      -H "Authorization: Bearer $TOKEN" \
+      -H "Content-Type: application/json" \
+      -d '{
+        "username": "testuser2",
+        "email": "testuser2@example.com",
+        "emailVerified": true,
+        "firstName": "Test",
+        "lastName": "User Two",
+        "enabled": true,
+        "credentials": [{
+          "type": "password",
+          "value": "password123",
+          "temporary": false
+        }]
+      }'
+    ```
 
 # Get user ID and assign role (same as testuser1)
 USER_ID=$(curl -X GET "http://localhost:8080/admin/realms/secure-test/users?username=testuser2" \

@@ -106,34 +106,36 @@ TOKEN=$(curl -s -k -X POST https://keycloak.lab.home/realms/secure-test/protocol
 
 Decode the JWT token to verify it contains the `groups` claim:
 
-```bash
-# Decode the token payload
-python3 -c "import sys, json, base64; \
-payload = sys.argv[1].split('.')[1]; \
-payload += '=' * (4 - len(payload) % 4); \
-claims = json.loads(base64.b64decode(payload)); \
-print('Username:', claims.get('preferred_username')); \
-print('Groups:', json.dumps(claims.get('groups', []), indent=2))" "$TOKEN"
-```
+=== "Command Line"
 
-**Expected output:**
+    ```bash
+    # Decode the token payload
+    python3 -c "import sys, json, base64; \
+    payload = sys.argv[1].split('.')[1]; \
+    payload += '=' * (4 - len(payload) % 4); \
+    claims = json.loads(base64.b64decode(payload)); \
+    print('Username:', claims.get('preferred_username')); \
+    print('Groups:', json.dumps(claims.get('groups', []), indent=2))" "$TOKEN"
+    ```
 
-```
-Username: testuser2
-Groups: [
-  "schedule-user",
-  "offline_access",
-  "uma_authorization",
-  "default-roles-secure-test"
-]
-```
+    **Expected output:**
 
-### Alternative: Use jwt.io
+    ```
+    Username: testuser2
+    Groups: [
+      "schedule-user",
+      "offline_access",
+      "uma_authorization",
+      "default-roles-secure-test"
+    ]
+    ```
 
-1. Copy the token
-2. Go to [https://jwt.io](https://jwt.io)
-3. Paste the token in the "Encoded" section
-4. Check the "Payload" section for the `groups` claim
+=== "jwt.io"
+
+    1. Copy the token
+    2. Go to [https://jwt.io](https://jwt.io)
+    3. Paste the token in the "Encoded" section
+    4. Check the "Payload" section for the `groups` claim
 
 ## Step 4: Update OpenLiberty Configuration
 
