@@ -1925,7 +1925,8 @@
 <h2 id="development-mode">Development Mode<a class="headerlink" href="#development-mode" title="Permanent link">&para;</a></h2>
 <h3 id="using-maven-liberty-plugin">Using Maven Liberty Plugin<a class="headerlink" href="#using-maven-liberty-plugin" title="Permanent link">&para;</a></h3>
 <p>The easiest way to run during development:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mvn<span class="w"> </span>liberty:dev
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">cd</span><span class="w"> </span>API_server
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>mvn<span class="w"> </span>liberty:dev
 </code></pre></div>
 <p>Features:
 - Hot reload on code changes
@@ -1939,10 +1940,12 @@
 <h2 id="production-mode">Production Mode<a class="headerlink" href="#production-mode" title="Permanent link">&para;</a></h2>
 <h3 id="using-maven">Using Maven<a class="headerlink" href="#using-maven" title="Permanent link">&para;</a></h3>
 <p>Start the server in background:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>mvn<span class="w"> </span>liberty:start
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">cd</span><span class="w"> </span>API_server
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>mvn<span class="w"> </span>liberty:start
 </code></pre></div>
 <p>Stop the server:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>mvn<span class="w"> </span>liberty:stop
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">cd</span><span class="w"> </span>API_server
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>mvn<span class="w"> </span>liberty:stop
 </code></pre></div>
 <h3 id="using-container">Using Container<a class="headerlink" href="#using-container" title="Permanent link">&para;</a></h3>
 <p>See <a href="../containers/">Containerization Guide</a> for running in containers.</p>
@@ -1950,7 +1953,8 @@
 <p>Set environment variables before starting:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">JWT_JWKS_URI</span><span class="o">=</span>https://keycloak.lab.home/realms/secure-test/protocol/openid-connect/certs
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">JWT_ISSUER</span><span class="o">=</span>https://keycloak.lab.home/realms/secure-test
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>mvn<span class="w"> </span>liberty:dev
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nb">cd</span><span class="w"> </span>API_server
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>mvn<span class="w"> </span>liberty:dev
 </code></pre></div>
 <h2 id="verification">Verification<a class="headerlink" href="#verification" title="Permanent link">&para;</a></h2>
 <p>Test the server is running:</p>

@@ -2212,11 +2212,12 @@
 <p>Get the Authentication Test API up and running in just a few minutes.</p>
 <h2 id="step-1-clone-or-download">Step 1: Clone or Download<a class="headerlink" href="#step-1-clone-or-download" title="Permanent link">&para;</a></h2>
 <p>If you have the source code, navigate to the project directory:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">cd</span><span class="w"> </span>authentication_test
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">cd</span><span class="w"> </span>authentication_test/API_server
 </code></pre></div>
 <h2 id="step-2-build-the-application">Step 2: Build the Application<a class="headerlink" href="#step-2-build-the-application" title="Permanent link">&para;</a></h2>
 <p>Build the application using Maven:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>mvn<span class="w"> </span>clean<span class="w"> </span>package
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">cd</span><span class="w"> </span>API_server
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>mvn<span class="w"> </span>clean<span class="w"> </span>package
 </code></pre></div>
 <p>This will:
 - Compile the Java source code
@@ -2229,7 +2230,8 @@
 </code></pre></div></p>
 <h2 id="step-3-run-with-maven-development">Step 3: Run with Maven (Development)<a class="headerlink" href="#step-3-run-with-maven-development" title="Permanent link">&para;</a></h2>
 <p>The fastest way to run the application for development:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>mvn<span class="w"> </span>liberty:dev
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">cd</span><span class="w"> </span>API_server
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>mvn<span class="w"> </span>liberty:dev
 </code></pre></div>
 <p>This starts the server in development mode with:
 - Hot reload on code changes
@@ -2338,11 +2340,13 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Podman</label><label for="__tabbed_2_2">Docker</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>podman<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>authentication-test-api:1.0.0<span class="w"> </span>.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nb">cd</span><span class="w"> </span>API_server
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>podman<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>authentication-test-api:1.0.0<span class="w"> </span>.
 </code></pre></div>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>authentication-test-api:1.0.0<span class="w"> </span>.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nb">cd</span><span class="w"> </span>API_server
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>authentication-test-api:1.0.0<span class="w"> </span>.
 </code></pre></div>
 </div>
 </div>

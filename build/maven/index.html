@@ -3098,6 +3098,10 @@
 
 <h1 id="building-with-maven">Building with Maven<a class="headerlink" href="#building-with-maven" title="Permanent link">&para;</a></h1>
 <p>This guide covers building, testing, and packaging the Authentication Test API using Apache Maven.</p>
+<div class="admonition note">
+<p class="admonition-title">Project Location</p>
+<p>All Maven commands should be run from the <code>API_server/</code> directory where the <code>pom.xml</code> file is located.</p>
+</div>
 <h2 id="maven-lifecycle">Maven Lifecycle<a class="headerlink" href="#maven-lifecycle" title="Permanent link">&para;</a></h2>
 <p>Maven uses a standard build lifecycle with these main phases:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>clean → validate → compile → test → package → verify → install → deploy
@@ -3105,32 +3109,38 @@
 <h2 id="basic-build-commands">Basic Build Commands<a class="headerlink" href="#basic-build-commands" title="Permanent link">&para;</a></h2>
 <h3 id="clean-build">Clean Build<a class="headerlink" href="#clean-build" title="Permanent link">&para;</a></h3>
 <p>Remove all generated files and start fresh:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>mvn<span class="w"> </span>clean
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">cd</span><span class="w"> </span>API_server
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>mvn<span class="w"> </span>clean
 </code></pre></div>
-<p>This deletes the <code>target/</code> directory.</p>
+<p>This deletes the <code>target/</code> directory within <code>API_server/</code>.</p>
 <h3 id="compile">Compile<a class="headerlink" href="#compile" title="Permanent link">&para;</a></h3>
 <p>Compile the source code without running tests:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>mvn<span class="w"> </span>compile
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">cd</span><span class="w"> </span>API_server
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>mvn<span class="w"> </span>compile
 </code></pre></div>
-<p>Output: Compiled classes in <code>target/classes/</code></p>
+<p>Output: Compiled classes in <code>API_server/target/classes/</code></p>
 <h3 id="run-tests">Run Tests<a class="headerlink" href="#run-tests" title="Permanent link">&para;</a></h3>
 <p>Execute unit tests:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>mvn<span class="w"> </span><span class="nb">test</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">cd</span><span class="w"> </span>API_server
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>mvn<span class="w"> </span><span class="nb">test</span>
 </code></pre></div>
 <h3 id="package">Package<a class="headerlink" href="#package" title="Permanent link">&para;</a></h3>
 <p>Create the WAR file:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>mvn<span class="w"> </span>package
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">cd</span><span class="w"> </span>API_server
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>mvn<span class="w"> </span>package
 </code></pre></div>
-<p>Output: <code>target/authentication-test-api.war</code></p>
+<p>Output: <code>API_server/target/authentication-test-api.war</code></p>
 <h3 id="full-build">Full Build<a class="headerlink" href="#full-build" title="Permanent link">&para;</a></h3>
 <p>Clean, compile, test, and package in one command:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>mvn<span class="w"> </span>clean<span class="w"> </span>package
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">cd</span><span class="w"> </span>API_server
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>mvn<span class="w"> </span>clean<span class="w"> </span>package
 </code></pre></div>
 <p>This is the most common build command.</p>
 <h2 id="development-mode">Development Mode<a class="headerlink" href="#development-mode" title="Permanent link">&para;</a></h2>
 <h3 id="liberty-dev-mode">Liberty Dev Mode<a class="headerlink" href="#liberty-dev-mode" title="Permanent link">&para;</a></h3>
 <p>Run the application with hot reload:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>mvn<span class="w"> </span>liberty:dev
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">cd</span><span class="w"> </span>API_server
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>mvn<span class="w"> </span>liberty:dev
 </code></pre></div>
 <p>Features:
 - <strong>Hot Reload</strong>: Automatically recompiles and redeploys on code changes
@@ -3140,7 +3150,8 @@
 <p>Exit with <code>Ctrl+C</code>.</p>
 <h3 id="skip-tests">Skip Tests<a class="headerlink" href="#skip-tests" title="Permanent link">&para;</a></h3>
 <p>Build without running tests (faster):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>mvn<span class="w"> </span>clean<span class="w"> </span>package<span class="w"> </span>-DskipTests
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">cd</span><span class="w"> </span>API_server
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>mvn<span class="w"> </span>clean<span class="w"> </span>package<span class="w"> </span>-DskipTests
 </code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -3149,63 +3160,74 @@
 <h2 id="advanced-build-options">Advanced Build Options<a class="headerlink" href="#advanced-build-options" title="Permanent link">&para;</a></h2>
 <h3 id="update-dependencies">Update Dependencies<a class="headerlink" href="#update-dependencies" title="Permanent link">&para;</a></h3>
 <p>Force update of all dependencies:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>mvn<span class="w"> </span>clean<span class="w"> </span>install<span class="w"> </span>-U
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">cd</span><span class="w"> </span>API_server
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>mvn<span class="w"> </span>clean<span class="w"> </span>install<span class="w"> </span>-U
 </code></pre></div>
 <p>The <code>-U</code> flag forces Maven to check for updated snapshots.</p>
 <h3 id="offline-build">Offline Build<a class="headerlink" href="#offline-build" title="Permanent link">&para;</a></h3>
 <p>Build without downloading dependencies:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>mvn<span class="w"> </span>clean<span class="w"> </span>package<span class="w"> </span>-o
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">cd</span><span class="w"> </span>API_server
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>mvn<span class="w"> </span>clean<span class="w"> </span>package<span class="w"> </span>-o
 </code></pre></div>
 <p>Requires all dependencies to be in local repository.</p>
 <h3 id="verbose-output">Verbose Output<a class="headerlink" href="#verbose-output" title="Permanent link">&para;</a></h3>
 <p>Show detailed build information:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>mvn<span class="w"> </span>clean<span class="w"> </span>package<span class="w"> </span>-X
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nb">cd</span><span class="w"> </span>API_server
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>mvn<span class="w"> </span>clean<span class="w"> </span>package<span class="w"> </span>-X
 </code></pre></div>
 <p>Useful for debugging build issues.</p>
 <h3 id="parallel-builds">Parallel Builds<a class="headerlink" href="#parallel-builds" title="Permanent link">&para;</a></h3>
 <p>Build faster using multiple threads:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>mvn<span class="w"> </span>clean<span class="w"> </span>package<span class="w"> </span>-T<span class="w"> </span><span class="m">4</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nb">cd</span><span class="w"> </span>API_server
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>mvn<span class="w"> </span>clean<span class="w"> </span>package<span class="w"> </span>-T<span class="w"> </span><span class="m">4</span>
 </code></pre></div>
 <p>Uses 4 threads. Adjust based on your CPU cores.</p>
 <h2 id="build-profiles">Build Profiles<a class="headerlink" href="#build-profiles" title="Permanent link">&para;</a></h2>
 <h3 id="development-profile">Development Profile<a class="headerlink" href="#development-profile" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>mvn<span class="w"> </span>clean<span class="w"> </span>package<span class="w"> </span>-Pdev
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nb">cd</span><span class="w"> </span>API_server
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>mvn<span class="w"> </span>clean<span class="w"> </span>package<span class="w"> </span>-Pdev
 </code></pre></div>
 <h3 id="production-profile">Production Profile<a class="headerlink" href="#production-profile" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>mvn<span class="w"> </span>clean<span class="w"> </span>package<span class="w"> </span>-Pprod
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nb">cd</span><span class="w"> </span>API_server
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>mvn<span class="w"> </span>clean<span class="w"> </span>package<span class="w"> </span>-Pprod
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Profiles are defined in <code>pom.xml</code> and can customize build behavior.</p>
+<p>Profiles are defined in <code>API_server/pom.xml</code> and can customize build behavior.</p>
 </div>
 <h2 id="liberty-maven-plugin">Liberty Maven Plugin<a class="headerlink" href="#liberty-maven-plugin" title="Permanent link">&para;</a></h2>
 <h3 id="start-server">Start Server<a class="headerlink" href="#start-server" title="Permanent link">&para;</a></h3>
 <p>Start OpenLiberty server:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>mvn<span class="w"> </span>liberty:start
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nb">cd</span><span class="w"> </span>API_server
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>mvn<span class="w"> </span>liberty:start
 </code></pre></div>
 <p>Server runs in background.</p>
 <h3 id="stop-server">Stop Server<a class="headerlink" href="#stop-server" title="Permanent link">&para;</a></h3>
 <p>Stop the running server:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>mvn<span class="w"> </span>liberty:stop
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nb">cd</span><span class="w"> </span>API_server
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>mvn<span class="w"> </span>liberty:stop
 </code></pre></div>
 <h3 id="run-server">Run Server<a class="headerlink" href="#run-server" title="Permanent link">&para;</a></h3>
 <p>Start server in foreground:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>mvn<span class="w"> </span>liberty:run
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nb">cd</span><span class="w"> </span>API_server
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>mvn<span class="w"> </span>liberty:run
 </code></pre></div>
 <p>Exit with <code>Ctrl+C</code>.</p>
 <h3 id="create-server-package">Create Server Package<a class="headerlink" href="#create-server-package" title="Permanent link">&para;</a></h3>
 <p>Create a runnable server package:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>mvn<span class="w"> </span>liberty:package
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nb">cd</span><span class="w"> </span>API_server
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>mvn<span class="w"> </span>liberty:package
 </code></pre></div>
-<p>Output: <code>target/authentication-test-api.zip</code></p>
+<p>Output: <code>API_server/target/authentication-test-api.zip</code></p>
 <h3 id="deploy-application">Deploy Application<a class="headerlink" href="#deploy-application" title="Permanent link">&para;</a></h3>
 <p>Deploy WAR to running server:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>mvn<span class="w"> </span>liberty:deploy
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nb">cd</span><span class="w"> </span>API_server
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>mvn<span class="w"> </span>liberty:deploy
 </code></pre></div>
 <h2 id="build-output">Build Output<a class="headerlink" href="#build-output" title="Permanent link">&para;</a></h2>
 <h3 id="directory-structure">Directory Structure<a class="headerlink" href="#directory-structure" title="Permanent link">&para;</a></h3>
 <p>After a successful build:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>target/
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>API_server/target/
 <a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>├── authentication-test-api.war          # Deployable WAR file
 <a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>├── authentication-test-api/             # Exploded WAR
 <a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>├── classes/                             # Compiled classes
@@ -3228,47 +3250,57 @@
 <h2 id="dependency-management">Dependency Management<a class="headerlink" href="#dependency-management" title="Permanent link">&para;</a></h2>
 <h3 id="list-dependencies">List Dependencies<a class="headerlink" href="#list-dependencies" title="Permanent link">&para;</a></h3>
 <p>Show all project dependencies:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>mvn<span class="w"> </span>dependency:tree
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nb">cd</span><span class="w"> </span>API_server
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>mvn<span class="w"> </span>dependency:tree
 </code></pre></div>
 <h3 id="analyze-dependencies">Analyze Dependencies<a class="headerlink" href="#analyze-dependencies" title="Permanent link">&para;</a></h3>
 <p>Check for unused or undeclared dependencies:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>mvn<span class="w"> </span>dependency:analyze
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nb">cd</span><span class="w"> </span>API_server
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>mvn<span class="w"> </span>dependency:analyze
 </code></pre></div>
 <h3 id="download-sources">Download Sources<a class="headerlink" href="#download-sources" title="Permanent link">&para;</a></h3>
 <p>Download source JARs for dependencies:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>mvn<span class="w"> </span>dependency:sources
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nb">cd</span><span class="w"> </span>API_server
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>mvn<span class="w"> </span>dependency:sources
 </code></pre></div>
 <p>Useful for IDE debugging.</p>
 <h3 id="download-javadocs">Download Javadocs<a class="headerlink" href="#download-javadocs" title="Permanent link">&para;</a></h3>
 <p>Download Javadoc JARs:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>mvn<span class="w"> </span>dependency:resolve<span class="w"> </span>-Dclassifier<span class="o">=</span>javadoc
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="nb">cd</span><span class="w"> </span>API_server
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>mvn<span class="w"> </span>dependency:resolve<span class="w"> </span>-Dclassifier<span class="o">=</span>javadoc
 </code></pre></div>
 <h2 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h2>
 <h3 id="run-specific-test">Run Specific Test<a class="headerlink" href="#run-specific-test" title="Permanent link">&para;</a></h3>
 <p>Run a single test class:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>mvn<span class="w"> </span><span class="nb">test</span><span class="w"> </span>-Dtest<span class="o">=</span>HelloResourceTest
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="nb">cd</span><span class="w"> </span>API_server
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>mvn<span class="w"> </span><span class="nb">test</span><span class="w"> </span>-Dtest<span class="o">=</span>HelloResourceTest
 </code></pre></div>
 <h3 id="run-test-method">Run Test Method<a class="headerlink" href="#run-test-method" title="Permanent link">&para;</a></h3>
 <p>Run a specific test method:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>mvn<span class="w"> </span><span class="nb">test</span><span class="w"> </span>-Dtest<span class="o">=</span>HelloResourceTest#testHelloEndpoint
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="nb">cd</span><span class="w"> </span>API_server
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>mvn<span class="w"> </span><span class="nb">test</span><span class="w"> </span>-Dtest<span class="o">=</span>HelloResourceTest#testHelloEndpoint
 </code></pre></div>
 <h3 id="skip-tests_1">Skip Tests<a class="headerlink" href="#skip-tests_1" title="Permanent link">&para;</a></h3>
 <p>Skip test compilation and execution:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>mvn<span class="w"> </span>package<span class="w"> </span>-Dmaven.test.skip<span class="o">=</span><span class="nb">true</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="nb">cd</span><span class="w"> </span>API_server
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>mvn<span class="w"> </span>package<span class="w"> </span>-Dmaven.test.skip<span class="o">=</span><span class="nb">true</span>
 </code></pre></div>
 <h3 id="test-coverage">Test Coverage<a class="headerlink" href="#test-coverage" title="Permanent link">&para;</a></h3>
 <p>Generate test coverage report (requires jacoco plugin):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>mvn<span class="w"> </span>clean<span class="w"> </span><span class="nb">test</span><span class="w"> </span>jacoco:report
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="nb">cd</span><span class="w"> </span>API_server
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>mvn<span class="w"> </span>clean<span class="w"> </span><span class="nb">test</span><span class="w"> </span>jacoco:report
 </code></pre></div>
-<p>Report: <code>target/site/jacoco/index.html</code></p>
+<p>Report: <code>API_server/target/site/jacoco/index.html</code></p>
 <h2 id="code-quality">Code Quality<a class="headerlink" href="#code-quality" title="Permanent link">&para;</a></h2>
 <h3 id="compile-with-warnings">Compile with Warnings<a class="headerlink" href="#compile-with-warnings" title="Permanent link">&para;</a></h3>
 <p>Show all compiler warnings:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>mvn<span class="w"> </span>clean<span class="w"> </span>compile<span class="w"> </span>-Xlint:all
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="nb">cd</span><span class="w"> </span>API_server
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>mvn<span class="w"> </span>clean<span class="w"> </span>compile<span class="w"> </span>-Xlint:all
 </code></pre></div>
 <h3 id="format-code">Format Code<a class="headerlink" href="#format-code" title="Permanent link">&para;</a></h3>
 <p>Format code according to style rules (requires formatter plugin):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>mvn<span class="w"> </span>formatter:format
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="nb">cd</span><span class="w"> </span>API_server
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>mvn<span class="w"> </span>formatter:format
 </code></pre></div>
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <h3 id="clear-local-repository">Clear Local Repository<a class="headerlink" href="#clear-local-repository" title="Permanent link">&para;</a></h3>
@@ -3277,54 +3309,65 @@
 <a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>rm<span class="w"> </span>-rf<span class="w"> </span>~/.m2/repository/com/example/authentication-test-api
 <a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>
 <a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="c1"># Rebuild</span>
-<a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a>mvn<span class="w"> </span>clean<span class="w"> </span>install<span class="w"> </span>-U
+<a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a><span class="nb">cd</span><span class="w"> </span>API_server
+<a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a>mvn<span class="w"> </span>clean<span class="w"> </span>install<span class="w"> </span>-U
 </code></pre></div>
 <h3 id="increase-memory">Increase Memory<a class="headerlink" href="#increase-memory" title="Permanent link">&para;</a></h3>
 <p>If build runs out of memory:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">MAVEN_OPTS</span><span class="o">=</span><span class="s2">&quot;-Xmx2048m -XX:MaxPermSize=512m&quot;</span>
-<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>mvn<span class="w"> </span>clean<span class="w"> </span>package
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="nb">cd</span><span class="w"> </span>API_server
+<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>mvn<span class="w"> </span>clean<span class="w"> </span>package
 </code></pre></div>
 <h3 id="debug-build">Debug Build<a class="headerlink" href="#debug-build" title="Permanent link">&para;</a></h3>
 <p>Run Maven in debug mode:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>mvn<span class="w"> </span>clean<span class="w"> </span>package<span class="w"> </span>-X<span class="w"> </span>&gt;<span class="w"> </span>build.log<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="nb">cd</span><span class="w"> </span>API_server
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>mvn<span class="w"> </span>clean<span class="w"> </span>package<span class="w"> </span>-X<span class="w"> </span>&gt;<span class="w"> </span>build.log<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span>
 </code></pre></div>
 <p>Review <code>build.log</code> for detailed information.</p>
 <h3 id="dependency-conflicts">Dependency Conflicts<a class="headerlink" href="#dependency-conflicts" title="Permanent link">&para;</a></h3>
 <p>Resolve dependency conflicts:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>mvn<span class="w"> </span>dependency:tree<span class="w"> </span>-Dverbose
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="nb">cd</span><span class="w"> </span>API_server
+<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>mvn<span class="w"> </span>dependency:tree<span class="w"> </span>-Dverbose
 </code></pre></div>
 <p>Look for conflicts marked with <code>(omitted for conflict with X.Y.Z)</code>.</p>
 <h2 id="build-best-practices">Build Best Practices<a class="headerlink" href="#build-best-practices" title="Permanent link">&para;</a></h2>
 <h3 id="1-always-clean-before-release">1. Always Clean Before Release<a class="headerlink" href="#1-always-clean-before-release" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>mvn<span class="w"> </span>clean<span class="w"> </span>package
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="nb">cd</span><span class="w"> </span>API_server
+<a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>mvn<span class="w"> </span>clean<span class="w"> </span>package
 </code></pre></div>
 <p>Ensures no stale artifacts.</p>
 <h3 id="2-run-tests">2. Run Tests<a class="headerlink" href="#2-run-tests" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>mvn<span class="w"> </span>clean<span class="w"> </span>verify
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="nb">cd</span><span class="w"> </span>API_server
+<a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>mvn<span class="w"> </span>clean<span class="w"> </span>verify
 </code></pre></div>
 <p>Runs all tests including integration tests.</p>
 <h3 id="3-check-for-updates">3. Check for Updates<a class="headerlink" href="#3-check-for-updates" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>mvn<span class="w"> </span>versions:display-dependency-updates
-<a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>mvn<span class="w"> </span>versions:display-plugin-updates
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="nb">cd</span><span class="w"> </span>API_server
+<a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>mvn<span class="w"> </span>versions:display-dependency-updates
+<a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a>mvn<span class="w"> </span>versions:display-plugin-updates
 </code></pre></div>
 <h3 id="4-verify-build-reproducibility">4. Verify Build Reproducibility<a class="headerlink" href="#4-verify-build-reproducibility" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>mvn<span class="w"> </span>clean<span class="w"> </span>package
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="nb">cd</span><span class="w"> </span>API_server
 <a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a>mvn<span class="w"> </span>clean<span class="w"> </span>package
-<a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a>diff<span class="w"> </span>target/authentication-test-api.war<span class="w"> </span>target/authentication-test-api.war
+<a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a>mvn<span class="w"> </span>clean<span class="w"> </span>package
+<a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a>diff<span class="w"> </span>target/authentication-test-api.war<span class="w"> </span>target/authentication-test-api.war
 </code></pre></div>
 <p>Builds should be identical.</p>
 <h2 id="cicd-integration">CI/CD Integration<a class="headerlink" href="#cicd-integration" title="Permanent link">&para;</a></h2>
 <h3 id="github-actions">GitHub Actions<a class="headerlink" href="#github-actions" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build with Maven</span>
-<a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a><span class="w">  </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mvn clean package -B</span>
+<a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a><span class="w">  </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a><span class="w">    </span><span class="no">cd API_server</span>
+<a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a><span class="w">    </span><span class="no">mvn clean package -B</span>
 </code></pre></div>
 <h3 id="gitlab-ci">GitLab CI<a class="headerlink" href="#gitlab-ci" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="nt">build</span><span class="p">:</span>
 <a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a><span class="w">  </span><span class="nt">script</span><span class="p">:</span>
-<a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mvn clean package</span>
+<a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cd API_server</span>
+<a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mvn clean package</span>
 </code></pre></div>
 <h3 id="jenkins">Jenkins<a class="headerlink" href="#jenkins" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="n">sh</span><span class="w"> </span><span class="s1">&#39;mvn clean package&#39;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="n">sh</span><span class="w"> </span><span class="s1">&#39;cd API_server &amp;&amp; mvn clean package&#39;</span>
 </code></pre></div>
 <h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
 <ul>
