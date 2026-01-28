@@ -1210,6 +1210,45 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#exporting-the-openapi-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exporting the OpenAPI Specification
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exporting the OpenAPI Specification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#verify-the-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verify the Export
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-spec-with-orchestrate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using the Spec with Orchestrate
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#using-swagger-ui" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1834,6 +1873,45 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#exporting-the-openapi-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exporting the OpenAPI Specification
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exporting the OpenAPI Specification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#verify-the-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verify the Export
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-spec-with-orchestrate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using the Spec with Orchestrate
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#using-swagger-ui" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1920,6 +1998,79 @@
 <p>Raw OpenAPI 3.0 specification in JSON format:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>http://localhost:9080/openapi
 </code></pre></div>
+<h2 id="exporting-the-openapi-specification">Exporting the OpenAPI Specification<a class="headerlink" href="#exporting-the-openapi-specification" title="Permanent link">&para;</a></h2>
+<p>To add this API to Orchestrate or other tools, you need to export the OpenAPI specification file.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">curl</label><label for="__tabbed_1_2">wget</label><label for="__tabbed_1_3">Browser</label><label for="__tabbed_1_4">Swagger UI</label><label for="__tabbed_1_5">Automated Script</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Download the spec using curl (recommended):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>curl<span class="w"> </span>http://localhost:9080/openapi<span class="w"> </span>-o<span class="w"> </span>openapi.json
+</code></pre></div>
+<p>This creates an <code>openapi.json</code> file in your current directory.</p>
+</div>
+<div class="tabbed-block">
+<p>Download using wget:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>wget<span class="w"> </span>http://localhost:9080/openapi<span class="w"> </span>-O<span class="w"> </span>openapi.json
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Download via web browser:</p>
+<ol>
+<li>Start the server: <code>mvn liberty:dev</code></li>
+<li>Open your browser to: <code>http://localhost:9080/openapi</code></li>
+<li>Right-click and select "Save Page As..."</li>
+<li>Save as <code>openapi.json</code></li>
+</ol>
+</div>
+<div class="tabbed-block">
+<p>Export from Swagger UI:</p>
+<ol>
+<li>Navigate to <code>http://localhost:9080/openapi/ui</code></li>
+<li>Look for the OpenAPI spec link at the top of the page</li>
+<li>Right-click and "Save Link As..."</li>
+<li>Save as <code>openapi.json</code></li>
+</ol>
+</div>
+<div class="tabbed-block">
+<p>Create a script to export automatically:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="ch">#!/bin/bash</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1"># export-openapi.sh</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># Wait for server to be ready</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Waiting for server to start...&quot;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="k">until</span><span class="w"> </span>curl<span class="w"> </span>-s<span class="w"> </span>http://localhost:9080/openapi<span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span>sleep<span class="w"> </span><span class="m">2</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="k">done</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="c1"># Export the spec</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Exporting OpenAPI specification...&quot;</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>curl<span class="w"> </span>http://localhost:9080/openapi<span class="w"> </span>-o<span class="w"> </span>openapi.json
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;OpenAPI spec exported to openapi.json&quot;</span>
+</code></pre></div>
+<p>Make it executable and run:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>chmod<span class="w"> </span>+x<span class="w"> </span>export-openapi.sh
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>./export-openapi.sh
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="verify-the-export">Verify the Export<a class="headerlink" href="#verify-the-export" title="Permanent link">&para;</a></h3>
+<p>Check that the file contains valid JSON:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>cat<span class="w"> </span>openapi.json<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span><span class="s1">&#39;.&#39;</span>
+</code></pre></div>
+<p>Or view the OpenAPI version:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>cat<span class="w"> </span>openapi.json<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span><span class="s1">&#39;.openapi&#39;</span>
+</code></pre></div>
+<p>Expected output: <code>"3.0.3"</code> or similar.</p>
+<h3 id="using-the-spec-with-orchestrate">Using the Spec with Orchestrate<a class="headerlink" href="#using-the-spec-with-orchestrate" title="Permanent link">&para;</a></h3>
+<p>Once exported, you can:</p>
+<ol>
+<li><strong>Import to Orchestrate</strong> - Use the <code>openapi.json</code> file to register your API</li>
+<li><strong>Version Control</strong> - Commit the spec to your repository for tracking changes</li>
+<li><strong>API Documentation</strong> - Share with team members or external consumers</li>
+<li><strong>Code Generation</strong> - Use tools like OpenAPI Generator to create client SDKs</li>
+</ol>
 <h2 id="using-swagger-ui">Using Swagger UI<a class="headerlink" href="#using-swagger-ui" title="Permanent link">&para;</a></h2>
 <ol>
 <li><strong>Open Swagger UI</strong> at <code>http://localhost:9080/openapi/ui</code></li>
@@ -1937,28 +2088,28 @@
 </ol>
 <p>Now you can test protected endpoints.</p>
 <h2 id="getting-a-token-for-testing">Getting a Token for Testing<a class="headerlink" href="#getting-a-token-for-testing" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8080/realms/secure-test/protocol/openid-connect/token<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/x-www-form-urlencoded&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;client_id=authentication-test-api&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;client_secret=YOUR_SECRET&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;grant_type=password&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;username=testuser1&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;password=password123&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.access_token&#39;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8080/realms/secure-test/protocol/openid-connect/token<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/x-www-form-urlencoded&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;client_id=authentication-test-api&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;client_secret=YOUR_SECRET&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;grant_type=password&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;username=testuser1&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;password=password123&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">  </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.access_token&#39;</span>
 </code></pre></div>
 <p>Copy the token and use it in Swagger UI.</p>
 <h2 id="openapi-annotations">OpenAPI Annotations<a class="headerlink" href="#openapi-annotations" title="Permanent link">&para;</a></h2>
 <p>The API uses MicroProfile OpenAPI annotations for documentation:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nd">@Operation</span><span class="p">(</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="n">summary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Get user schedule&quot;</span><span class="p">,</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Retrieve the authenticated user&#39;s schedule&quot;</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">)</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nd">@APIResponses</span><span class="p">({</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="nd">@APIResponse</span><span class="p">(</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">        </span><span class="n">responseCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;200&quot;</span><span class="p">,</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">        </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Schedule retrieved successfully&quot;</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="p">)</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="p">})</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nd">@Operation</span><span class="p">(</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="n">summary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Get user schedule&quot;</span><span class="p">,</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Retrieve the authenticated user&#39;s schedule&quot;</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="p">)</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="nd">@APIResponses</span><span class="p">({</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">    </span><span class="nd">@APIResponse</span><span class="p">(</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">        </span><span class="n">responseCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;200&quot;</span><span class="p">,</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">        </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Schedule retrieved successfully&quot;</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">    </span><span class="p">)</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="p">})</span>
 </code></pre></div>
 <h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
 <ul>
