@@ -1,0 +1,40 @@
+# Multi-stage build for Authentication Test API
+
+# Stage 1: Build the application
+FROM maven:3.9-eclipse-temurin-21 AS builder
+
+WORKDIR /app
+
+# Copy pom.xml and download dependencies (cached layer)
+COPY pom.xml .
+RUN mvn dependency:go-offline -B
+
+# Copy source code and build
+COPY src ./src
+RUN mvn clean package -DskipTests
+
+# Stage 2: Runtime image
+FROM icr.io/appcafe/open-liberty:24.0.0.1-full-java21-openj9-ubi
+
+# Copy Liberty configuration
+COPY --chown=1001:0 src/main/liberty/config/server.xml /config/
+
+# Copy the application WAR
+COPY --chown=1001:0 --from=builder /app/target/authentication-test-api.war /config/apps/
+
+# Environment variables with defaults
+ENV JWT_JWKS_URI=https://keycloak.lab.home/realms/secure-test/protocol/openid-connect/certs
+ENV JWT_ISSUER=https://keycloak.lab.home/realms/secure-test
+ENV CORS_ALLOWED_ORIGINS=http://localhost:3000,https://app.lab.home
+ENV CORS_ALLOWED_METHODS=GET,POST,PUT,DELETE,OPTIONS
+ENV CORS_ALLOWED_HEADERS=Authorization,Content-Type
+ENV LOG_LEVEL=INFO
+
+# Expose ports
+EXPOSE 9080 9443
+
+# Run as non-root user
+USER 1001
+
+# Configure Liberty
+RUN configure.sh

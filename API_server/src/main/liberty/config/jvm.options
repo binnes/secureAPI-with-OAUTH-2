@@ -1,0 +1,17 @@
+# JVM Options for Authentication Test API Server
+# These options disable SSL certificate validation for development with self-signed certificates
+
+# Disable SSL certificate validation (DEVELOPMENT ONLY - DO NOT USE IN PRODUCTION)
+-Dcom.ibm.jsse2.overrideDefaultTLS=true
+-Djavax.net.ssl.trustAll=true
+-Djdk.internal.httpclient.disableHostnameVerification=true
+
+# Memory settings
+-Xms256m
+-Xmx512m
+
+# Garbage collection
+-XX:+UseG1GC
+
+# Debug settings (already configured in server.xml for dev mode)
+# -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=7777

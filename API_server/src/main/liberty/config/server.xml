@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<server description="Authentication Test API Server">
+
+    <!-- JVM Options for development (disable SSL validation for self-signed certs) -->
+    <jvmOptions>-Dcom.ibm.jsse2.overrideDefaultTLS=true</jvmOptions>
+    <jvmOptions>-Dcom.ibm.ssl.skipDefaultCertificateValidation=true</jvmOptions>
+
+    <!-- Enable features -->
+    <featureManager>
+        <feature>restfulWS-3.1</feature>
+        <feature>jsonp-2.1</feature>
+        <feature>jsonb-3.0</feature>
+        <feature>cdi-4.0</feature>
+        <feature>mpConfig-3.1</feature>
+        <feature>mpOpenAPI-3.1</feature>
+        <feature>mpJWT-2.1</feature>
+        <feature>mpRestClient-3.0</feature>
+        <feature>ssl-1.0</feature>
+    </featureManager>
+
+    <!-- HTTP Endpoint -->
+    <httpEndpoint id="defaultHttpEndpoint"
+                  host="*"
+                  httpPort="9080"
+                  httpsPort="9443">
+        <tcpOptions soReuseAddr="true"/>
+    </httpEndpoint>
+
+    <!-- Application Configuration -->
+    <webApplication id="authentication-test-api"
+                    location="authentication-test-api.war"
+                    contextRoot="/"/>
+
+    <!-- MicroProfile JWT Configuration -->
+    <mpJwt id="jwtConfig"
+           jwksUri="${env.JWT_JWKS_URI}"
+           issuer="${env.JWT_ISSUER}"
+           audiences="authentication-test-api"
+           groupNameAttribute="groups"
+           userNameAttribute="preferred_username"
+           sslRef="jwtSSLConfig"/>
+
+    <!-- SSL Configuration for JWT/JWKS endpoint (disables validation for dev/self-signed certs) -->
+    <ssl id="jwtSSLConfig"
+         keyStoreRef="defaultKeyStore"
+         trustDefaultCerts="true"
+         verifyHostname="false"
+         sslProtocol="TLSv1.2"
+         clientAuthentication="false"
+         clientAuthenticationSupported="false"/>
+    
+    <!-- Outbound SSL configuration for REST clients (disables cert validation) -->
+    <sslDefault outboundSSLRef="jwtSSLConfig"/>
+
+    <!-- SSL Configuration (for HTTPS server endpoint) -->
+    <ssl id="defaultSSLConfig"
+         keyStoreRef="defaultKeyStore"
+         trustDefaultCerts="true"
+         sslProtocol="TLSv1.2"/>
+
+    <keyStore id="defaultKeyStore"
+              password="changeit"/>
+
+    <!-- Logging -->
+    <logging traceSpecification="*=info:com.example.api.*=all:com.ibm.ws.security.*=all:com.ibm.ws.security.mp.jwt.*=all"
+             maxFileSize="20"
+             maxFiles="10"
+             consoleLogLevel="${env.LOG_LEVEL}"/>
+
+    <!-- CORS Configuration -->
+    <cors domain="/api"
+          allowedOrigins="${env.CORS_ALLOWED_ORIGINS}"
+          allowedMethods="${env.CORS_ALLOWED_METHODS}"
+          allowedHeaders="${env.CORS_ALLOWED_HEADERS}"
+          allowCredentials="true"
+          maxAge="3600"/>
+
+</server>
+
+<!-- Made with Bob -->

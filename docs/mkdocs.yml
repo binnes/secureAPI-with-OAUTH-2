@@ -1,0 +1,108 @@
+site_name: Authentication Test API Documentation
+site_description: RESTful API server with OAuth 2.0 authentication via Keycloak
+site_author: Authentication Test API Team
+site_url: https://yourusername.github.io/authentication_test
+
+repo_name: authentication_test
+repo_url: https://github.com/yourusername/authentication_test
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  palette:
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.tracking
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+  language: en
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - search
+
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - pymdownx.details
+  - pymdownx.mark
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Overview: getting-started/overview.md
+    - Prerequisites: getting-started/prerequisites.md
+    - Quick Start: getting-started/quick-start.md
+  - Building & Deployment:
+    - Building with Maven: build/maven.md
+    - Containerization: build/containers.md
+    - Running the Server: build/running.md
+  - Keycloak Setup:
+    - Installation: keycloak/installation.md
+    - Realm Configuration: keycloak/realm-setup.md
+    - Client Configuration: keycloak/client-setup.md
+    - User Management: keycloak/user-management.md
+    - Groups Claim Mapper: keycloak/groups-mapper.md
+  - API Reference:
+    - Endpoints: api/endpoints.md
+    - Authentication: api/authentication.md
+    - Error Handling: api/errors.md
+    - OpenAPI Documentation: api/openapi.md
+  - Configuration:
+    - Environment Variables: config/environment.md
+    - Server Configuration: config/server.md
+    - Security Settings: config/security.md
+    - SSL Certificates: config/ssl-certificates.md
+  - Troubleshooting:
+    - Common Issues: troubleshooting/common-issues.md
+    - Debugging: troubleshooting/debugging.md
+  - Development:
+    - Project Structure: development/structure.md
+    - Contributing: development/contributing.md
+  - Deployment:
+    - GitHub Pages: deployment/github-pages.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/yourusername/authentication_test
+  version:
+    provider: mike
+
+copyright: Copyright &copy; 2026 Authentication Test API Team
+
+# Made with Bob
