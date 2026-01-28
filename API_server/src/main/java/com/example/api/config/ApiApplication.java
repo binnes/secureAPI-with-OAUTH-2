@@ -3,7 +3,6 @@ package com.example.api.config;
 import org.eclipse.microprofile.auth.LoginConfig;
 import org.eclipse.microprofile.openapi.annotations.OpenAPIDefinition;
 import org.eclipse.microprofile.openapi.annotations.enums.SecuritySchemeType;
-import org.eclipse.microprofile.openapi.annotations.info.Contact;
 import org.eclipse.microprofile.openapi.annotations.info.Info;
 import org.eclipse.microprofile.openapi.annotations.info.License;
 import org.eclipse.microprofile.openapi.annotations.security.SecurityScheme;
@@ -22,10 +21,6 @@ import jakarta.ws.rs.core.Application;
         title = "Authentication Test API",
         version = "1.0.0",
         description = "RESTful API server providing user schedule management with OAuth 2.0 authentication via Keycloak",
-        contact = @Contact(
-            name = "API Support",
-            email = "support@example.com"
-        ),
         license = @License(
             name = "Apache 2.0",
             url = "https://www.apache.org/licenses/LICENSE-2.0.html"
