@@ -305,17 +305,6 @@ git push origin docs/update-api-guide
 
 ## Monitoring
 
-### Analytics
-
-Add Google Analytics to mkdocs.yml:
-
-```yaml
-extra:
-  analytics:
-    provider: google
-    property: G-XXXXXXXXXX
-```
-
 ### Search
 
 MkDocs Material includes built-in search. No configuration needed.
