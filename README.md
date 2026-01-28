@@ -62,6 +62,9 @@ export LOG_LEVEL=INFO
 ### Using Maven
 
 ```bash
+# Navigate to API server directory
+cd API_server
+
 # Build the application
 mvn clean package
 
@@ -76,6 +79,9 @@ The application will be available at:
 ### Using Containers (Podman/Docker)
 
 ```bash
+# Navigate to API server directory
+cd API_server
+
 # Build container image
 podman build -t authentication-test-api:1.0.0 .
 
@@ -192,25 +198,34 @@ All errors follow a consistent format:
 
 ```
 authentication_test/
-├── src/
-│   ├── main/
-│   │   ├── java/com/example/api/
-│   │   │   ├── config/          # Configuration classes
-│   │   │   ├── model/           # Data models
-│   │   │   ├── resource/        # JAX-RS resources (endpoints)
-│   │   │   ├── service/         # Business logic
-│   │   │   └── exception/       # Exception handlers
-│   │   ├── resources/
-│   │   │   └── META-INF/
-│   │   │       └── microprofile-config.properties
-│   │   └── liberty/
-│   │       └── config/
-│   │           └── server.xml   # OpenLiberty configuration
-│   └── test/
-│       └── java/                # Test classes
-├── pom.xml                      # Maven configuration
-├── Containerfile                # Container build configuration
-└── README.md                    # This file
+├── .github/
+│   └── workflows/
+│       └── docs.yml             # GitHub Actions for docs deployment
+├── docs/                        # MkDocs documentation
+│   ├── mkdocs.yml              # MkDocs configuration
+│   ├── requirements.txt        # Python dependencies for docs
+│   └── docs/                   # Documentation source files
+├── API_server/                  # API Server application
+│   ├── src/
+│   │   ├── main/
+│   │   │   ├── java/com/example/api/
+│   │   │   │   ├── config/     # Configuration classes
+│   │   │   │   ├── model/      # Data models
+│   │   │   │   ├── resource/   # JAX-RS resources (endpoints)
+│   │   │   │   ├── service/    # Business logic
+│   │   │   │   └── exception/  # Exception handlers
+│   │   │   ├── resources/
+│   │   │   │   └── META-INF/
+│   │   │   │       └── microprofile-config.properties
+│   │   │   └── liberty/
+│   │   │       └── config/
+│   │   │           └── server.xml   # OpenLiberty configuration
+│   │   └── test/
+│   │       └── java/           # Test classes
+│   ├── pom.xml                 # Maven configuration
+│   ├── Containerfile           # Container build configuration
+│   └── spec.md                 # API specification
+└── README.md                   # This file
 ```
 
 ## Development
@@ -218,6 +233,7 @@ authentication_test/
 ### Running in Development Mode
 
 ```bash
+cd API_server
 mvn liberty:dev
 ```
 
@@ -229,6 +245,7 @@ This enables:
 ### Running Tests
 
 ```bash
+cd API_server
 mvn test
 ```
 

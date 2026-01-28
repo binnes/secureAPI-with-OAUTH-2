@@ -103,9 +103,10 @@ certs/intermediate_ca.crt: OK
 
 ## Step 3: Import Certificates into Truststore
 
+This assumes you have a separate RootCA certificate, and intermediate certificate and a server certificate chain, adjust as needed.
 OpenLiberty uses a PKCS12 keystore located at:
 ```
-target/liberty/wlp/usr/servers/authTestServer/resources/security/key.p12
+API_server/target/liberty/wlp/usr/servers/authTestServer/resources/security/key.p12
 ```
 
 ### Import Root CA Certificate
@@ -114,7 +115,7 @@ target/liberty/wlp/usr/servers/authTestServer/resources/security/key.p12
 keytool -import \
   -alias homelab-root-ca \
   -file certs/root_ca.crt \
-  -keystore target/liberty/wlp/usr/servers/authTestServer/resources/security/key.p12 \
+  -keystore API_server/target/liberty/wlp/usr/servers/authTestServer/resources/security/key.p12 \
   -storepass changeit \
   -noprompt
 ```
@@ -125,7 +126,7 @@ keytool -import \
 keytool -import \
   -alias homelab-intermediate-ca \
   -file certs/intermediate_ca.crt \
-  -keystore target/liberty/wlp/usr/servers/authTestServer/resources/security/key.p12 \
+  -keystore API_server/target/liberty/wlp/usr/servers/authTestServer/resources/security/key.p12 \
   -storepass changeit \
   -noprompt
 ```
@@ -136,7 +137,7 @@ List all certificates in the keystore:
 
 ```bash
 keytool -list \
-  -keystore target/liberty/wlp/usr/servers/authTestServer/resources/security/key.p12 \
+  -keystore API_server/target/liberty/wlp/usr/servers/authTestServer/resources/security/key.p12 \
   -storepass changeit
 ```
 
@@ -157,7 +158,7 @@ homelab-intermediate-ca, 28 Jan 2026, trustedCertEntry
 
 ### Update server.xml
 
-Configure SSL settings in [`src/main/liberty/config/server.xml`](../config/server.md):
+Configure SSL settings in [`API_server/src/main/liberty/config/server.xml`](../config/server.md):
 
 ```xml
 <!-- SSL Configuration for JWT/JWKS endpoint -->
@@ -200,7 +201,7 @@ Configure SSL settings in [`src/main/liberty/config/server.xml`](../config/serve
 
 For development environments, you can add JVM options to disable strict SSL validation:
 
-Create [`src/main/liberty/config/jvm.options`](../config/server.md):
+Create [`API_server/src/main/liberty/config/jvm.options`](../config/server.md):
 
 ```
 # Disable strict SSL validation (DEVELOPMENT ONLY)
@@ -222,6 +223,7 @@ After importing certificates and updating configuration:
 
 ```bash
 # Stop the server
+cd API_server
 mvn liberty:stop
 
 # Start in dev mode
@@ -232,6 +234,7 @@ Or for a full restart:
 
 ```bash
 # Complete restart
+cd API_server
 mvn liberty:stop && sleep 3 && mvn liberty:dev
 ```
 
@@ -243,7 +246,7 @@ Check if OpenLiberty can now access the Keycloak JWKS endpoint:
 
 ```bash
 # Check server logs for SSL errors
-tail -f target/liberty/wlp/usr/servers/authTestServer/logs/messages.log | grep -i "ssl\|pkix\|certificate"
+tail -f API_server/target/liberty/wlp/usr/servers/authTestServer/logs/messages.log | grep -i "ssl\|pkix\|certificate"
 ```
 
 **Success indicators:**
@@ -282,7 +285,7 @@ curl -s http://localhost:9080/api/v1/schedule \
 
 2. **Server not restarted**
    - Truststore changes require a full server restart
-   - Use `mvn liberty:stop && mvn liberty:dev`
+   - Use `cd API_server && mvn liberty:stop && mvn liberty:dev`
 
 3. **Wrong keystore path**
    - Verify keystore location matches server.xml configuration
@@ -320,7 +323,7 @@ Create a script to automate certificate import:
 #!/bin/bash
 # import_ca_certs.sh
 
-KEYSTORE="target/liberty/wlp/usr/servers/authTestServer/resources/security/key.p12"
+KEYSTORE="API_server/target/liberty/wlp/usr/servers/authTestServer/resources/security/key.p12"
 STOREPASS="changeit"
 
 # Import root CA

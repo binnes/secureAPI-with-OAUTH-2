@@ -10,26 +10,29 @@ authentication_test/
 │   └── workflows/
 │       └── docs.yml              # GitHub Actions for docs deployment
 ├── docs/                         # MkDocs documentation
-├── src/
-│   ├── main/
-│   │   ├── java/com/example/api/
-│   │   │   ├── config/          # Configuration classes
-│   │   │   ├── model/           # Data models
-│   │   │   ├── resource/        # JAX-RS endpoints
-│   │   │   ├── service/         # Business logic
-│   │   │   └── exception/       # Exception handlers
-│   │   ├── resources/
-│   │   │   └── META-INF/
-│   │   │       └── microprofile-config.properties
-│   │   └── liberty/
-│   │       └── config/
-│   │           └── server.xml   # OpenLiberty configuration
-│   └── test/
-│       └── java/                # Test classes
-├── pom.xml                      # Maven configuration
-├── Containerfile                # Container build file
-├── mkdocs.yml                   # MkDocs configuration
-├── requirements.txt             # Python dependencies for docs
+│   ├── mkdocs.yml               # MkDocs configuration
+│   ├── requirements.txt         # Python dependencies for docs
+│   └── docs/                    # Documentation source files
+├── API_server/                   # API Server application
+│   ├── src/
+│   │   ├── main/
+│   │   │   ├── java/com/example/api/
+│   │   │   │   ├── config/      # Configuration classes
+│   │   │   │   ├── model/       # Data models
+│   │   │   │   ├── resource/    # JAX-RS endpoints
+│   │   │   │   ├── service/     # Business logic
+│   │   │   │   └── exception/   # Exception handlers
+│   │   │   ├── resources/
+│   │   │   │   └── META-INF/
+│   │   │   │       └── microprofile-config.properties
+│   │   │   └── liberty/
+│   │   │       └── config/
+│   │   │           └── server.xml   # OpenLiberty configuration
+│   │   └── test/
+│   │       └── java/            # Test classes
+│   ├── pom.xml                  # Maven configuration
+│   ├── Containerfile            # Container build file
+│   └── spec.md                  # API specification
 └── README.md                    # Project README
 ```
 

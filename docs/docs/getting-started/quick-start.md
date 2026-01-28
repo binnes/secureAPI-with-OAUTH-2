@@ -7,7 +7,7 @@ Get the Authentication Test API up and running in just a few minutes.
 If you have the source code, navigate to the project directory:
 
 ```bash
-cd authentication_test
+cd authentication_test/API_server
 ```
 
 ## Step 2: Build the Application
@@ -15,6 +15,7 @@ cd authentication_test
 Build the application using Maven:
 
 ```bash
+cd API_server
 mvn clean package
 ```
 
@@ -35,6 +36,7 @@ Expected output:
 The fastest way to run the application for development:
 
 ```bash
+cd API_server
 mvn liberty:dev
 ```
 
@@ -166,11 +168,13 @@ Instead of Maven, you can run the application in a container:
 
 === "Podman"
     ```bash
+    cd API_server
     podman build -t authentication-test-api:1.0.0 .
     ```
 
 === "Docker"
     ```bash
+    cd API_server
     docker build -t authentication-test-api:1.0.0 .
     ```
 

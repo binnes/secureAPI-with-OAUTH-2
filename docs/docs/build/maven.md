@@ -2,6 +2,9 @@
 
 This guide covers building, testing, and packaging the Authentication Test API using Apache Maven.
 
+!!! note "Project Location"
+    All Maven commands should be run from the `API_server/` directory where the `pom.xml` file is located.
+
 ## Maven Lifecycle
 
 Maven uses a standard build lifecycle with these main phases:
@@ -17,26 +20,29 @@ clean → validate → compile → test → package → verify → install → d
 Remove all generated files and start fresh:
 
 ```bash
+cd API_server
 mvn clean
 ```
 
-This deletes the `target/` directory.
+This deletes the `target/` directory within `API_server/`.
 
 ### Compile
 
 Compile the source code without running tests:
 
 ```bash
+cd API_server
 mvn compile
 ```
 
-Output: Compiled classes in `target/classes/`
+Output: Compiled classes in `API_server/target/classes/`
 
 ### Run Tests
 
 Execute unit tests:
 
 ```bash
+cd API_server
 mvn test
 ```
 
@@ -45,16 +51,18 @@ mvn test
 Create the WAR file:
 
 ```bash
+cd API_server
 mvn package
 ```
 
-Output: `target/authentication-test-api.war`
+Output: `API_server/target/authentication-test-api.war`
 
 ### Full Build
 
 Clean, compile, test, and package in one command:
 
 ```bash
+cd API_server
 mvn clean package
 ```
 
@@ -67,6 +75,7 @@ This is the most common build command.
 Run the application with hot reload:
 
 ```bash
+cd API_server
 mvn liberty:dev
 ```
 
@@ -83,6 +92,7 @@ Exit with `Ctrl+C`.
 Build without running tests (faster):
 
 ```bash
+cd API_server
 mvn clean package -DskipTests
 ```
 
@@ -96,6 +106,7 @@ mvn clean package -DskipTests
 Force update of all dependencies:
 
 ```bash
+cd API_server
 mvn clean install -U
 ```
 
@@ -106,6 +117,7 @@ The `-U` flag forces Maven to check for updated snapshots.
 Build without downloading dependencies:
 
 ```bash
+cd API_server
 mvn clean package -o
 ```
 
@@ -116,6 +128,7 @@ Requires all dependencies to be in local repository.
 Show detailed build information:
 
 ```bash
+cd API_server
 mvn clean package -X
 ```
 
@@ -126,6 +139,7 @@ Useful for debugging build issues.
 Build faster using multiple threads:
 
 ```bash
+cd API_server
 mvn clean package -T 4
 ```
 
@@ -136,17 +150,19 @@ Uses 4 threads. Adjust based on your CPU cores.
 ### Development Profile
 
 ```bash
+cd API_server
 mvn clean package -Pdev
 ```
 
 ### Production Profile
 
 ```bash
+cd API_server
 mvn clean package -Pprod
 ```
 
 !!! note
-    Profiles are defined in `pom.xml` and can customize build behavior.
+    Profiles are defined in `API_server/pom.xml` and can customize build behavior.
 
 ## Liberty Maven Plugin
 
@@ -155,6 +171,7 @@ mvn clean package -Pprod
 Start OpenLiberty server:
 
 ```bash
+cd API_server
 mvn liberty:start
 ```
 
@@ -165,6 +182,7 @@ Server runs in background.
 Stop the running server:
 
 ```bash
+cd API_server
 mvn liberty:stop
 ```
 
@@ -173,6 +191,7 @@ mvn liberty:stop
 Start server in foreground:
 
 ```bash
+cd API_server
 mvn liberty:run
 ```
 
@@ -183,16 +202,18 @@ Exit with `Ctrl+C`.
 Create a runnable server package:
 
 ```bash
+cd API_server
 mvn liberty:package
 ```
 
-Output: `target/authentication-test-api.zip`
+Output: `API_server/target/authentication-test-api.zip`
 
 ### Deploy Application
 
 Deploy WAR to running server:
 
 ```bash
+cd API_server
 mvn liberty:deploy
 ```
 
@@ -203,7 +224,7 @@ mvn liberty:deploy
 After a successful build:
 
 ```
-target/
+API_server/target/
 ├── authentication-test-api.war          # Deployable WAR file
 ├── authentication-test-api/             # Exploded WAR
 ├── classes/                             # Compiled classes
@@ -235,6 +256,7 @@ authentication-test-api.war
 Show all project dependencies:
 
 ```bash
+cd API_server
 mvn dependency:tree
 ```
 
@@ -243,6 +265,7 @@ mvn dependency:tree
 Check for unused or undeclared dependencies:
 
 ```bash
+cd API_server
 mvn dependency:analyze
 ```
 
@@ -251,6 +274,7 @@ mvn dependency:analyze
 Download source JARs for dependencies:
 
 ```bash
+cd API_server
 mvn dependency:sources
 ```
 
@@ -261,6 +285,7 @@ Useful for IDE debugging.
 Download Javadoc JARs:
 
 ```bash
+cd API_server
 mvn dependency:resolve -Dclassifier=javadoc
 ```
 
@@ -271,6 +296,7 @@ mvn dependency:resolve -Dclassifier=javadoc
 Run a single test class:
 
 ```bash
+cd API_server
 mvn test -Dtest=HelloResourceTest
 ```
 
@@ -279,6 +305,7 @@ mvn test -Dtest=HelloResourceTest
 Run a specific test method:
 
 ```bash
+cd API_server
 mvn test -Dtest=HelloResourceTest#testHelloEndpoint
 ```
 
@@ -287,6 +314,7 @@ mvn test -Dtest=HelloResourceTest#testHelloEndpoint
 Skip test compilation and execution:
 
 ```bash
+cd API_server
 mvn package -Dmaven.test.skip=true
 ```
 
@@ -295,10 +323,11 @@ mvn package -Dmaven.test.skip=true
 Generate test coverage report (requires jacoco plugin):
 
 ```bash
+cd API_server
 mvn clean test jacoco:report
 ```
 
-Report: `target/site/jacoco/index.html`
+Report: `API_server/target/site/jacoco/index.html`
 
 ## Code Quality
 
@@ -307,6 +336,7 @@ Report: `target/site/jacoco/index.html`
 Show all compiler warnings:
 
 ```bash
+cd API_server
 mvn clean compile -Xlint:all
 ```
 
@@ -315,6 +345,7 @@ mvn clean compile -Xlint:all
 Format code according to style rules (requires formatter plugin):
 
 ```bash
+cd API_server
 mvn formatter:format
 ```
 
@@ -329,6 +360,7 @@ If dependencies are corrupted:
 rm -rf ~/.m2/repository/com/example/authentication-test-api
 
 # Rebuild
+cd API_server
 mvn clean install -U
 ```
 
@@ -338,6 +370,7 @@ If build runs out of memory:
 
 ```bash
 export MAVEN_OPTS="-Xmx2048m -XX:MaxPermSize=512m"
+cd API_server
 mvn clean package
 ```
 
@@ -346,6 +379,7 @@ mvn clean package
 Run Maven in debug mode:
 
 ```bash
+cd API_server
 mvn clean package -X > build.log 2>&1
 ```
 
@@ -356,6 +390,7 @@ Review `build.log` for detailed information.
 Resolve dependency conflicts:
 
 ```bash
+cd API_server
 mvn dependency:tree -Dverbose
 ```
 
@@ -366,6 +401,7 @@ Look for conflicts marked with `(omitted for conflict with X.Y.Z)`.
 ### 1. Always Clean Before Release
 
 ```bash
+cd API_server
 mvn clean package
 ```
 
@@ -374,6 +410,7 @@ Ensures no stale artifacts.
 ### 2. Run Tests
 
 ```bash
+cd API_server
 mvn clean verify
 ```
 
@@ -382,6 +419,7 @@ Runs all tests including integration tests.
 ### 3. Check for Updates
 
 ```bash
+cd API_server
 mvn versions:display-dependency-updates
 mvn versions:display-plugin-updates
 ```
@@ -389,6 +427,7 @@ mvn versions:display-plugin-updates
 ### 4. Verify Build Reproducibility
 
 ```bash
+cd API_server
 mvn clean package
 mvn clean package
 diff target/authentication-test-api.war target/authentication-test-api.war
@@ -402,7 +441,9 @@ Builds should be identical.
 
 ```yaml
 - name: Build with Maven
-  run: mvn clean package -B
+  run: |
+    cd API_server
+    mvn clean package -B
 ```
 
 ### GitLab CI
@@ -410,13 +451,14 @@ Builds should be identical.
 ```yaml
 build:
   script:
+    - cd API_server
     - mvn clean package
 ```
 
 ### Jenkins
 
 ```groovy
-sh 'mvn clean package'
+sh 'cd API_server && mvn clean package'
 ```
 
 ## Next Steps

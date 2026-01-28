@@ -4,7 +4,7 @@ Learn how to build and run the Authentication Test API in containers using Podma
 
 ## Overview
 
-The project includes a `Containerfile` (compatible with both Podman and Docker) that creates a production-ready container image.
+The project includes a `Containerfile` in the `API_server/` directory (compatible with both Podman and Docker) that creates a production-ready container image.
 
 ## Container Image Details
 
@@ -22,12 +22,14 @@ Podman is a daemonless container engine that's compatible with Docker.
 #### Build Image
 
 ```bash
+cd API_server
 podman build -t authentication-test-api:1.0.0 .
 ```
 
 #### Build with Custom Tag
 
 ```bash
+cd API_server
 podman build -t authentication-test-api:latest .
 ```
 
@@ -36,6 +38,7 @@ podman build -t authentication-test-api:latest .
 Force rebuild without using cache:
 
 ```bash
+cd API_server
 podman build --no-cache -t authentication-test-api:1.0.0 .
 ```
 
@@ -44,6 +47,7 @@ podman build --no-cache -t authentication-test-api:1.0.0 .
 #### Build Image
 
 ```bash
+cd API_server
 docker build -t authentication-test-api:1.0.0 .
 ```
 
@@ -52,6 +56,7 @@ docker build -t authentication-test-api:1.0.0 .
 Pass build-time variables:
 
 ```bash
+cd API_server
 docker build \
   --build-arg LIBERTY_VERSION=24.0.0.1 \
   -t authentication-test-api:1.0.0 .
@@ -591,11 +596,13 @@ Build with verbose output:
 
 === "Podman"
     ```bash
+    cd API_server
     podman build --no-cache --progress=plain -t authentication-test-api:1.0.0 .
     ```
 
 === "Docker"
     ```bash
+    cd API_server
     docker build --no-cache --progress=plain -t authentication-test-api:1.0.0 .
     ```
 
