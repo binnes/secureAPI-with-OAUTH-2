@@ -2,7 +2,7 @@ import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 import { authOptions } from "@/lib/auth";
 import KanbanBoard from "@/components/kanban/KanbanBoard";
-import OrchestrateWidget from "@/components/orchestrate/OrchestrateWidget";
+import ChatWidget from "@/components/orchestrate/ChatWidget";
 
 export default async function ApplicationPage() {
   const session = await getServerSession(authOptions);
@@ -40,7 +40,7 @@ export default async function ApplicationPage() {
                   Get help with your tasks and projects
                 </p>
               </div>
-              <OrchestrateWidget />
+              <ChatWidget />
             </div>
           </div>
         </div>

@@ -1,0 +1,22 @@
+spec_version: v1
+kind: connection
+app_id: schedule-api-connection
+environments:
+  draft:
+    kind: oauth_auth_token_exchange_flow
+    type: member
+    sso: true
+    server_url: http://localhost:9080
+    app_config:
+      header:
+        content-type: application/json
+  live:
+    kind: oauth_auth_token_exchange_flow
+    type: member
+    sso: true
+    server_url: http://localhost:9080
+    app_config:
+      header:
+        content-type: application/json
+
+# Made with Bob

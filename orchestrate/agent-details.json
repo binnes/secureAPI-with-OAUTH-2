@@ -1,0 +1,209 @@
+{
+  "native": [
+    {
+      "kind": "native",
+      "id": "7e78e8e6-27a7-4922-bb90-955c5367778e",
+      "name": "schedule_assistant",
+      "display_name": "schedule_assistant",
+      "description": "An intelligent assistant that helps users manage and query their personal schedules.\nThis agent can retrieve schedule information and answer questions about upcoming events,\nmeetings, and activities.\n",
+      "context_access_enabled": true,
+      "context_variables": [
+        "wxo_username",
+        "wxo_email"
+      ],
+      "restrictions": "editable",
+      "llm": "watsonx/meta-llama/llama-3-2-90b-vision-instruct",
+      "style": "default",
+      "hide_reasoning": false,
+      "instructions": "You are a helpful scheduling assistant with access to the user's personal schedule.\n\nWhen a user asks about their schedule, use the getUserSchedule tool to retrieve their\nschedule data and present it in a clear, organized manner.\n\nGuidelines:\n- Always use the getUserSchedule tool to fetch the latest schedule information\n- Present schedule items in chronological order\n- Format dates and times in a user-friendly way (e.g., \"Tomorrow at 2:00 PM\" or \"Monday, January 29th at 9:00 AM\")\n- If asked about specific dates or times, filter the schedule data accordingly\n- Be conversational and helpful in your responses\n- If there are no scheduled items, let the user know their schedule is clear\n- Summarize the schedule when appropriate (e.g., \"You have 3 meetings today\")\n\nExample interactions:\n- \"What's on my schedule today?\" → Retrieve and display today's schedule items\n- \"Do I have any meetings tomorrow?\" → Check tomorrow's schedule for meetings\n- \"What time is my next appointment?\" → Find the next upcoming item\n- \"Show me my schedule for this week\" → Display all items for the current week\n",
+      "guidelines": [],
+      "collaborators": [],
+      "tools": [
+        "cf754d84-a26d-4b7f-990e-244a73fc037d"
+      ],
+      "plugins": {
+        "agent_pre_invoke": [],
+        "agent_post_invoke": []
+      },
+      "hidden": false,
+      "knowledge_base": [],
+      "chat_with_docs": {
+        "enabled": false,
+        "supports_full_document": true,
+        "vector_index": {
+          "chunk_size": 400,
+          "chunk_overlap": 50,
+          "limit": 10,
+          "extraction_strategy": "express"
+        },
+        "generation": {
+          "prompt_instruction": "",
+          "max_docs_passed_to_llm": 5,
+          "generated_response_length": "Moderate",
+          "display_text_no_results_found": "I searched my knowledge base, but did not find anything related to your query",
+          "display_text_connectivity_issue": "I might have information related to your query to share, but am unable to connect to my knowledge base at the moment",
+          "idk_message": "I'm afraid I don't understand. Please rephrase your question.",
+          "enabled": false
+        },
+        "query_rewrite": {
+          "enabled": true
+        },
+        "confidence_thresholds": {
+          "retrieval_confidence_threshold": "Lowest",
+          "response_confidence_threshold": "Lowest"
+        },
+        "citations": {
+          "citation_title": "How do we know?",
+          "citations_shown": -1
+        },
+        "hap_filtering": {
+          "output": {
+            "enabled": false,
+            "threshold": 0.5
+          }
+        },
+        "query_source": "Agent",
+        "agent_query_description": "The query to search for in the knowledge base"
+      },
+      "llm_config": {
+        "model": "",
+        "decoding_method": null,
+        "prompt": null,
+        "max_tokens": null,
+        "max_completion_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "n": null,
+        "stream": null,
+        "logprobs": null,
+        "top_logprobs": null,
+        "echo": null,
+        "stop": null,
+        "presence_penalty": null,
+        "frequency_penalty": null,
+        "best_of": null,
+        "logit_bias": null,
+        "user": null,
+        "context": null,
+        "examples": null,
+        "top_k": null,
+        "response_format": null,
+        "seed": null,
+        "store": null,
+        "metadata": null,
+        "modalities": null,
+        "audio": null,
+        "service_tier": null,
+        "prediction": null,
+        "safety_settings": null,
+        "anthropic_beta": null,
+        "anthropic_version": null,
+        "thinking": null,
+        "space_id": null,
+        "project_id": null,
+        "reasoning_effort": null
+      }
+    },
+    {
+      "kind": "native",
+      "id": "515c575c-c30a-4d35-a351-abc4f5118e66",
+      "name": "AskOrchestrate",
+      "display_name": "AskOrchestrate",
+      "description": "A helpful AI assistant",
+      "context_access_enabled": true,
+      "context_variables": [],
+      "restrictions": "editable",
+      "llm": "watsonx/meta-llama/llama-3-2-90b-vision-instruct",
+      "style": "default",
+      "hide_reasoning": false,
+      "instructions": "",
+      "guidelines": [],
+      "collaborators": [],
+      "tools": [],
+      "plugins": {
+        "agent_pre_invoke": [],
+        "agent_post_invoke": []
+      },
+      "hidden": false,
+      "knowledge_base": [],
+      "chat_with_docs": {
+        "enabled": false,
+        "supports_full_document": true,
+        "vector_index": {
+          "chunk_size": 400,
+          "chunk_overlap": 50,
+          "limit": 10,
+          "extraction_strategy": "express"
+        },
+        "generation": {
+          "prompt_instruction": "",
+          "max_docs_passed_to_llm": 5,
+          "generated_response_length": "Moderate",
+          "display_text_no_results_found": "I searched my knowledge base, but did not find anything related to your query",
+          "display_text_connectivity_issue": "I might have information related to your query to share, but am unable to connect to my knowledge base at the moment",
+          "idk_message": "I'm afraid I don't understand. Please rephrase your question.",
+          "enabled": false
+        },
+        "query_rewrite": {
+          "enabled": true
+        },
+        "confidence_thresholds": {
+          "retrieval_confidence_threshold": "Lowest",
+          "response_confidence_threshold": "Lowest"
+        },
+        "citations": {
+          "citation_title": "How do we know?",
+          "citations_shown": -1
+        },
+        "hap_filtering": {
+          "output": {
+            "enabled": false,
+            "threshold": 0.5
+          }
+        },
+        "query_source": "Agent",
+        "agent_query_description": "The query to search for in the knowledge base"
+      },
+      "llm_config": {
+        "model": "",
+        "decoding_method": null,
+        "prompt": null,
+        "max_tokens": null,
+        "max_completion_tokens": null,
+        "temperature": null,
+        "top_p": null,
+        "n": null,
+        "stream": null,
+        "logprobs": null,
+        "top_logprobs": null,
+        "echo": null,
+        "stop": null,
+        "presence_penalty": null,
+        "frequency_penalty": null,
+        "best_of": null,
+        "logit_bias": null,
+        "user": null,
+        "context": null,
+        "examples": null,
+        "top_k": null,
+        "response_format": null,
+        "seed": null,
+        "store": null,
+        "metadata": null,
+        "modalities": null,
+        "audio": null,
+        "service_tier": null,
+        "prediction": null,
+        "safety_settings": null,
+        "anthropic_beta": null,
+        "anthropic_version": null,
+        "thinking": null,
+        "space_id": null,
+        "project_id": null,
+        "reasoning_effort": null
+      }
+    }
+  ],
+  "assistant": [],
+  "external": []
+}
