@@ -1,4 +1,8 @@
-# Maven
+# ============================================
+# Project-Wide Ignores
+# ============================================
+
+# Maven (API Server)
 target/
 pom.xml.tag
 pom.xml.releaseBackup
@@ -10,68 +14,122 @@ buildNumber.properties
 .mvn/timing.properties
 .mvn/wrapper/maven-wrapper.jar
 
-# IDE - IntelliJ IDEA
+# Node.js / Next.js (Frontend)
+node_modules/
+.pnp
+.pnp.js
+.yarn/install-state.gz
+.next/
+out/
+build/
+coverage/
+
+# Python (Orchestrate, Docs)
+**/.venv/
+**/venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ============================================
+# IDE / Editor
+# ============================================
+
+# IntelliJ IDEA
 .idea/
 *.iml
 *.iws
 *.ipr
 out/
 
-# IDE - Eclipse
+# Eclipse
 .settings/
 .project
 .classpath
 .factorypath
 
-# IDE - VSCode
+# VSCode
 .vscode/
 *.code-workspace
 
-# IDE - NetBeans
+# NetBeans
 nbproject/
 nbbuild/
 dist/
 nbdist/
 .nb-gradle/
 
-# OS
+# ============================================
+# Operating System
+# ============================================
+
+# macOS
 .DS_Store
 .DS_Store?
 ._*
 .Spotlight-V100
 .Trashes
+
+# Windows
 ehthumbs.db
 Thumbs.db
+desktop.ini
 
-# Logs
+# Linux
+*~
+
+# ============================================
+# Logs & Temporary Files
+# ============================================
+
 *.log
 logs/
-
-# Liberty
-servers/
-wlp/
-
-# Temporary files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 *.tmp
 *.bak
 *.swp
-*~
 
-# Security
+# ============================================
+# Security & Credentials
+# ============================================
+
+# Certificates
 *.key
 *.pem
 *.p12
 *.jks
 *.keystore
 *.truststore
+certs/
 
-# Environment
+# Environment Variables
 .env
-.env.local 
-**/.venv
-**/venv
-**/test.txt
-**/certs/
+.env.local
+.env*.local
+
+# ============================================
+# Build Artifacts & Dependencies
+# ============================================
+
+# Liberty Server
+servers/
+wlp/
+
+# Vercel (Next.js deployment)
+.vercel
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
 
 # MkDocs
-**/site/
+site/
+
+# Test files
+test.txt

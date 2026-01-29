@@ -74,7 +74,8 @@ nav:
   - Keycloak Setup:
     - Installation: keycloak/installation.md
     - Realm Configuration: keycloak/realm-setup.md
-    - Client Configuration: keycloak/client-setup.md
+    - API Client Configuration: keycloak/client-setup.md
+    - Frontend Client Configuration: keycloak/frontend-client-setup.md
     - User Management: keycloak/user-management.md
     - Groups Claim Mapper: keycloak/groups-mapper.md
   - API Reference:
@@ -87,6 +88,14 @@ nav:
     - Server Configuration: config/server.md
     - Security Settings: config/security.md
     - SSL Certificates: config/ssl-certificates.md
+  - Frontend Application:
+     - Overview: frontend/overview.md
+     - Setup & Installation: frontend/setup.md
+     - Configuration: frontend/configuration.md
+     - Authentication: frontend/authentication.md
+     - Orchestrate Integration: frontend/orchestrate-integration.md
+     - API Integration: frontend/api-integration.md
+     - Development: frontend/development.md
   - watsonx Orchestrate:
     - Installation: orchestrate/installation.md
   - Troubleshooting:
