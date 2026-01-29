@@ -12,11 +12,13 @@
         <meta name="author" content="Authentication Test API Team">
       
       
-        <link rel="canonical" href="https://binnes.github.io/secureAPI-with-OAUTH-2/deployment/github-pages/">
+        <link rel="canonical" href="https://binnes.github.io/secureAPI-with-OAUTH-2/frontend/configuration/">
       
       
-        <link rel="prev" href="../../development/contributing/">
+        <link rel="prev" href="../setup/">
       
+      
+        <link rel="next" href="../authentication/">
       
       
         
@@ -27,7 +29,7 @@
     
     
       
-        <title>GitHub Pages - Authentication Test API Documentation</title>
+        <title>Configuration - Authentication Test API Documentation</title>
       
     
     
@@ -78,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#deploying-documentation-to-github-pages" class="md-skip">
+        <a href="#frontend-configuration-guide" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              GitHub Pages
+              Configuration
             
           </span>
         </div>
@@ -346,11 +348,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../frontend/overview/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../overview/" class="md-tabs__link">
           
   
   
@@ -426,13 +430,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../deployment/github-pages/" class="md-tabs__link">
           
   
   
@@ -1375,26 +1377,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
             
   
   
@@ -1412,7 +1419,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1430,7 +1437,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../frontend/overview/" class="md-nav__link">
+      <a href="../overview/" class="md-nav__link">
         
   
   
@@ -1458,7 +1465,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../frontend/setup/" class="md-nav__link">
+      <a href="../setup/" class="md-nav__link">
         
   
   
@@ -1483,10 +1490,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../frontend/configuration/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1502,6 +1536,498 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment Variables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#required-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required Environment Variables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Required Environment Variables">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#keycloak-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keycloak Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Keycloak Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#keycloak_client_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KEYCLOAK_CLIENT_ID
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keycloak_client_secret" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KEYCLOAK_CLIENT_SECRET
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keycloak_issuer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KEYCLOAK_ISSUER
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextauth-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NextAuth Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="NextAuth Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nextauth_url" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NEXTAUTH_URL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextauth_secret" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NEXTAUTH_SECRET
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibm-watsonx-orchestrate-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IBM watsonx Orchestrate Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IBM watsonx Orchestrate Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#next_public_orchestrate_integration_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NEXT_PUBLIC_ORCHESTRATE_INTEGRATION_ID
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#next_public_orchestrate_region" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NEXT_PUBLIC_ORCHESTRATE_REGION
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#next_public_orchestrate_service_instance_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NEXT_PUBLIC_ORCHESTRATE_SERVICE_INSTANCE_ID
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complete-envlocal-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete .env.local Example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-specific-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment-Specific Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Environment-Specific Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#development-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Development Environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#production-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Production Environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variable-prefixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Variable Prefixes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Variable Prefixes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#next_public_-prefix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NEXT_PUBLIC_ Prefix
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#no-prefix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        No Prefix
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Best Practices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-never-commit-secrets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Never Commit Secrets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-use-strong-secrets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Use Strong Secrets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-rotate-secrets-regularly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Rotate Secrets Regularly
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-limit-secret-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Limit Secret Access
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-environment-separation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Environment Separation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-invalid-client-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: "Invalid client credentials"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-redirect-uri-mismatch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: "Redirect URI mismatch"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-orchestrate-widget-not-loading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: "Orchestrate widget not loading"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-environment-variables-not-loading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: "Environment variables not loading"
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#custom-port" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom Port
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#https-in-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTPS in Development
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiple-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multiple Environments
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Next Steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Documentation
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1514,7 +2040,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../frontend/authentication/" class="md-nav__link">
+      <a href="../authentication/" class="md-nav__link">
         
   
   
@@ -1542,7 +2068,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../frontend/orchestrate-integration/" class="md-nav__link">
+      <a href="../orchestrate-integration/" class="md-nav__link">
         
   
   
@@ -1570,7 +2096,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../frontend/api-integration/" class="md-nav__link">
+      <a href="../api-integration/" class="md-nav__link">
         
   
   
@@ -1598,7 +2124,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../frontend/development/" class="md-nav__link">
+      <a href="../development/" class="md-nav__link">
         
   
   
@@ -1947,31 +2473,26 @@
       
   
   
-    
   
   
-  
     
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
         
           
-          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
             
   
   
@@ -1989,7 +2510,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_11">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2004,37 +2525,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    GitHub Pages
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../deployment/github-pages/" class="md-nav__link">
         
   
   
@@ -2050,359 +2544,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Prerequisites
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deployment-options" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Deployment Options
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#customizing-deployment" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Customizing Deployment
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Customizing Deployment">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#custom-domain" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Custom Domain
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#update-mkdocsyml" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Update mkdocs.yml
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#local-development" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Local Development
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Local Development">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#serve-locally" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Serve Locally
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#build-only" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Build Only
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#clean-build" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Clean Build
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Troubleshooting
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Troubleshooting">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#build-fails" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Build Fails
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#deployment-fails" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Deployment Fails
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#site-not-updating" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Site Not Updating
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#404-errors" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        404 Errors
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#best-practices" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Best Practices
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Best Practices">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-version-control" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Version Control
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-documentation-structure" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Documentation Structure
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-regular-updates" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Regular Updates
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-review-before-deploy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Review Before Deploy
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-use-branches" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Use Branches
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#monitoring" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Monitoring
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Monitoring">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#search" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Search
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#maintenance" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Maintenance
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Maintenance">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#update-dependencies" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Update Dependencies
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#check-for-broken-links" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Check for Broken Links
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#additional-resources" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Additional Resources
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#next-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Next Steps
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2442,10 +2583,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
+  <a href="#environment-variables" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Prerequisites
+        Environment Variables
       
     </span>
   </a>
@@ -2453,33 +2594,34 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#deployment-options" class="md-nav__link">
+  <a href="#required-environment-variables" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Deployment Options
+        Required Environment Variables
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#customizing-deployment" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Customizing Deployment
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Customizing Deployment">
+    <nav class="md-nav" aria-label="Required Environment Variables">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#custom-domain" class="md-nav__link">
+  <a href="#keycloak-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Custom Domain
+        Keycloak Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Keycloak Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#keycloak_client_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KEYCLOAK_CLIENT_ID
       
     </span>
   </a>
@@ -2487,10 +2629,165 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#update-mkdocsyml" class="md-nav__link">
+  <a href="#keycloak_client_secret" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Update mkdocs.yml
+        KEYCLOAK_CLIENT_SECRET
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#keycloak_issuer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        KEYCLOAK_ISSUER
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextauth-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NextAuth Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="NextAuth Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nextauth_url" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NEXTAUTH_URL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nextauth_secret" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NEXTAUTH_SECRET
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ibm-watsonx-orchestrate-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IBM watsonx Orchestrate Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="IBM watsonx Orchestrate Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#next_public_orchestrate_integration_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NEXT_PUBLIC_ORCHESTRATE_INTEGRATION_ID
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#next_public_orchestrate_region" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NEXT_PUBLIC_ORCHESTRATE_REGION
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#next_public_orchestrate_service_instance_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NEXT_PUBLIC_ORCHESTRATE_SERVICE_INSTANCE_ID
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complete-envlocal-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete .env.local Example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#environment-specific-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment-Specific Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Environment-Specific Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#development-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Development Environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#production-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Production Environment
       
     </span>
   </a>
@@ -2503,22 +2800,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#local-development" class="md-nav__link">
+  <a href="#variable-prefixes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Local Development
+        Variable Prefixes
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Local Development">
+    <nav class="md-nav" aria-label="Variable Prefixes">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#serve-locally" class="md-nav__link">
+  <a href="#next_public_-prefix" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Serve Locally
+        NEXT_PUBLIC_ Prefix
       
     </span>
   </a>
@@ -2526,10 +2823,49 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#build-only" class="md-nav__link">
+  <a href="#no-prefix" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Build Only
+        No Prefix
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Best Practices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-never-commit-secrets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Never Commit Secrets
       
     </span>
   </a>
@@ -2537,10 +2873,43 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#clean-build" class="md-nav__link">
+  <a href="#2-use-strong-secrets" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Clean Build
+        2. Use Strong Secrets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-rotate-secrets-regularly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Rotate Secrets Regularly
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-limit-secret-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Limit Secret Access
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-environment-separation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Environment Separation
       
     </span>
   </a>
@@ -2565,10 +2934,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#build-fails" class="md-nav__link">
+  <a href="#issue-invalid-client-credentials" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Build Fails
+        Issue: "Invalid client credentials"
       
     </span>
   </a>
@@ -2576,10 +2945,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#deployment-fails" class="md-nav__link">
+  <a href="#issue-redirect-uri-mismatch" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Deployment Fails
+        Issue: "Redirect URI mismatch"
       
     </span>
   </a>
@@ -2587,10 +2956,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#site-not-updating" class="md-nav__link">
+  <a href="#issue-orchestrate-widget-not-loading" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Site Not Updating
+        Issue: "Orchestrate widget not loading"
       
     </span>
   </a>
@@ -2598,10 +2967,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#404-errors" class="md-nav__link">
+  <a href="#issue-environment-variables-not-loading" class="md-nav__link">
     <span class="md-ellipsis">
       
-        404 Errors
+        Issue: "Environment variables not loading"
       
     </span>
   </a>
@@ -2614,22 +2983,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#best-practices" class="md-nav__link">
+  <a href="#advanced-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Best Practices
+        Advanced Configuration
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Best Practices">
+    <nav class="md-nav" aria-label="Advanced Configuration">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-version-control" class="md-nav__link">
+  <a href="#custom-port" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Version Control
+        Custom Port
       
     </span>
   </a>
@@ -2637,10 +3006,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-documentation-structure" class="md-nav__link">
+  <a href="#https-in-development" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Documentation Structure
+        HTTPS in Development
       
     </span>
   </a>
@@ -2648,32 +3017,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-regular-updates" class="md-nav__link">
+  <a href="#multiple-environments" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Regular Updates
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-review-before-deploy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Review Before Deploy
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-use-branches" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Use Branches
+        Multiple Environments
       
     </span>
   </a>
@@ -2682,84 +3029,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#monitoring" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Monitoring
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Monitoring">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#search" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Search
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#maintenance" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Maintenance
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Maintenance">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#update-dependencies" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Update Dependencies
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#check-for-broken-links" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Check for Broken Links
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#additional-resources" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Additional Resources
-      
-    </span>
-  </a>
   
 </li>
       
@@ -2768,6 +3037,17 @@
     <span class="md-ellipsis">
       
         Next Steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Documentation
       
     </span>
   </a>
@@ -2794,277 +3074,257 @@
   
 
 
-<h1 id="deploying-documentation-to-github-pages">Deploying Documentation to GitHub Pages<a class="headerlink" href="#deploying-documentation-to-github-pages" title="Permanent link">&para;</a></h1>
-<p>This guide explains how to deploy the MkDocs documentation to GitHub Pages.</p>
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<h1 id="frontend-configuration-guide">Frontend Configuration Guide<a class="headerlink" href="#frontend-configuration-guide" title="Permanent link">&para;</a></h1>
+<h2 id="environment-variables">Environment Variables<a class="headerlink" href="#environment-variables" title="Permanent link">&para;</a></h2>
+<p>The frontend application uses environment variables for configuration. These are stored in <code>.env.local</code> (for local development) and should never be committed to version control.</p>
+<h2 id="required-environment-variables">Required Environment Variables<a class="headerlink" href="#required-environment-variables" title="Permanent link">&para;</a></h2>
+<h3 id="keycloak-configuration">Keycloak Configuration<a class="headerlink" href="#keycloak-configuration" title="Permanent link">&para;</a></h3>
+<h4 id="keycloak_client_id"><code>KEYCLOAK_CLIENT_ID</code><a class="headerlink" href="#keycloak_client_id" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Git repository on GitHub</li>
-<li>Python 3.8+ installed</li>
-<li>Write access to the repository</li>
+<li><strong>Description</strong>: The client ID registered in Keycloak for this application</li>
+<li><strong>Example</strong>: <code>authentication-test-frontend</code></li>
+<li><strong>Required</strong>: Yes</li>
+<li><strong>Where to find</strong>: Keycloak Admin Console → Clients → Your Client → Settings</li>
 </ul>
-<h2 id="deployment-options">Deployment Options<a class="headerlink" href="#deployment-options" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Manual Deployment</label><label for="__tabbed_1_2">GitHub Actions (Automated)</label><label for="__tabbed_1_3">Mike (Versioned Documentation)</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p><strong>Step 1: Install MkDocs</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Install MkDocs and dependencies</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># Verify installation</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>mkdocs<span class="w"> </span>--version
-</code></pre></div>
-<p><strong>Step 2: Build Documentation</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Build the documentation</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>mkdocs<span class="w"> </span>build
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># This creates a &#39;site&#39; directory with static HTML</span>
-</code></pre></div>
-<p><strong>Step 3: Deploy to GitHub Pages</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Deploy to gh-pages branch</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>mkdocs<span class="w"> </span>gh-deploy
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># This will:</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1"># 1. Build the documentation</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="c1"># 2. Push to gh-pages branch</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1"># 3. Make it available at https://yourusername.github.io/authentication_test</span>
-</code></pre></div>
-<p><strong>Step 4: Configure GitHub Pages</strong></p>
-<ol>
-<li>Go to your repository on GitHub</li>
-<li>Click "Settings"</li>
-<li>Scroll to "Pages" section</li>
-<li>Under "Source", select:</li>
-<li>Branch: <code>gh-pages</code></li>
-<li>Folder: <code>/ (root)</code></li>
-<li>Click "Save"</li>
-</ol>
-<p>Your documentation will be available at:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>https://yourusername.github.io/authentication_test
-</code></pre></div></p>
-</div>
-<div class="tabbed-block">
-<p><strong>Step 1: Create Workflow File</strong></p>
-<p>Create <code>.github/workflows/docs.yml</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deploy Documentation</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nt">on</span><span class="p">:</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="nt">push</span><span class="p">:</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="nt">branches</span><span class="p">:</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="nt">paths</span><span class="p">:</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;docs/**&#39;</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;mkdocs.yml&#39;</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;requirements.txt&#39;</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&#39;.github/workflows/docs.yml&#39;</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">  </span><span class="nt">workflow_dispatch</span><span class="p">:</span>
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="nt">permissions</span><span class="p">:</span>
-<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">  </span><span class="nt">contents</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">write</span>
-<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>
-<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="nt">jobs</span><span class="p">:</span>
-<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">  </span><span class="nt">deploy</span><span class="p">:</span>
-<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span>
-<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
-<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Checkout code</span>
-<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v4</span>
-<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="w">        </span><span class="nt">with</span><span class="p">:</span>
-<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="w">          </span><span class="nt">fetch-depth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
-<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>
-<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Setup Python</span>
-<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v5</span>
-<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a><span class="w">        </span><span class="nt">with</span><span class="p">:</span>
-<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a><span class="w">          </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.x</span>
-<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>
-<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Cache dependencies</span>
-<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a><span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/cache@v3</span>
-<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a><span class="w">        </span><span class="nt">with</span><span class="p">:</span>
-<a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a><span class="w">          </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ github.ref }}</span>
-<a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a><span class="w">          </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.cache</span>
-<a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a>
-<a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install dependencies</span>
-<a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pip install -r requirements.txt</span>
-<a id="__codelineno-4-39" name="__codelineno-4-39" href="#__codelineno-4-39"></a>
-<a id="__codelineno-4-40" name="__codelineno-4-40" href="#__codelineno-4-40"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build and deploy</span>
-<a id="__codelineno-4-41" name="__codelineno-4-41" href="#__codelineno-4-41"></a><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mkdocs gh-deploy --force</span>
-</code></pre></div>
-<p><strong>Step 2: Commit and Push</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>git<span class="w"> </span>add<span class="w"> </span>.github/workflows/docs.yml
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add GitHub Actions workflow for documentation&quot;</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>main
-</code></pre></div>
-<p><strong>Step 3: Verify Deployment</strong></p>
-<ol>
-<li>Go to "Actions" tab in your repository</li>
-<li>Watch the workflow run</li>
-<li>Once complete, visit your documentation site</li>
-</ol>
-</div>
-<div class="tabbed-block">
-<p>Mike allows you to maintain multiple versions of documentation.</p>
-<p><strong>Install Mike:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>pip<span class="w"> </span>install<span class="w"> </span>mike
-</code></pre></div>
-<p><strong>Deploy Version:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Deploy version 1.0</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>mike<span class="w"> </span>deploy<span class="w"> </span>--push<span class="w"> </span>--update-aliases<span class="w"> </span><span class="m">1</span>.0<span class="w"> </span>latest
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1"># Set default version</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>mike<span class="w"> </span>set-default<span class="w"> </span>--push<span class="w"> </span>latest
-</code></pre></div>
-<p><strong>View Versions Locally:</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>mike<span class="w"> </span>serve
-</code></pre></div>
-<p>Visit: <code>http://localhost:8000</code></p>
-</div>
-</div>
-</div>
-<h2 id="customizing-deployment">Customizing Deployment<a class="headerlink" href="#customizing-deployment" title="Permanent link">&para;</a></h2>
-<h3 id="custom-domain">Custom Domain<a class="headerlink" href="#custom-domain" title="Permanent link">&para;</a></h3>
-<ol>
-<li>
-<p>Create <code>docs/CNAME</code> file:
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>docs.example.com
-</code></pre></div></p>
-</li>
-<li>
-<p>Configure DNS:</p>
-</li>
-<li>
-<p>Add CNAME record pointing to <code>yourusername.github.io</code></p>
-</li>
-<li>
-<p>In GitHub Settings → Pages:</p>
-</li>
-<li>Enter custom domain</li>
-<li>Enable "Enforce HTTPS"</li>
-</ol>
-<h3 id="update-mkdocsyml">Update mkdocs.yml<a class="headerlink" href="#update-mkdocsyml" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">site_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://docs.example.com</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nt">repo_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/yourusername/authentication_test</span>
-</code></pre></div>
-<h2 id="local-development">Local Development<a class="headerlink" href="#local-development" title="Permanent link">&para;</a></h2>
-<h3 id="serve-locally">Serve Locally<a class="headerlink" href="#serve-locally" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># Start development server</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>mkdocs<span class="w"> </span>serve
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="c1"># With live reload</span>
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>mkdocs<span class="w"> </span>serve<span class="w"> </span>--dev-addr<span class="o">=</span><span class="m">0</span>.0.0.0:8000
-</code></pre></div>
-<p>Visit: <code>http://localhost:8000</code></p>
-<h3 id="build-only">Build Only<a class="headerlink" href="#build-only" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># Build without deploying</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>mkdocs<span class="w"> </span>build
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="c1"># Build to custom directory</span>
-<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>mkdocs<span class="w"> </span>build<span class="w"> </span>--site-dir<span class="w"> </span>custom_site
-</code></pre></div>
-<h3 id="clean-build">Clean Build<a class="headerlink" href="#clean-build" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># Remove site directory</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>rm<span class="w"> </span>-rf<span class="w"> </span>site
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="c1"># Rebuild</span>
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>mkdocs<span class="w"> </span>build
-</code></pre></div>
-<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
-<h3 id="build-fails">Build Fails<a class="headerlink" href="#build-fails" title="Permanent link">&para;</a></h3>
-<p>Check for errors:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>mkdocs<span class="w"> </span>build<span class="w"> </span>--verbose
-</code></pre></div>
-<p>Common issues:
-- Missing dependencies: <code>pip install -r requirements.txt</code>
-- Invalid YAML in mkdocs.yml
-- Broken links in documentation</p>
-<h3 id="deployment-fails">Deployment Fails<a class="headerlink" href="#deployment-fails" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Check GitHub Actions logs</li>
-<li>Verify permissions:
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nt">permissions</span><span class="p">:</span>
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span><span class="nt">contents</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">write</span>
-</code></pre></div></li>
-<li>Ensure gh-pages branch exists</li>
-</ol>
-<h3 id="site-not-updating">Site Not Updating<a class="headerlink" href="#site-not-updating" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Clear browser cache</li>
-<li>Wait a few minutes for GitHub Pages to update</li>
-<li>Check GitHub Actions workflow completed successfully</li>
-<li>Verify gh-pages branch has new commits</li>
-</ol>
-<h3 id="404-errors">404 Errors<a class="headerlink" href="#404-errors" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Check <code>site_url</code> in mkdocs.yml</li>
-<li>Verify GitHub Pages is enabled</li>
-<li>Ensure gh-pages branch is selected as source</li>
-</ol>
-<h2 id="best-practices">Best Practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h2>
-<h3 id="1-version-control">1. Version Control<a class="headerlink" href="#1-version-control" title="Permanent link">&para;</a></h3>
-<p>Don't commit the <code>site/</code> directory:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a># .gitignore
-<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>site/
-<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>.cache/
-</code></pre></div>
-<h3 id="2-documentation-structure">2. Documentation Structure<a class="headerlink" href="#2-documentation-structure" title="Permanent link">&para;</a></h3>
-<p>Keep documentation organized:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>docs/
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>├── index.md
-<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>├── getting-started/
-<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>├── build/
-<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>├── keycloak/
-<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>├── api/
-<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>├── config/
-<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>├── troubleshooting/
-<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>└── development/
-</code></pre></div>
-<h3 id="3-regular-updates">3. Regular Updates<a class="headerlink" href="#3-regular-updates" title="Permanent link">&para;</a></h3>
-<p>Update documentation with code changes:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1"># After code changes</span>
-<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>git<span class="w"> </span>add<span class="w"> </span>docs/
-<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Update documentation&quot;</span>
-<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>git<span class="w"> </span>push
-</code></pre></div>
-<h3 id="4-review-before-deploy">4. Review Before Deploy<a class="headerlink" href="#4-review-before-deploy" title="Permanent link">&para;</a></h3>
-<p>Always review locally:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>mkdocs<span class="w"> </span>serve
-<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="c1"># Review at http://localhost:8000</span>
-<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>mkdocs<span class="w"> </span>gh-deploy
-</code></pre></div>
-<h3 id="5-use-branches">5. Use Branches<a class="headerlink" href="#5-use-branches" title="Permanent link">&para;</a></h3>
-<p>For major documentation changes:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>docs/update-api-guide
-<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="c1"># Make changes</span>
-<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>docs/update-api-guide
-<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="c1"># Create pull request</span>
-</code></pre></div>
-<h2 id="monitoring">Monitoring<a class="headerlink" href="#monitoring" title="Permanent link">&para;</a></h2>
-<h3 id="search">Search<a class="headerlink" href="#search" title="Permanent link">&para;</a></h3>
-<p>MkDocs Material includes built-in search. No configuration needed.</p>
-<h2 id="maintenance">Maintenance<a class="headerlink" href="#maintenance" title="Permanent link">&para;</a></h2>
-<h3 id="update-dependencies">Update Dependencies<a class="headerlink" href="#update-dependencies" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c1"># Update all dependencies</span>
-<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>-r<span class="w"> </span>requirements.txt
-<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>
-<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="c1"># Update specific package</span>
-<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>mkdocs-material
-</code></pre></div>
-<h3 id="check-for-broken-links">Check for Broken Links<a class="headerlink" href="#check-for-broken-links" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="c1"># Install linkchecker</span>
-<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>pip<span class="w"> </span>install<span class="w"> </span>linkchecker
-<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>
-<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="c1"># Check links</span>
-<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>mkdocs<span class="w"> </span>build
-<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>linkchecker<span class="w"> </span>site/
-</code></pre></div>
-<h2 id="additional-resources">Additional Resources<a class="headerlink" href="#additional-resources" title="Permanent link">&para;</a></h2>
+<h4 id="keycloak_client_secret"><code>KEYCLOAK_CLIENT_SECRET</code><a class="headerlink" href="#keycloak_client_secret" title="Permanent link">&para;</a></h4>
 <ul>
-<li><a href="https://www.mkdocs.org/">MkDocs Documentation</a></li>
-<li><a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a></li>
-<li><a href="https://docs.github.com/en/pages">GitHub Pages Documentation</a></li>
-<li><a href="https://github.com/jimporter/mike">Mike Documentation</a></li>
+<li><strong>Description</strong>: The client secret for authenticating with Keycloak</li>
+<li><strong>Example</strong>: <code>8u50V7iXkuibA4BvzKVoDcQ5aaAbUsTI</code></li>
+<li><strong>Required</strong>: Yes</li>
+<li><strong>Security</strong>: Keep this secret! Never commit to version control</li>
+<li><strong>Where to find</strong>: Keycloak Admin Console → Clients → Your Client → Credentials</li>
+</ul>
+<h4 id="keycloak_issuer"><code>KEYCLOAK_ISSUER</code><a class="headerlink" href="#keycloak_issuer" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Description</strong>: The Keycloak realm issuer URL</li>
+<li><strong>Format</strong>: <code>https://{keycloak-host}/realms/{realm-name}</code></li>
+<li><strong>Example</strong>: <code>https://keycloak.lab.home/realms/secure-test</code></li>
+<li><strong>Required</strong>: Yes</li>
+<li><strong>Note</strong>: Must match the issuer in JWT tokens</li>
+</ul>
+<h3 id="nextauth-configuration">NextAuth Configuration<a class="headerlink" href="#nextauth-configuration" title="Permanent link">&para;</a></h3>
+<h4 id="nextauth_url"><code>NEXTAUTH_URL</code><a class="headerlink" href="#nextauth_url" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Description</strong>: The canonical URL of your application</li>
+<li><strong>Example</strong>: <code>http://localhost:3000</code></li>
+<li><strong>Required</strong>: Yes</li>
+<li><strong>Production</strong>: Use your production domain (e.g., <code>https://app.lab.home</code>)</li>
+<li><strong>Note</strong>: Must match the redirect URI configured in Keycloak</li>
+</ul>
+<h4 id="nextauth_secret"><code>NEXTAUTH_SECRET</code><a class="headerlink" href="#nextauth_secret" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Description</strong>: Secret key for encrypting session tokens</li>
+<li><strong>Example</strong>: <code>your-random-secret-here</code></li>
+<li><strong>Required</strong>: Yes</li>
+<li><strong>Security</strong>: Must be a strong random string</li>
+<li><strong>Generate</strong>: <code>openssl rand -base64 32</code></li>
+<li><strong>Note</strong>: Change this in production!</li>
+</ul>
+<h3 id="ibm-watsonx-orchestrate-configuration">IBM watsonx Orchestrate Configuration<a class="headerlink" href="#ibm-watsonx-orchestrate-configuration" title="Permanent link">&para;</a></h3>
+<h4 id="next_public_orchestrate_integration_id"><code>NEXT_PUBLIC_ORCHESTRATE_INTEGRATION_ID</code><a class="headerlink" href="#next_public_orchestrate_integration_id" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Description</strong>: The integration ID for your Orchestrate instance</li>
+<li><strong>Example</strong>: <code>12345678-1234-1234-1234-123456789abc</code></li>
+<li><strong>Required</strong>: Yes (for Orchestrate widget to work)</li>
+<li><strong>Where to find</strong>: IBM watsonx Orchestrate console</li>
+<li><strong>Note</strong>: Prefix <code>NEXT_PUBLIC_</code> makes it available in browser</li>
+</ul>
+<h4 id="next_public_orchestrate_region"><code>NEXT_PUBLIC_ORCHESTRATE_REGION</code><a class="headerlink" href="#next_public_orchestrate_region" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Description</strong>: The IBM Cloud region where Orchestrate is deployed</li>
+<li><strong>Example</strong>: <code>us-south</code></li>
+<li><strong>Required</strong>: Yes</li>
+<li><strong>Valid values</strong>: <code>us-south</code>, <code>us-east</code>, <code>eu-gb</code>, <code>eu-de</code>, <code>jp-tok</code>, <code>au-syd</code></li>
+<li><strong>Where to find</strong>: IBM watsonx Orchestrate console</li>
+</ul>
+<h4 id="next_public_orchestrate_service_instance_id"><code>NEXT_PUBLIC_ORCHESTRATE_SERVICE_INSTANCE_ID</code><a class="headerlink" href="#next_public_orchestrate_service_instance_id" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Description</strong>: The service instance ID for your Orchestrate deployment</li>
+<li><strong>Example</strong>: <code>abcdef12-3456-7890-abcd-ef1234567890</code></li>
+<li><strong>Required</strong>: Yes</li>
+<li><strong>Where to find</strong>: IBM watsonx Orchestrate console</li>
+</ul>
+<h2 id="complete-envlocal-example">Complete .env.local Example<a class="headerlink" href="#complete-envlocal-example" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># =============================================================================</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># Keycloak OAuth 2.0 Configuration</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># =============================================================================</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># Client ID registered in Keycloak for this frontend application</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nv">KEYCLOAK_CLIENT_ID</span><span class="o">=</span>authentication-test-frontend
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># Client secret for authenticating with Keycloak (keep secret!)</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="nv">KEYCLOAK_CLIENT_SECRET</span><span class="o">=</span>8u50V7iXkuibA4BvzKVoDcQ5aaAbUsTI
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c1"># Keycloak realm issuer URL</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="c1"># Format: https://{keycloak-host}/realms/{realm-name}</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="nv">KEYCLOAK_ISSUER</span><span class="o">=</span>https://keycloak.lab.home/realms/secure-test
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="c1"># =============================================================================</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="c1"># NextAuth.js Configuration</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="c1"># =============================================================================</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="c1"># Canonical URL of your application</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="c1"># Development: http://localhost:3000</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="c1"># Production: https://app.lab.home</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="nv">NEXTAUTH_URL</span><span class="o">=</span>http://localhost:3000
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="c1"># Secret key for encrypting session tokens</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="c1"># Generate with: openssl rand -base64 32</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="c1"># IMPORTANT: Change this in production!</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="nv">NEXTAUTH_SECRET</span><span class="o">=</span>your-random-secret-here
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="c1"># =============================================================================</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="c1"># IBM watsonx Orchestrate Configuration</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="c1"># =============================================================================</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="c1"># Integration ID from Orchestrate console</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="nv">NEXT_PUBLIC_ORCHESTRATE_INTEGRATION_ID</span><span class="o">=</span><span class="m">12345678</span>-1234-1234-1234-123456789abc
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="c1"># IBM Cloud region where Orchestrate is deployed</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="c1"># Valid values: us-south, us-east, eu-gb, eu-de, jp-tok, au-syd</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="nv">NEXT_PUBLIC_ORCHESTRATE_REGION</span><span class="o">=</span>us-south
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="c1"># Service instance ID from Orchestrate console</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="nv">NEXT_PUBLIC_ORCHESTRATE_SERVICE_INSTANCE_ID</span><span class="o">=</span>abcdef12-3456-7890-abcd-ef1234567890
+</code></pre></div>
+<h2 id="environment-specific-configuration">Environment-Specific Configuration<a class="headerlink" href="#environment-specific-configuration" title="Permanent link">&para;</a></h2>
+<h3 id="development-environment">Development Environment<a class="headerlink" href="#development-environment" title="Permanent link">&para;</a></h3>
+<p>For local development, use <code>.env.local</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">NEXTAUTH_URL</span><span class="o">=</span>http://localhost:3000
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nv">KEYCLOAK_ISSUER</span><span class="o">=</span>https://keycloak.lab.home/realms/secure-test
+</code></pre></div>
+<h3 id="production-environment">Production Environment<a class="headerlink" href="#production-environment" title="Permanent link">&para;</a></h3>
+<p>For production deployment, set environment variables in your hosting platform:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">NEXTAUTH_URL</span><span class="o">=</span>https://app.lab.home
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nv">KEYCLOAK_ISSUER</span><span class="o">=</span>https://keycloak.lab.home/realms/secure-test
+</code></pre></div>
+<p><strong>Important</strong>: Never use <code>.env.local</code> in production. Use your platform's environment variable management.</p>
+<h2 id="variable-prefixes">Variable Prefixes<a class="headerlink" href="#variable-prefixes" title="Permanent link">&para;</a></h2>
+<h3 id="next_public_-prefix"><code>NEXT_PUBLIC_</code> Prefix<a class="headerlink" href="#next_public_-prefix" title="Permanent link">&para;</a></h3>
+<p>Variables with this prefix are:</p>
+<ul>
+<li><strong>Exposed to the browser</strong>: Available in client-side code</li>
+<li><strong>Embedded at build time</strong>: Included in the JavaScript bundle</li>
+<li><strong>Use for</strong>: Non-sensitive configuration that the browser needs</li>
+</ul>
+<p>Example:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">// Available in browser</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">region</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NEXT_PUBLIC_ORCHESTRATE_REGION</span><span class="p">;</span>
+</code></pre></div></p>
+<h3 id="no-prefix">No Prefix<a class="headerlink" href="#no-prefix" title="Permanent link">&para;</a></h3>
+<p>Variables without prefix are:</p>
+<ul>
+<li><strong>Server-side only</strong>: Not available in browser</li>
+<li><strong>Secure</strong>: Never exposed to client</li>
+<li><strong>Use for</strong>: Secrets, API keys, sensitive configuration</li>
+</ul>
+<p>Example:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">// Only available on server</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">secret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">KEYCLOAK_CLIENT_SECRET</span><span class="p">;</span>
+</code></pre></div></p>
+<h2 id="validation">Validation<a class="headerlink" href="#validation" title="Permanent link">&para;</a></h2>
+<p>The application validates required environment variables at startup. If any are missing, you'll see an error:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Error: Missing required environment variable: KEYCLOAK_CLIENT_ID
+</code></pre></div>
+<h2 id="security-best-practices">Security Best Practices<a class="headerlink" href="#security-best-practices" title="Permanent link">&para;</a></h2>
+<h3 id="1-never-commit-secrets">1. Never Commit Secrets<a class="headerlink" href="#1-never-commit-secrets" title="Permanent link">&para;</a></h3>
+<p>Add to <code>.gitignore</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>.env.local
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>.env*.local
+</code></pre></div>
+<h3 id="2-use-strong-secrets">2. Use Strong Secrets<a class="headerlink" href="#2-use-strong-secrets" title="Permanent link">&para;</a></h3>
+<p>Generate secure random strings:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># For NEXTAUTH_SECRET</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>openssl<span class="w"> </span>rand<span class="w"> </span>-base64<span class="w"> </span><span class="m">32</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1"># For other secrets</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>openssl<span class="w"> </span>rand<span class="w"> </span>-hex<span class="w"> </span><span class="m">32</span>
+</code></pre></div>
+<h3 id="3-rotate-secrets-regularly">3. Rotate Secrets Regularly<a class="headerlink" href="#3-rotate-secrets-regularly" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Change <code>NEXTAUTH_SECRET</code> periodically</li>
+<li>Rotate Keycloak client secrets</li>
+<li>Update all environments when rotating</li>
+</ul>
+<h3 id="4-limit-secret-access">4. Limit Secret Access<a class="headerlink" href="#4-limit-secret-access" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Only share secrets with authorized team members</li>
+<li>Use secret management tools (e.g., HashiCorp Vault)</li>
+<li>Never send secrets via email or chat</li>
+</ul>
+<h3 id="5-environment-separation">5. Environment Separation<a class="headerlink" href="#5-environment-separation" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Use different secrets for dev/staging/production</li>
+<li>Never use production secrets in development</li>
+<li>Test with non-production Keycloak realms</li>
+</ul>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<h3 id="issue-invalid-client-credentials">Issue: "Invalid client credentials"<a class="headerlink" href="#issue-invalid-client-credentials" title="Permanent link">&para;</a></h3>
+<p><strong>Cause</strong>: <code>KEYCLOAK_CLIENT_SECRET</code> doesn't match Keycloak</p>
+<p><strong>Solution</strong>:
+1. Go to Keycloak Admin Console
+2. Navigate to Clients → Your Client → Credentials
+3. Copy the secret
+4. Update <code>.env.local</code>
+5. Restart dev server</p>
+<h3 id="issue-redirect-uri-mismatch">Issue: "Redirect URI mismatch"<a class="headerlink" href="#issue-redirect-uri-mismatch" title="Permanent link">&para;</a></h3>
+<p><strong>Cause</strong>: <code>NEXTAUTH_URL</code> doesn't match Keycloak redirect URI</p>
+<p><strong>Solution</strong>:
+1. Check <code>NEXTAUTH_URL</code> in <code>.env.local</code>
+2. Go to Keycloak Admin Console
+3. Navigate to Clients → Your Client → Settings
+4. Add to Valid Redirect URIs: <code>{NEXTAUTH_URL}/api/auth/callback/keycloak</code>
+5. Save and restart</p>
+<h3 id="issue-orchestrate-widget-not-loading">Issue: "Orchestrate widget not loading"<a class="headerlink" href="#issue-orchestrate-widget-not-loading" title="Permanent link">&para;</a></h3>
+<p><strong>Cause</strong>: Missing or incorrect Orchestrate configuration</p>
+<p><strong>Solution</strong>:
+1. Verify all <code>NEXT_PUBLIC_ORCHESTRATE_*</code> variables are set
+2. Check values in Orchestrate console
+3. Ensure region is correct
+4. Restart dev server (required for <code>NEXT_PUBLIC_</code> changes)</p>
+<h3 id="issue-environment-variables-not-loading">Issue: "Environment variables not loading"<a class="headerlink" href="#issue-environment-variables-not-loading" title="Permanent link">&para;</a></h3>
+<p><strong>Cause</strong>: File not named correctly or server not restarted</p>
+<p><strong>Solution</strong>:
+1. Ensure file is named <code>.env.local</code> (not <code>.env</code> or <code>.env.development</code>)
+2. Restart dev server: <code>npm run dev</code>
+3. Check for typos in variable names
+4. Verify file is in <code>Frontend/</code> directory</p>
+<h2 id="advanced-configuration">Advanced Configuration<a class="headerlink" href="#advanced-configuration" title="Permanent link">&para;</a></h2>
+<h3 id="custom-port">Custom Port<a class="headerlink" href="#custom-port" title="Permanent link">&para;</a></h3>
+<p>To run on a different port:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nv">PORT</span><span class="o">=</span><span class="m">3001</span><span class="w"> </span>npm<span class="w"> </span>run<span class="w"> </span>dev
+</code></pre></div>
+<p>Update configuration:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nv">NEXTAUTH_URL</span><span class="o">=</span>http://localhost:3001
+</code></pre></div></p>
+<p>Update Keycloak redirect URI:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>http://localhost:3001/api/auth/callback/keycloak
+</code></pre></div></p>
+<h3 id="https-in-development">HTTPS in Development<a class="headerlink" href="#https-in-development" title="Permanent link">&para;</a></h3>
+<p>For local HTTPS:</p>
+<ol>
+<li>Generate self-signed certificate</li>
+<li>Configure Next.js for HTTPS</li>
+<li>Update <code>NEXTAUTH_URL</code> to use <code>https://</code></li>
+<li>Update Keycloak redirect URIs</li>
+</ol>
+<h3 id="multiple-environments">Multiple Environments<a class="headerlink" href="#multiple-environments" title="Permanent link">&para;</a></h3>
+<p>Create environment-specific files:</p>
+<ul>
+<li><code>.env.local</code> - Local development</li>
+<li><code>.env.development</code> - Development server</li>
+<li><code>.env.staging</code> - Staging environment</li>
+<li><code>.env.production</code> - Production (use platform variables instead)</li>
 </ul>
 <h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
+<p>After configuration:</p>
+<ol>
+<li><a href="../authentication/">Understand Authentication Flow</a></li>
+<li><a href="../orchestrate-integration/">Setup Orchestrate Integration</a></li>
+<li><a href="../development/">Start Development</a></li>
+</ol>
+<h2 id="related-documentation">Related Documentation<a class="headerlink" href="#related-documentation" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="../../development/contributing/">Contributing Guide</a></li>
-<li><a href="../../development/structure/">Project Structure</a></li>
+<li><a href="../setup/">Setup Guide</a></li>
+<li><a href="../../keycloak/client-setup/">Keycloak Client Setup</a></li>
+<li><a href="../../orchestrate/installation/">Orchestrate Installation</a></li>
 </ul>
 
 

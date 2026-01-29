@@ -12,13 +12,13 @@
         <meta name="author" content="Authentication Test API Team">
       
       
-        <link rel="canonical" href="https://binnes.github.io/secureAPI-with-OAUTH-2/keycloak/client-setup/">
+        <link rel="canonical" href="https://binnes.github.io/secureAPI-with-OAUTH-2/keycloak/frontend-client-setup/">
       
       
-        <link rel="prev" href="../realm-setup/">
+        <link rel="prev" href="../client-setup/">
       
       
-        <link rel="next" href="../frontend-client-setup/">
+        <link rel="next" href="../user-management/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>API Client Configuration - Authentication Test API Documentation</title>
+        <title>Frontend Client Configuration - Authentication Test API Documentation</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#client-configuration" class="md-skip">
+        <a href="#frontend-client-configuration" class="md-skip">
           Skip to content
         </a>
       
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              API Client Configuration
+              Frontend Client Configuration
             
           </span>
         </div>
@@ -921,6 +921,34 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../client-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Client Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -940,7 +968,7 @@
   <span class="md-ellipsis">
     
   
-    API Client Configuration
+    Frontend Client Configuration
   
 
     
@@ -958,7 +986,7 @@
   <span class="md-ellipsis">
     
   
-    API Client Configuration
+    Frontend Client Configuration
   
 
     
@@ -984,10 +1012,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-is-a-client" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What is a Client?
+        Overview
       
     </span>
   </a>
@@ -1006,44 +1034,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-1-create-client" class="md-nav__link">
+  <a href="#client-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1: Create Client
+        Client Configuration
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-2-get-client-secret" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 2: Get Client Secret
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-configure-client-settings" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 3: Configure Client Settings
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 3: Configure Client Settings">
+    <nav class="md-nav" aria-label="Client Configuration">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#settings-tab" class="md-nav__link">
+  <a href="#step-1-create-frontend-client" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Settings Tab
+        Step 1: Create Frontend Client
       
     </span>
   </a>
@@ -1051,10 +1057,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#access-settings" class="md-nav__link">
+  <a href="#step-2-configure-environment-variables" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Access Settings
+        Step 2: Configure Environment Variables
       
     </span>
   </a>
@@ -1062,10 +1068,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#advanced-settings" class="md-nav__link">
+  <a href="#step-3-generate-nextauth-secret" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Advanced Settings
+        Step 3: Generate NextAuth Secret
       
     </span>
   </a>
@@ -1078,22 +1084,44 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-configure-roles" class="md-nav__link">
+  <a href="#client-configuration-details" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 4: Configure Roles
+        Client Configuration Details
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Step 4: Configure Roles">
+    <nav class="md-nav" aria-label="Client Configuration Details">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#client-roles-mapping" class="md-nav__link">
+  <a href="#authentication-flow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Client Roles Mapping
+        Authentication Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pkce-proof-key-for-code-exchange" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PKCE (Proof Key for Code Exchange)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#token-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Token Storage
       
     </span>
   </a>
@@ -1106,22 +1134,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-5-configure-api-environment" class="md-nav__link">
+  <a href="#redirect-uris-explained" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 5: Configure API Environment
+        Redirect URIs Explained
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Step 5: Configure API Environment">
+    <nav class="md-nav" aria-label="Redirect URIs Explained">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#environment-variables" class="md-nav__link">
+  <a href="#valid-redirect-uris" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Environment Variables
+        Valid Redirect URIs
       
     </span>
   </a>
@@ -1129,10 +1157,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#microprofile-config" class="md-nav__link">
+  <a href="#web-origins-cors" class="md-nav__link">
     <span class="md-ellipsis">
       
-        MicroProfile Config
+        Web Origins (CORS)
       
     </span>
   </a>
@@ -1145,22 +1173,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#advanced-configuration" class="md-nav__link">
+  <a href="#verification-steps" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Advanced Configuration
+        Verification Steps
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Advanced Configuration">
+    <nav class="md-nav" aria-label="Verification Steps">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#cors-configuration" class="md-nav__link">
+  <a href="#1-verify-client-creation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        CORS Configuration
+        1. Verify Client Creation
       
     </span>
   </a>
@@ -1168,10 +1196,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#token-lifespan" class="md-nav__link">
+  <a href="#2-test-authentication-flow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Token Lifespan
+        2. Test Authentication Flow
       
     </span>
   </a>
@@ -1179,10 +1207,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#audience" class="md-nav__link">
+  <a href="#3-verify-token-contents" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Audience
+        3. Verify Token Contents
       
     </span>
   </a>
@@ -1207,10 +1235,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#invalid-client-credentials" class="md-nav__link">
+  <a href="#issue-invalid-redirect-uri" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Invalid Client Credentials
+        Issue: "Invalid redirect URI"
       
     </span>
   </a>
@@ -1218,10 +1246,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#token-missing-roles" class="md-nav__link">
+  <a href="#issue-cors-error" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Token Missing Roles
+        Issue: "CORS error"
       
     </span>
   </a>
@@ -1229,10 +1257,182 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#cors-errors" class="md-nav__link">
+  <a href="#issue-client-authentication-failed" class="md-nav__link">
     <span class="md-ellipsis">
       
-        CORS Errors
+        Issue: "Client authentication failed"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-session-not-persisting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: "Session not persisting"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-token-expired-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: "Token expired" errors
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#custom-token-lifespan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom Token Lifespan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-custom-claims" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add Custom Claims
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#audience-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Audience Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#production-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Production Deployment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Production Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update-for-production" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update for Production
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-specific-clients" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment-Specific Clients
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Best Practices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-client-secret-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Client Secret Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-redirect-uri-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Redirect URI Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-token-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Token Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-cors-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. CORS Configuration
       
     </span>
   </a>
@@ -1270,34 +1470,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../frontend-client-setup/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Frontend Client Configuration
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -2394,10 +2566,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-is-a-client" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What is a Client?
+        Overview
       
     </span>
   </a>
@@ -2416,44 +2588,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-1-create-client" class="md-nav__link">
+  <a href="#client-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1: Create Client
+        Client Configuration
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-2-get-client-secret" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 2: Get Client Secret
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-configure-client-settings" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 3: Configure Client Settings
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 3: Configure Client Settings">
+    <nav class="md-nav" aria-label="Client Configuration">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#settings-tab" class="md-nav__link">
+  <a href="#step-1-create-frontend-client" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Settings Tab
+        Step 1: Create Frontend Client
       
     </span>
   </a>
@@ -2461,10 +2611,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#access-settings" class="md-nav__link">
+  <a href="#step-2-configure-environment-variables" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Access Settings
+        Step 2: Configure Environment Variables
       
     </span>
   </a>
@@ -2472,10 +2622,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#advanced-settings" class="md-nav__link">
+  <a href="#step-3-generate-nextauth-secret" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Advanced Settings
+        Step 3: Generate NextAuth Secret
       
     </span>
   </a>
@@ -2488,22 +2638,44 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-configure-roles" class="md-nav__link">
+  <a href="#client-configuration-details" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 4: Configure Roles
+        Client Configuration Details
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Step 4: Configure Roles">
+    <nav class="md-nav" aria-label="Client Configuration Details">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#client-roles-mapping" class="md-nav__link">
+  <a href="#authentication-flow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Client Roles Mapping
+        Authentication Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pkce-proof-key-for-code-exchange" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PKCE (Proof Key for Code Exchange)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#token-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Token Storage
       
     </span>
   </a>
@@ -2516,22 +2688,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-5-configure-api-environment" class="md-nav__link">
+  <a href="#redirect-uris-explained" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 5: Configure API Environment
+        Redirect URIs Explained
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Step 5: Configure API Environment">
+    <nav class="md-nav" aria-label="Redirect URIs Explained">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#environment-variables" class="md-nav__link">
+  <a href="#valid-redirect-uris" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Environment Variables
+        Valid Redirect URIs
       
     </span>
   </a>
@@ -2539,10 +2711,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#microprofile-config" class="md-nav__link">
+  <a href="#web-origins-cors" class="md-nav__link">
     <span class="md-ellipsis">
       
-        MicroProfile Config
+        Web Origins (CORS)
       
     </span>
   </a>
@@ -2555,22 +2727,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#advanced-configuration" class="md-nav__link">
+  <a href="#verification-steps" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Advanced Configuration
+        Verification Steps
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Advanced Configuration">
+    <nav class="md-nav" aria-label="Verification Steps">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#cors-configuration" class="md-nav__link">
+  <a href="#1-verify-client-creation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        CORS Configuration
+        1. Verify Client Creation
       
     </span>
   </a>
@@ -2578,10 +2750,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#token-lifespan" class="md-nav__link">
+  <a href="#2-test-authentication-flow" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Token Lifespan
+        2. Test Authentication Flow
       
     </span>
   </a>
@@ -2589,10 +2761,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#audience" class="md-nav__link">
+  <a href="#3-verify-token-contents" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Audience
+        3. Verify Token Contents
       
     </span>
   </a>
@@ -2617,10 +2789,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#invalid-client-credentials" class="md-nav__link">
+  <a href="#issue-invalid-redirect-uri" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Invalid Client Credentials
+        Issue: "Invalid redirect URI"
       
     </span>
   </a>
@@ -2628,10 +2800,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#token-missing-roles" class="md-nav__link">
+  <a href="#issue-cors-error" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Token Missing Roles
+        Issue: "CORS error"
       
     </span>
   </a>
@@ -2639,10 +2811,182 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#cors-errors" class="md-nav__link">
+  <a href="#issue-client-authentication-failed" class="md-nav__link">
     <span class="md-ellipsis">
       
-        CORS Errors
+        Issue: "Client authentication failed"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-session-not-persisting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: "Session not persisting"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-token-expired-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue: "Token expired" errors
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#custom-token-lifespan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom Token Lifespan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-custom-claims" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add Custom Claims
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#audience-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Audience Validation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#production-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Production Deployment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Production Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update-for-production" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update for Production
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-specific-clients" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment-Specific Clients
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Best Practices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security Best Practices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-client-secret-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Client Secret Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-redirect-uri-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Redirect URI Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-token-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Token Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-cors-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. CORS Configuration
       
     </span>
   </a>
@@ -2696,309 +3040,461 @@
   
 
 
-<h1 id="client-configuration">Client Configuration<a class="headerlink" href="#client-configuration" title="Permanent link">&para;</a></h1>
-<p>This guide explains how to configure the <code>authentication-test-api</code> client in Keycloak for OAuth 2.0 authentication.</p>
-<h2 id="what-is-a-client">What is a Client?<a class="headerlink" href="#what-is-a-client" title="Permanent link">&para;</a></h2>
-<p>In Keycloak, a client represents an application that wants to use Keycloak for authentication. For our API, the client configuration defines:</p>
-<ul>
-<li>How the API validates JWT tokens</li>
-<li>Which authentication flows are allowed</li>
-<li>Token settings and lifespans</li>
-<li>Valid redirect URIs</li>
-</ul>
+<h1 id="frontend-client-configuration">Frontend Client Configuration<a class="headerlink" href="#frontend-client-configuration" title="Permanent link">&para;</a></h1>
+<p>This guide explains how to configure the <code>authentication-test-frontend</code> client in Keycloak for the Next.js frontend application.</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>The frontend application requires its own OAuth 2.0 client in Keycloak, separate from the API server client. This client handles user authentication via the Authorization Code Flow with PKCE.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Keycloak installed and running</li>
 <li><code>secure-test</code> realm created</li>
 <li>Access to Keycloak Admin Console</li>
+<li>Admin credentials for Keycloak</li>
 </ul>
-<h2 id="step-1-create-client">Step 1: Create Client<a class="headerlink" href="#step-1-create-client" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Admin Console</label><label for="__tabbed_1_2">REST API</label></div>
+<h2 id="client-configuration">Client Configuration<a class="headerlink" href="#client-configuration" title="Permanent link">&para;</a></h2>
+<h3 id="step-1-create-frontend-client">Step 1: Create Frontend Client<a class="headerlink" href="#step-1-create-frontend-client" title="Permanent link">&para;</a></h3>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Admin Console (Manual)</label><label for="__tabbed_1_2">REST API (Automated)</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <ol>
-<li><strong>Select "secure-test" realm</strong> from dropdown</li>
-<li><strong>Go to "Clients"</strong> in left menu</li>
-<li><strong>Click "Create client"</strong></li>
-<li><strong>Enter Client Details</strong>:<ul>
+<li>
+<p><strong>Log into Keycloak Admin Console</strong></p>
+<ul>
+<li>URL: <code>https://keycloak.lab.home/admin</code></li>
+<li>Select realm: <strong>secure-test</strong></li>
+</ul>
+</li>
+<li>
+<p><strong>Navigate to Clients</strong></p>
+<ul>
+<li>Click <strong>Clients</strong> in the left sidebar</li>
+<li>Click <strong>Create client</strong> button</li>
+</ul>
+</li>
+<li>
+<p><strong>General Settings</strong></p>
+<ul>
 <li><strong>Client type</strong>: <code>OpenID Connect</code></li>
-<li><strong>Client ID</strong>: <code>authentication-test-api</code></li>
+<li><strong>Client ID</strong>: <code>authentication-test-frontend</code></li>
+<li>Click <strong>Next</strong></li>
 </ul>
 </li>
 <li>
-<p><strong>Click "Next"</strong></p>
-</li>
-<li>
-<p><strong>Configure Capability</strong>:</p>
+<p><strong>Capability Config</strong></p>
 <ul>
-<li><strong>Client authentication</strong>: ✓ ON (confidential client)</li>
+<li><strong>Client authentication</strong>: ✓ ON (Confidential client)</li>
 <li><strong>Authorization</strong>: ✗ OFF</li>
-<li><strong>Authentication flow</strong>:</li>
-<li>✓ Standard flow</li>
-<li>✓ Direct access grants</li>
+<li><strong>Authentication flow</strong>:<ul>
+<li>✓ <strong>Standard flow</strong> (Authorization Code Flow)</li>
+<li>✓ <strong>Direct access grants</strong> (Optional, for testing)</li>
 <li>✗ Implicit flow</li>
-<li>✗ Service accounts roles</li>
+<li>✗ Service account roles</li>
+</ul>
+</li>
+<li>Click <strong>Next</strong></li>
 </ul>
 </li>
 <li>
-<p><strong>Click "Next"</strong></p>
-</li>
-<li>
-<p><strong>Configure Login Settings</strong>:</p>
+<p><strong>Login Settings</strong></p>
 <ul>
-<li><strong>Root URL</strong>: <code>http://localhost:9080</code></li>
-<li><strong>Home URL</strong>: <code>http://localhost:9080</code></li>
-<li><strong>Valid redirect URIs</strong>:</li>
-<li><code>http://localhost:9080/*</code></li>
-<li><code>https://localhost:9443/*</code></li>
-<li><strong>Valid post logout redirect URIs</strong>: <code>+</code> (use root URL)</li>
-<li><strong>Web origins</strong>:</li>
-<li><code>http://localhost:9080</code></li>
-<li><code>https://localhost:9443</code></li>
+<li><strong>Root URL</strong>: <code>http://localhost:3000</code></li>
+<li><strong>Home URL</strong>: <code>http://localhost:3000</code></li>
+<li><strong>Valid redirect URIs</strong>:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>http://localhost:3000/*
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>http://localhost:3000/api/auth/callback/keycloak
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>https://app.lab.home/*
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>https://app.lab.home/api/auth/callback/keycloak
+</code></pre></div></li>
+<li><strong>Valid post logout redirect URIs</strong>:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>http://localhost:3000
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>https://app.lab.home
+</code></pre></div></li>
+<li><strong>Web origins</strong> (for CORS):
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>http://localhost:3000
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>https://app.lab.home
+</code></pre></div></li>
+<li>Click <strong>Save</strong></li>
 </ul>
 </li>
-<li><strong>Click "Save"</strong></li>
+<li>
+<p><strong>Get Client Secret</strong></p>
+<ul>
+<li>Go to <strong>Credentials</strong> tab</li>
+<li>Copy the <strong>Client Secret</strong> value</li>
+<li>Save this securely for the frontend <code>.env.local</code> file</li>
+</ul>
+</li>
 </ol>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Get admin token</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nv">TOKEN</span><span class="o">=</span><span class="k">$(</span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8080/realms/master/protocol/openid-connect/token<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/x-www-form-urlencoded&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;username=admin&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;password=admin&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;grant_type=password&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;client_id=admin-cli&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.access_token&#39;</span><span class="k">)</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c1"># Create client</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8080/admin/realms/secure-test/clients<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="s1">    &quot;clientId&quot;: &quot;authentication-test-api&quot;,</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="s1">    &quot;name&quot;: &quot;Authentication Test API&quot;,</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="s1">    &quot;description&quot;: &quot;RESTful API with OAuth 2.0 authentication&quot;,</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="s1">    &quot;enabled&quot;: true,</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="s1">    &quot;clientAuthenticatorType&quot;: &quot;client-secret&quot;,</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="s1">    &quot;redirectUris&quot;: [</span>
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="s1">      &quot;http://localhost:9080/*&quot;,</span>
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="s1">      &quot;https://localhost:9443/*&quot;</span>
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="s1">    ],</span>
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="s1">    &quot;webOrigins&quot;: [</span>
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="s1">      &quot;http://localhost:9080&quot;,</span>
-<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="s1">      &quot;https://localhost:9443&quot;</span>
-<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="s1">    ],</span>
-<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="s1">    &quot;publicClient&quot;: false,</span>
-<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="s1">    &quot;protocol&quot;: &quot;openid-connect&quot;,</span>
-<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="s1">    &quot;standardFlowEnabled&quot;: true,</span>
-<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="s1">    &quot;directAccessGrantsEnabled&quot;: true,</span>
-<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="s1">    &quot;serviceAccountsEnabled&quot;: false</span>
-<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="s1">  }&#39;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Step 1: Get admin access token</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nv">TOKEN</span><span class="o">=</span><span class="k">$(</span>curl<span class="w"> </span>-s<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;https://keycloak.lab.home/realms/master/protocol/openid-connect/token&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/x-www-form-urlencoded&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;username=admin&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;password=your-admin-password&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;grant_type=password&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span>-d<span class="w"> </span><span class="s2">&quot;client_id=admin-cli&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span><span class="p">|</span><span class="w"> </span>python3<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import sys, json; print(json.load(sys.stdin)[&#39;access_token&#39;])&quot;</span><span class="k">)</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="c1"># Step 2: Create frontend client</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;https://keycloak.lab.home/admin/realms/secure-test/clients&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="s1">    &quot;clientId&quot;: &quot;authentication-test-frontend&quot;,</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="s1">    &quot;name&quot;: &quot;Authentication Test Frontend&quot;,</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="s1">    &quot;description&quot;: &quot;Next.js frontend application for TaskFlow&quot;,</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="s1">    &quot;enabled&quot;: true,</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="s1">    &quot;protocol&quot;: &quot;openid-connect&quot;,</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="s1">    &quot;publicClient&quot;: false,</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="s1">    &quot;clientAuthenticatorType&quot;: &quot;client-secret&quot;,</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="s1">    &quot;standardFlowEnabled&quot;: true,</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="s1">    &quot;directAccessGrantsEnabled&quot;: true,</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="s1">    &quot;serviceAccountsEnabled&quot;: false,</span>
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="s1">    &quot;authorizationServicesEnabled&quot;: false,</span>
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a><span class="s1">    &quot;rootUrl&quot;: &quot;http://localhost:3000&quot;,</span>
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="s1">    &quot;baseUrl&quot;: &quot;http://localhost:3000&quot;,</span>
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="s1">    &quot;redirectUris&quot;: [</span>
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="s1">      &quot;http://localhost:3000/*&quot;,</span>
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a><span class="s1">      &quot;http://localhost:3000/api/auth/callback/keycloak&quot;,</span>
+<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a><span class="s1">      &quot;https://app.lab.home/*&quot;,</span>
+<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a><span class="s1">      &quot;https://app.lab.home/api/auth/callback/keycloak&quot;</span>
+<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a><span class="s1">    ],</span>
+<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a><span class="s1">    &quot;webOrigins&quot;: [</span>
+<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a><span class="s1">      &quot;http://localhost:3000&quot;,</span>
+<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a><span class="s1">      &quot;https://app.lab.home&quot;</span>
+<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a><span class="s1">    ],</span>
+<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a><span class="s1">    &quot;attributes&quot;: {</span>
+<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a><span class="s1">      &quot;pkce.code.challenge.method&quot;: &quot;S256&quot;</span>
+<a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a><span class="s1">    }</span>
+<a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a><span class="s1">  }&#39;</span>
+<a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a>
+<a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a><span class="c1"># Step 3: Get the client details including secret</span>
+<a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a><span class="nv">CLIENT_UUID</span><span class="o">=</span><span class="k">$(</span>curl<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;https://keycloak.lab.home/admin/realms/secure-test/clients?clientId=authentication-test-frontend&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-46" name="__codelineno-3-46" href="#__codelineno-3-46"></a><span class="w">  </span><span class="p">|</span><span class="w"> </span>python3<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import sys, json; print(json.load(sys.stdin)[0][&#39;id&#39;])&quot;</span><span class="k">)</span>
+<a id="__codelineno-3-47" name="__codelineno-3-47" href="#__codelineno-3-47"></a>
+<a id="__codelineno-3-48" name="__codelineno-3-48" href="#__codelineno-3-48"></a><span class="c1"># Step 4: Retrieve client secret</span>
+<a id="__codelineno-3-49" name="__codelineno-3-49" href="#__codelineno-3-49"></a>curl<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;https://keycloak.lab.home/admin/realms/secure-test/clients/</span><span class="nv">$CLIENT_UUID</span><span class="s2">/client-secret&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-50" name="__codelineno-3-50" href="#__codelineno-3-50"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-51" name="__codelineno-3-51" href="#__codelineno-3-51"></a><span class="w">  </span><span class="p">|</span><span class="w"> </span>python3<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import sys, json; print(&#39;Client Secret:&#39;, json.load(sys.stdin)[&#39;value&#39;])&quot;</span>
 </code></pre></div>
+<div class="admonition success">
+<p class="admonition-title">Automated Setup Complete</p>
+<p>The client has been created and configured. Copy the client secret from the output for use in your <code>.env.local</code> file.</p>
 </div>
 </div>
 </div>
-<h2 id="step-2-get-client-secret">Step 2: Get Client Secret<a class="headerlink" href="#step-2-get-client-secret" title="Permanent link">&para;</a></h2>
-<p>The client secret is required for the API to validate tokens.</p>
+</div>
+<h3 id="step-2-configure-environment-variables">Step 2: Configure Environment Variables<a class="headerlink" href="#step-2-configure-environment-variables" title="Permanent link">&para;</a></h3>
+<p>After creating the client and obtaining the secret, configure your frontend application:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Navigate to frontend directory</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">cd</span><span class="w"> </span>Frontend
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># Copy environment template</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>cp<span class="w"> </span>.env.local.example<span class="w"> </span>.env.local
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="c1"># Edit .env.local with your values</span>
+</code></pre></div>
+<p>Update <code>.env.local</code> with the following:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Keycloak Configuration</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nv">NEXTAUTH_URL</span><span class="o">=</span>http://localhost:3000
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nv">NEXTAUTH_SECRET</span><span class="o">=</span>&lt;generate-with-openssl-rand-base64-32&gt;
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="c1"># Keycloak OAuth Provider</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="nv">KEYCLOAK_ID</span><span class="o">=</span>authentication-test-frontend
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="nv">KEYCLOAK_SECRET</span><span class="o">=</span>&lt;client-secret-from-keycloak&gt;
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="nv">KEYCLOAK_ISSUER</span><span class="o">=</span>https://keycloak.lab.home/realms/secure-test
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="c1"># API Server Configuration</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="nv">NEXT_PUBLIC_API_URL</span><span class="o">=</span>http://localhost:9080
+</code></pre></div>
+<h3 id="step-3-generate-nextauth-secret">Step 3: Generate NextAuth Secret<a class="headerlink" href="#step-3-generate-nextauth-secret" title="Permanent link">&para;</a></h3>
+<p>Generate a secure random secret for NextAuth:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>openssl<span class="w"> </span>rand<span class="w"> </span>-base64<span class="w"> </span><span class="m">32</span>
+</code></pre></div>
+<p>Copy the output and set it as <code>NEXTAUTH_SECRET</code> in <code>.env.local</code>.</p>
+<h2 id="client-configuration-details">Client Configuration Details<a class="headerlink" href="#client-configuration-details" title="Permanent link">&para;</a></h2>
+<h3 id="authentication-flow">Authentication Flow<a class="headerlink" href="#authentication-flow" title="Permanent link">&para;</a></h3>
+<p>The frontend uses the <strong>Authorization Code Flow</strong> with PKCE (Proof Key for Code Exchange):</p>
+<ol>
+<li>User clicks "Sign In"</li>
+<li>Frontend redirects to Keycloak login page</li>
+<li>User enters credentials</li>
+<li>Keycloak validates and redirects back with authorization code</li>
+<li>Frontend exchanges code for access token (with PKCE verification)</li>
+<li>Session created with user info and tokens</li>
+</ol>
+<h3 id="pkce-proof-key-for-code-exchange">PKCE (Proof Key for Code Exchange)<a class="headerlink" href="#pkce-proof-key-for-code-exchange" title="Permanent link">&para;</a></h3>
+<p>PKCE adds security to the Authorization Code Flow:</p>
+<ul>
+<li><strong>Code Challenge</strong>: Generated by frontend before redirect</li>
+<li><strong>Code Verifier</strong>: Sent when exchanging authorization code</li>
+<li><strong>Method</strong>: S256 (SHA-256 hash)</li>
+<li><strong>Purpose</strong>: Prevents authorization code interception attacks</li>
+</ul>
+<h3 id="token-storage">Token Storage<a class="headerlink" href="#token-storage" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Access Token</strong>: Stored in HTTP-only cookie (not accessible to JavaScript)</li>
+<li><strong>Refresh Token</strong>: Stored in HTTP-only cookie</li>
+<li><strong>ID Token</strong>: Stored in HTTP-only cookie</li>
+<li><strong>Session</strong>: Managed by NextAuth.js</li>
+</ul>
+<h2 id="redirect-uris-explained">Redirect URIs Explained<a class="headerlink" href="#redirect-uris-explained" title="Permanent link">&para;</a></h2>
+<h3 id="valid-redirect-uris">Valid Redirect URIs<a class="headerlink" href="#valid-redirect-uris" title="Permanent link">&para;</a></h3>
+<p>These URIs are where Keycloak can redirect after authentication:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>http://localhost:3000/*                              # Development (wildcard)
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>http://localhost:3000/api/auth/callback/keycloak   # NextAuth callback (specific)
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>https://app.lab.home/*                              # Production (wildcard)
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>https://app.lab.home/api/auth/callback/keycloak    # Production callback (specific)
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Exact Match Required</p>
+<p>The callback URI must match exactly. NextAuth uses <code>/api/auth/callback/keycloak</code> by default.</p>
+</div>
+<h3 id="web-origins-cors">Web Origins (CORS)<a class="headerlink" href="#web-origins-cors" title="Permanent link">&para;</a></h3>
+<p>These origins are allowed to make cross-origin requests:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>http://localhost:3000    # Development
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>https://app.lab.home     # Production
+</code></pre></div>
+<h2 id="verification-steps">Verification Steps<a class="headerlink" href="#verification-steps" title="Permanent link">&para;</a></h2>
+<h3 id="1-verify-client-creation">1. Verify Client Creation<a class="headerlink" href="#1-verify-client-creation" title="Permanent link">&para;</a></h3>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Admin Console</label><label for="__tabbed_2_2">REST API</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <ol>
-<li><strong>Go to "Clients"</strong></li>
-<li><strong>Click "authentication-test-api"</strong></li>
-<li><strong>Go to "Credentials" tab</strong></li>
-<li><strong>Copy the "Client secret"</strong></li>
+<li>Navigate to <strong>Clients</strong></li>
+<li>Find <code>authentication-test-frontend</code> in the list</li>
+<li>Verify <strong>Enabled</strong> is ON</li>
+<li>Check <strong>Client authentication</strong> is ON</li>
 </ol>
-<p>Save this secret - you'll need it for the API configuration.</p>
 </div>
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Get client secret</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="s2">&quot;http://localhost:8080/admin/realms/secure-test/clients/</span><span class="k">$(</span>curl<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span>http://localhost:8080/admin/realms/secure-test/clients<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.[] | select(.clientId==&quot;authentication-test-api&quot;) | .id&#39;</span><span class="k">)</span><span class="s2">/client-secret&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.value&#39;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Get client details</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>curl<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;https://keycloak.lab.home/admin/realms/secure-test/clients?clientId=authentication-test-frontend&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span><span class="nv">$TOKEN</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">  </span><span class="p">|</span><span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>json.tool
 </code></pre></div>
 </div>
 </div>
 </div>
-<h2 id="step-3-configure-client-settings">Step 3: Configure Client Settings<a class="headerlink" href="#step-3-configure-client-settings" title="Permanent link">&para;</a></h2>
-<h3 id="settings-tab">Settings Tab<a class="headerlink" href="#settings-tab" title="Permanent link">&para;</a></h3>
+<h3 id="2-test-authentication-flow">2. Test Authentication Flow<a class="headerlink" href="#2-test-authentication-flow" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>Go to "Clients" → "authentication-test-api" → "Settings"</strong></li>
-<li><strong>Configure</strong>:</li>
-<li><strong>Client ID</strong>: <code>authentication-test-api</code> (read-only)</li>
-<li><strong>Name</strong>: <code>Authentication Test API</code></li>
-<li><strong>Description</strong>: <code>RESTful API with OAuth 2.0 authentication</code></li>
-<li><strong>Always display in console</strong>: ✗</li>
-<li><strong>Consent required</strong>: ✗</li>
-<li><strong>Login theme</strong>: (leave empty)</li>
-<li><strong>Client authentication</strong>: ✓ ON</li>
 <li>
-<p><strong>Authorization</strong>: ✗ OFF</p>
+<p><strong>Start frontend application</strong>:
+   <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nb">cd</span><span class="w"> </span>Frontend
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>npm<span class="w"> </span>run<span class="w"> </span>dev
+</code></pre></div></p>
 </li>
 <li>
-<p><strong>Authentication flow</strong>:</p>
-</li>
-<li>✓ Standard flow (Authorization Code)</li>
-<li>✓ Direct access grants (Resource Owner Password)</li>
-<li>✗ Implicit flow</li>
-<li>✗ Service accounts roles</li>
-<li>
-<p>✗ OAuth 2.0 Device Authorization Grant</p>
+<p><strong>Open browser</strong>: http://localhost:3000</p>
 </li>
 <li>
-<p><strong>Click "Save"</strong></p>
-</li>
-</ol>
-<h3 id="access-settings">Access Settings<a class="headerlink" href="#access-settings" title="Permanent link">&para;</a></h3>
-<ol>
-<li><strong>Still in "Settings" tab, scroll to "Access settings"</strong></li>
-<li><strong>Configure</strong>:</li>
-<li><strong>Root URL</strong>: <code>http://localhost:9080</code></li>
-<li><strong>Home URL</strong>: <code>http://localhost:9080</code></li>
-<li><strong>Valid redirect URIs</strong>:
-     <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>http://localhost:9080/*
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>https://localhost:9443/*
-</code></pre></div></li>
-<li><strong>Valid post logout redirect URIs</strong>: <code>+</code></li>
-<li><strong>Web origins</strong>:
-     <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>http://localhost:9080
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>https://localhost:9443
-</code></pre></div></li>
-<li>
-<p><strong>Admin URL</strong>: (leave empty)</p>
-</li>
-<li>
-<p><strong>Click "Save"</strong></p>
-</li>
-</ol>
-<h3 id="advanced-settings">Advanced Settings<a class="headerlink" href="#advanced-settings" title="Permanent link">&para;</a></h3>
-<ol>
-<li><strong>Scroll to "Advanced" section</strong></li>
-<li><strong>Configure Token Settings</strong>:</li>
-<li><strong>Access Token Lifespan</strong>: (leave empty to use realm default)</li>
-<li><strong>Client Session Idle</strong>: (leave empty)</li>
-<li><strong>Client Session Max</strong>: (leave empty)</li>
-<li><strong>Client Offline Session Idle</strong>: (leave empty)</li>
-<li>
-<p><strong>Client Offline Session Max</strong>: (leave empty)</p>
-</li>
-<li>
-<p><strong>OAuth 2.0 Mutual TLS Certificate Bound Access Tokens</strong>: ✗</p>
-</li>
-<li><strong>OIDC CIBA Grant</strong>: ✗</li>
-<li><strong>Click "Save"</strong></li>
-</ol>
-<h2 id="step-4-configure-roles">Step 4: Configure Roles<a class="headerlink" href="#step-4-configure-roles" title="Permanent link">&para;</a></h2>
-<p>Map the realm role to the client.</p>
-<h3 id="client-roles-mapping">Client Roles Mapping<a class="headerlink" href="#client-roles-mapping" title="Permanent link">&para;</a></h3>
-<ol>
-<li><strong>Go to "Clients" → "authentication-test-api" → "Client scopes"</strong></li>
-<li><strong>Click "authentication-test-api-dedicated"</strong></li>
-<li><strong>Go to "Mappers" tab</strong></li>
-<li><strong>Click "Add mapper" → "By configuration"</strong></li>
-<li><strong>Select "User Realm Role"</strong></li>
-<li><strong>Configure</strong>:</li>
-<li><strong>Name</strong>: <code>realm-roles</code></li>
-<li><strong>Mapper Type</strong>: <code>User Realm Role</code></li>
-<li><strong>Multivalued</strong>: ✓ ON</li>
-<li><strong>Token Claim Name</strong>: <code>realm_access.roles</code></li>
-<li><strong>Claim JSON Type</strong>: <code>String</code></li>
-<li><strong>Add to ID token</strong>: ✓ ON</li>
-<li><strong>Add to access token</strong>: ✓ ON</li>
-<li>
-<p><strong>Add to userinfo</strong>: ✓ ON</p>
-</li>
-<li>
-<p><strong>Click "Save"</strong></p>
-</li>
-</ol>
-<p>This ensures the <code>schedule-user</code> role appears in the JWT token.</p>
-<div class="admonition note">
-<p class="admonition-title">Testing Client Configuration</p>
-<p>To test the client configuration with actual tokens, you'll need to create users first. See the <a href="../user-management/">User Management</a> guide, then return to test token generation.</p>
-</div>
-<h2 id="step-5-configure-api-environment">Step 5: Configure API Environment<a class="headerlink" href="#step-5-configure-api-environment" title="Permanent link">&para;</a></h2>
-<p>Update your API configuration with the client details:</p>
-<h3 id="environment-variables">Environment Variables<a class="headerlink" href="#environment-variables" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">JWT_JWKS_URI</span><span class="o">=</span>http://localhost:8080/realms/secure-test/protocol/openid-connect/certs
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">JWT_ISSUER</span><span class="o">=</span>http://localhost:8080/realms/secure-test
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">KEYCLOAK_CLIENT_ID</span><span class="o">=</span>authentication-test-api
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">KEYCLOAK_CLIENT_SECRET</span><span class="o">=</span>YOUR_CLIENT_SECRET
-</code></pre></div>
-<h3 id="microprofile-config">MicroProfile Config<a class="headerlink" href="#microprofile-config" title="Permanent link">&para;</a></h3>
-<p>Update <code>src/main/resources/META-INF/microprofile-config.properties</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="na">mp.jwt.verify.publickey.location</span><span class="o">=</span><span class="s">http://localhost:8080/realms/secure-test/protocol/openid-connect/certs</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="na">mp.jwt.verify.issuer</span><span class="o">=</span><span class="s">http://localhost:8080/realms/secure-test</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="na">keycloak.client.id</span><span class="o">=</span><span class="s">authentication-test-api</span>
-</code></pre></div>
-<h2 id="advanced-configuration">Advanced Configuration<a class="headerlink" href="#advanced-configuration" title="Permanent link">&para;</a></h2>
-<h3 id="cors-configuration">CORS Configuration<a class="headerlink" href="#cors-configuration" title="Permanent link">&para;</a></h3>
-<p>If your API needs to handle CORS:</p>
-<ol>
-<li><strong>Go to "Clients" → "authentication-test-api" → "Settings"</strong></li>
-<li><strong>Scroll to "Web origins"</strong></li>
-<li><strong>Add allowed origins</strong>:
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>http://localhost:3000
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>https://app.example.com
-</code></pre></div></li>
-<li><strong>Click "Save"</strong></li>
-</ol>
-<h3 id="token-lifespan">Token Lifespan<a class="headerlink" href="#token-lifespan" title="Permanent link">&para;</a></h3>
-<p>Customize token lifespan for this client:</p>
-<ol>
-<li><strong>Go to "Clients" → "authentication-test-api" → "Advanced" tab</strong></li>
-<li><strong>Set "Access Token Lifespan"</strong>: <code>10 Minutes</code></li>
-<li><strong>Click "Save"</strong></li>
-</ol>
-<h3 id="audience">Audience<a class="headerlink" href="#audience" title="Permanent link">&para;</a></h3>
-<p>Add audience claim to tokens:</p>
-<ol>
-<li><strong>Go to "Clients" → "authentication-test-api" → "Client scopes"</strong></li>
-<li><strong>Click "authentication-test-api-dedicated"</strong></li>
-<li><strong>Go to "Mappers" tab</strong></li>
-<li><strong>Click "Add mapper" → "By configuration"</strong></li>
-<li><strong>Select "Audience"</strong></li>
-<li><strong>Configure</strong>:</li>
-<li><strong>Name</strong>: <code>audience</code></li>
-<li><strong>Included Client Audience</strong>: <code>authentication-test-api</code></li>
-<li><strong>Add to access token</strong>: ✓ ON</li>
-<li><strong>Click "Save"</strong></li>
-</ol>
-<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
-<h3 id="invalid-client-credentials">Invalid Client Credentials<a class="headerlink" href="#invalid-client-credentials" title="Permanent link">&para;</a></h3>
-<p>If you get "invalid_client" error:</p>
-<ol>
-<li>Verify client ID is correct</li>
-<li>Check client secret matches</li>
-<li>Ensure client authentication is enabled</li>
-</ol>
-<h3 id="token-missing-roles">Token Missing Roles<a class="headerlink" href="#token-missing-roles" title="Permanent link">&para;</a></h3>
-<p>If JWT token doesn't contain roles:</p>
-<ol>
-<li>Verify realm role mapper is configured</li>
-<li>Check user has the <code>schedule-user</code> role</li>
-<li>Ensure mapper is added to access token</li>
-</ol>
-<h3 id="cors-errors">CORS Errors<a class="headerlink" href="#cors-errors" title="Permanent link">&para;</a></h3>
-<p>If you get CORS errors:</p>
-<ol>
-<li>Add frontend origin to "Web origins"</li>
-<li>Ensure origin matches exactly (including protocol and port)</li>
-<li>Check browser console for specific CORS error</li>
-</ol>
-<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
+<p><strong>Click "Sign In"</strong>:</p>
 <ul>
-<li><a href="../user-management/">User Management</a> - Create test users</li>
-<li><a href="../../api/authentication/">API Authentication</a> - Use tokens with the API</li>
-<li><a href="../../troubleshooting/common-issues/">Troubleshooting</a> - Common issues</li>
+<li>Should redirect to Keycloak login page</li>
+<li>URL should be: <code>https://keycloak.lab.home/realms/secure-test/protocol/openid-connect/auth?...</code></li>
 </ul>
+</li>
+<li>
+<p><strong>Enter credentials</strong>:</p>
+<ul>
+<li>Use a test user with <code>schedule-user</code> role</li>
+<li>Should redirect back to application</li>
+</ul>
+</li>
+<li>
+<p><strong>Verify success</strong>:</p>
+<ul>
+<li>Username should appear in header</li>
+<li>Session should be active</li>
+<li>Can access <code>/app</code> page</li>
+</ul>
+</li>
+</ol>
+<h3 id="3-verify-token-contents">3. Verify Token Contents<a class="headerlink" href="#3-verify-token-contents" title="Permanent link">&para;</a></h3>
+<p>After successful login, check the token:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># In browser console (F12)</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="c1"># Note: Tokens are in HTTP-only cookies, so you can&#39;t access them directly</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="c1"># But you can verify the session:</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>fetch<span class="o">(</span><span class="s1">&#39;/api/auth/session&#39;</span><span class="o">)</span>.then<span class="o">(</span><span class="nv">r</span><span class="w"> </span><span class="o">=</span>&gt;<span class="w"> </span>r.json<span class="o">())</span>.then<span class="o">(</span>console.log<span class="o">)</span>
+</code></pre></div>
+<p>Expected session structure:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">{</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span><span class="nt">&quot;user&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;John Doe&quot;</span><span class="p">,</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="nt">&quot;email&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;john.doe@example.com&quot;</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">  </span><span class="nt">&quot;expires&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2026-02-28T10:00:00.000Z&quot;</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="p">}</span>
+</code></pre></div></p>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<h3 id="issue-invalid-redirect-uri">Issue: "Invalid redirect URI"<a class="headerlink" href="#issue-invalid-redirect-uri" title="Permanent link">&para;</a></h3>
+<p><strong>Cause</strong>: Redirect URI mismatch between NextAuth and Keycloak</p>
+<p><strong>Solution</strong>:</p>
+<ol>
+<li>Check the exact URI in browser when error occurs</li>
+<li>Add that URI to <strong>Valid redirect URIs</strong> in Keycloak</li>
+<li>Ensure it includes <code>/api/auth/callback/keycloak</code></li>
+<li>Restart frontend application</li>
+</ol>
+<h3 id="issue-cors-error">Issue: "CORS error"<a class="headerlink" href="#issue-cors-error" title="Permanent link">&para;</a></h3>
+<p><strong>Cause</strong>: Frontend origin not in Web origins</p>
+<p><strong>Solution</strong>:</p>
+<ol>
+<li>Add <code>http://localhost:3000</code> to <strong>Web origins</strong></li>
+<li>Ensure no trailing slash</li>
+<li>Match protocol (http/https) exactly</li>
+<li>Save and test again</li>
+</ol>
+<h3 id="issue-client-authentication-failed">Issue: "Client authentication failed"<a class="headerlink" href="#issue-client-authentication-failed" title="Permanent link">&para;</a></h3>
+<p><strong>Cause</strong>: Client secret mismatch</p>
+<p><strong>Solution</strong>:</p>
+<ol>
+<li>Go to Keycloak → Clients → authentication-test-frontend → Credentials</li>
+<li>Copy the client secret</li>
+<li>Update <code>KEYCLOAK_SECRET</code> in <code>.env.local</code></li>
+<li>Restart frontend: <code>npm run dev</code></li>
+</ol>
+<h3 id="issue-session-not-persisting">Issue: "Session not persisting"<a class="headerlink" href="#issue-session-not-persisting" title="Permanent link">&para;</a></h3>
+<p><strong>Cause</strong>: NEXTAUTH_SECRET not set or invalid</p>
+<p><strong>Solution</strong>:</p>
+<ol>
+<li>Generate new secret: <code>openssl rand -base64 32</code></li>
+<li>Set <code>NEXTAUTH_SECRET</code> in <code>.env.local</code></li>
+<li>Clear browser cookies</li>
+<li>Restart frontend</li>
+<li>Try logging in again</li>
+</ol>
+<h3 id="issue-token-expired-errors">Issue: "Token expired" errors<a class="headerlink" href="#issue-token-expired-errors" title="Permanent link">&para;</a></h3>
+<p><strong>Cause</strong>: Token lifespan too short</p>
+<p><strong>Solution</strong>:</p>
+<ol>
+<li>Go to Keycloak → Realm Settings → Tokens</li>
+<li>Increase <strong>Access Token Lifespan</strong> (default: 5 minutes)</li>
+<li>Increase <strong>SSO Session Idle</strong> (default: 30 minutes)</li>
+<li>Save and test again</li>
+</ol>
+<h2 id="advanced-configuration">Advanced Configuration<a class="headerlink" href="#advanced-configuration" title="Permanent link">&para;</a></h2>
+<h3 id="custom-token-lifespan">Custom Token Lifespan<a class="headerlink" href="#custom-token-lifespan" title="Permanent link">&para;</a></h3>
+<p>To customize token lifespan for this client:</p>
+<ol>
+<li>Go to <strong>Clients</strong> → <strong>authentication-test-frontend</strong> → <strong>Advanced</strong> tab</li>
+<li>Set <strong>Access Token Lifespan</strong>: <code>15 Minutes</code></li>
+<li>Set <strong>Client Session Idle</strong>: <code>30 Minutes</code></li>
+<li>Set <strong>Client Session Max</strong>: <code>10 Hours</code></li>
+<li>Click <strong>Save</strong></li>
+</ol>
+<h3 id="add-custom-claims">Add Custom Claims<a class="headerlink" href="#add-custom-claims" title="Permanent link">&para;</a></h3>
+<p>To add custom claims to tokens:</p>
+<ol>
+<li>Go to <strong>Clients</strong> → <strong>authentication-test-frontend</strong> → <strong>Client scopes</strong></li>
+<li>Click <strong>authentication-test-frontend-dedicated</strong></li>
+<li>Go to <strong>Mappers</strong> tab</li>
+<li>Click <strong>Add mapper</strong> → <strong>By configuration</strong></li>
+<li>Select mapper type (e.g., <strong>User Attribute</strong>)</li>
+<li>Configure and save</li>
+</ol>
+<h3 id="audience-validation">Audience Validation<a class="headerlink" href="#audience-validation" title="Permanent link">&para;</a></h3>
+<p>To add audience claim:</p>
+<ol>
+<li>Go to <strong>Client scopes</strong> → <strong>authentication-test-frontend-dedicated</strong> → <strong>Mappers</strong></li>
+<li>Click <strong>Add mapper</strong> → <strong>By configuration</strong></li>
+<li>Select <strong>Audience</strong></li>
+<li>Configure:<ul>
+<li><strong>Name</strong>: <code>audience</code></li>
+<li><strong>Included Client Audience</strong>: <code>authentication-test-frontend</code></li>
+<li><strong>Add to access token</strong>: ✓ ON</li>
+</ul>
+</li>
+<li>Click <strong>Save</strong></li>
+</ol>
+<h2 id="production-deployment">Production Deployment<a class="headerlink" href="#production-deployment" title="Permanent link">&para;</a></h2>
+<h3 id="update-for-production">Update for Production<a class="headerlink" href="#update-for-production" title="Permanent link">&para;</a></h3>
+<p>When deploying to production:</p>
+<ol>
+<li>
+<p><strong>Update Keycloak client</strong>:</p>
+<ul>
+<li>Add production redirect URIs</li>
+<li>Add production web origins</li>
+<li>Update root/home URLs</li>
+</ul>
+</li>
+<li>
+<p><strong>Update frontend environment</strong>:
+    <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nv">NEXTAUTH_URL</span><span class="o">=</span>https://app.lab.home
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="nv">KEYCLOAK_ISSUER</span><span class="o">=</span>https://keycloak.lab.home/realms/secure-test
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Security checklist</strong>:</p>
+<ul>
+<li>[ ] Use HTTPS for all URLs</li>
+<li>[ ] Generate new NEXTAUTH_SECRET for production</li>
+<li>[ ] Use different client secret than development</li>
+<li>[ ] Enable rate limiting</li>
+<li>[ ] Monitor authentication logs</li>
+<li>[ ] Set up session timeout alerts</li>
+</ul>
+</li>
+</ol>
+<h3 id="environment-specific-clients">Environment-Specific Clients<a class="headerlink" href="#environment-specific-clients" title="Permanent link">&para;</a></h3>
+<p>Consider creating separate clients for each environment:</p>
+<ul>
+<li><code>authentication-test-frontend-dev</code> - Development</li>
+<li><code>authentication-test-frontend-staging</code> - Staging</li>
+<li><code>authentication-test-frontend-prod</code> - Production</li>
+</ul>
+<p>Benefits:
+- Separate secrets per environment
+- Different token lifespans
+- Isolated configuration
+- Better security</p>
+<h2 id="security-best-practices">Security Best Practices<a class="headerlink" href="#security-best-practices" title="Permanent link">&para;</a></h2>
+<h3 id="1-client-secret-management">1. Client Secret Management<a class="headerlink" href="#1-client-secret-management" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Never commit</strong> client secrets to version control</li>
+<li>Use environment variables or secret management systems</li>
+<li>Rotate secrets periodically (every 90 days)</li>
+<li>Use different secrets for dev/staging/production</li>
+</ul>
+<h3 id="2-redirect-uri-security">2. Redirect URI Security<a class="headerlink" href="#2-redirect-uri-security" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Use specific URIs when possible (avoid wildcards in production)</li>
+<li>Always use HTTPS in production</li>
+<li>Validate redirect URIs on both client and server</li>
+<li>Never allow open redirects</li>
+</ul>
+<h3 id="3-token-security">3. Token Security<a class="headerlink" href="#3-token-security" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Tokens stored in HTTP-only cookies (not accessible to JavaScript)</li>
+<li>Automatic token refresh before expiration</li>
+<li>Logout clears all session data</li>
+<li>Short token lifespans (5-15 minutes for access tokens)</li>
+</ul>
+<h3 id="4-cors-configuration">4. CORS Configuration<a class="headerlink" href="#4-cors-configuration" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Restrict web origins to specific domains</li>
+<li>Never use wildcard (*) in production</li>
+<li>Match protocol and port exactly</li>
+<li>Review origins regularly</li>
+</ul>
+<h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>
+<p>After configuring the frontend client:</p>
+<ol>
+<li><a href="../../frontend/setup/">Frontend Setup Guide</a> - Install and run the application</li>
+<li><a href="../../frontend/configuration/">Frontend Configuration</a> - Detailed environment setup</li>
+<li><a href="../../frontend/authentication/">Authentication Flow</a> - Understand the auth process</li>
+<li><a href="../../frontend/api-integration/">API Integration</a> - Connect to backend API</li>
+</ol>
 <h2 id="additional-resources">Additional Resources<a class="headerlink" href="#additional-resources" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://www.keycloak.org/docs/latest/server_admin/#_clients">Keycloak Client Configuration</a></li>
-<li><a href="https://oauth.net/2/grant-types/">OAuth 2.0 Flows</a></li>
-<li><a href="https://openid.net/connect/">OpenID Connect</a></li>
+<li><a href="https://oauth.net/2/grant-types/authorization-code/">OAuth 2.0 Authorization Code Flow</a></li>
+<li><a href="https://oauth.net/2/pkce/">PKCE Specification</a></li>
+<li><a href="https://next-auth.js.org">NextAuth.js Documentation</a></li>
+<li><a href="https://openid.net/connect/">OpenID Connect Specification</a></li>
 </ul>
 
 
