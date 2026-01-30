@@ -50,16 +50,17 @@ async function refreshAccessToken(token: ExtendedJWT): Promise<ExtendedJWT> {
 
 export const authOptions: NextAuthOptions = {
   providers: [
-    KeycloakProvider({
-      clientId: process.env.KEYCLOAK_CLIENT_ID!,
-      clientSecret: process.env.KEYCLOAK_CLIENT_SECRET!,
-      issuer: process.env.KEYCLOAK_ISSUER,
-      authorization: {
-        params: {
-          scope: "openid email profile",
+      KeycloakProvider({
+        clientId: process.env.KEYCLOAK_CLIENT_ID!,
+        clientSecret: process.env.KEYCLOAK_CLIENT_SECRET!,
+        issuer: process.env.KEYCLOAK_ISSUER,
+        authorization: {
+          params: {
+            scope: "openid email profile",
+            redirect_uri: `${process.env.NEXTAUTH_URL}/api/auth/callback/keycloak`,
+          },
         },
-      },
-    }),
+      }),
   ],
   callbacks: {
     async jwt({ token, account, user }) {

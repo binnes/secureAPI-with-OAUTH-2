@@ -67,6 +67,8 @@ nav:
     - Overview: getting-started/overview.md
     - Prerequisites: getting-started/prerequisites.md
     - Quick Start: getting-started/quick-start.md
+  - Architecture:
+    - OAuth 2.0 Flows: architecture/oauth-flows.md
   - Building & Deployment:
     - Building with Maven: build/maven.md
     - Containerization: build/containers.md

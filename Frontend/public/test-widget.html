@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orchestrate Widget Test</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+        background: #1a1a2e;
+        color: white;
+      }
+      .info {
+        background: #16213e;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+      }
+      .info h1 {
+        margin-top: 0;
+      }
+      .info p {
+        margin: 5px 0;
+      }
+      #root {
+        min-height: 600px;
+        background: #0f3460;
+        border-radius: 8px;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="info">
+      <h1>Orchestrate Widget Test Page</h1>
+      <p>
+        <strong>Purpose:</strong> Debug widget with local copy from frontend
+        server
+      </p>
+      <p>
+        <strong>Widget Source:</strong> http://localhost:4000/wxoLoader.js
+        (Local Copy)
+      </p>
+      <p>
+        <strong>Original Source:</strong> http://localhost:3000/wxoLoader.js
+      </p>
+      <p><strong>Host URL:</strong> <span id="hostUrl"></span></p>
+      <p><strong>Protocol:</strong> <span id="protocol"></span></p>
+      <p><strong>Agent ID:</strong> 7e78e8e6-27a7-4922-bb90-955c5367778e</p>
+      <p><strong>Status:</strong> <span id="status">Initializing...</span></p>
+    </div>
+
+    <div id="root"></div>
+
+    <script>
+      // Display current protocol
+      document.getElementById("protocol").textContent =
+        window.location.protocol;
+
+      // Exact configuration from CLI: orchestrate channels webchat embed --agent-name schedule_assistant --env draft
+      window.wxOConfiguration = {
+        orchestrationID: "1347f097-e475-4558-b2df-cba7f1eb2288",
+        hostURL: "http://localhost:3000",
+        rootElementID: "root",
+        chatOptions: {
+          agentId: "7e78e8e6-27a7-4922-bb90-955c5367778e",
+        },
+      };
+      setTimeout(function () {
+        const script = document.createElement("script");
+        script.src = `${window.wxOConfiguration.hostURL}/wxoLoader.js?embed=true`;
+        script.addEventListener("load", function () {
+          wxoLoader.init();
+        });
+        document.head.appendChild(script);
+      }, 0);
+
+      document.getElementById("hostUrl").textContent =
+        window.wxOConfiguration.hostURL;
+
+      setTimeout(function () {
+        const script = document.createElement("script");
+        // Load from local frontend server for debugging
+        script.src = `http://localhost:4000/wxoLoader.js?embed=true`;
+        script.addEventListener("load", function () {
+          console.log("📦 Orchestrate script loaded from:", script.src);
+          document.getElementById("status").textContent =
+            "📦 Script loaded, initializing...";
+          if (window.wxoLoader) {
+            wxoLoader.init();
+          } else {
+            document.getElementById("status").textContent =
+              "❌ wxoLoader not found";
+            document.getElementById("status").style.color = "#ff0000";
+          }
+        });
+        script.addEventListener("error", function () {
+          console.error(
+            "❌ Failed to load Orchestrate script from:",
+            script.src,
+          );
+          document.getElementById("status").textContent =
+            "❌ Failed to load script from " + script.src;
+          document.getElementById("status").style.color = "#ff0000";
+        });
+        document.head.appendChild(script);
+      }, 0);
+    </script>
+  </body>
+</html>

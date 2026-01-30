@@ -1,0 +1,173 @@
+---
+openapi: 3.0.3
+info:
+  title: Authentication Test API
+  description: RESTful API server providing user schedule management with OAuth 2.0
+    authentication via Keycloak
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.0
+servers:
+- url: http://localhost:9080
+  description: Development server
+tags:
+- name: Health Check
+  description: Server health check and basic information
+- name: Schedule
+  description: User schedule management
+paths:
+  /api/v1/hello:
+    get:
+      operationId: getHello
+      tags:
+      - Health Check
+      summary: Health check endpoint
+      description: Returns server health status and basic information. No authentication
+        required.
+      responses:
+        "200":
+          description: Server is healthy
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HelloResponse'
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /api/v1/schedule:
+    get:
+      operationId: getUserSchedule
+      tags:
+      - Schedule
+      summary: Get user schedule
+      description: Retrieve the authenticated user's schedule. Requires valid JWT
+        token and schedule-user role.
+      responses:
+        "200":
+          description: Schedule retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Schedule'
+        "401":
+          description: Authentication required - missing or invalid token
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        "403":
+          description: Forbidden - insufficient permissions
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        "500":
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      security:
+      - bearerAuth: []
+components:
+  schemas:
+    ErrorResponse:
+      description: Standard error response
+      required:
+      - error
+      - message
+      - timestamp
+      type: object
+      properties:
+        error:
+          description: Error code
+          type: string
+          example: UNAUTHORIZED
+        message:
+          description: Human-readable error message
+          type: string
+          example: Authentication required
+        timestamp:
+          description: Timestamp in ISO 8601 UTC format
+          type: string
+          example: 2026-01-27T16:47:00Z
+        path:
+          description: Request path
+          type: string
+          example: /api/v1/schedule
+        details:
+          description: Additional error details
+          type: object
+          additionalProperties:
+            type: object
+    HelloResponse:
+      description: Health check response
+      required:
+      - hostname
+      - serverTime
+      - apiVersion
+      - status
+      type: object
+      properties:
+        hostname:
+          description: Server hostname
+          type: string
+          example: server-hostname.local
+        serverTime:
+          description: Current server time in ISO 8601 UTC format
+          type: string
+          example: 2026-01-27T16:47:00Z
+        apiVersion:
+          description: API version
+          type: string
+          example: 1.0.0
+        status:
+          description: Server status
+          type: string
+          example: healthy
+    Schedule:
+      description: User schedule with list of schedule items
+      required:
+      - user
+      - schedule
+      type: object
+      properties:
+        user:
+          description: Username from JWT token
+          type: string
+          example: john.doe
+        schedule:
+          description: Array of schedule items
+          type: array
+          items:
+            $ref: '#/components/schemas/ScheduleItem'
+    ScheduleItem:
+      description: A single schedule item
+      required:
+      - date
+      - time
+      - description
+      type: object
+      properties:
+        date:
+          description: Date in ISO 8601 format (YYYY-MM-DD)
+          type: string
+          example: 2026-01-28
+        time:
+          description: Time in 24-hour format (HH:mm)
+          type: string
+          example: 09:00
+        description:
+          description: Activity description (max 200 characters)
+          type: string
+          example: Team standup meeting
+  securitySchemes:
+    bearerAuth:
+      type: http
+      description: "JWT Bearer token authentication. Obtain token from Keycloak: https://keycloak.lab.home/realms/secure-test"
+      scheme: bearer
+      bearerFormat: JWT

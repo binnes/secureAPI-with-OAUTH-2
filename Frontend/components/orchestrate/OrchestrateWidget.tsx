@@ -11,8 +11,9 @@ import { useSession } from "next-auth/react";
 import { ExtendedSession } from "@/types";
 
 // Local Orchestrate configuration for Developer Edition
+// Generated via: orchestrate channels webchat embed --agent-name schedule_assistant --env draft
 const ORCHESTRATE_CONFIG = {
-  hostURL: "http://localhost:3001",
+  hostURL: "https://dl.watson-orchestrate.ibm.com", // IBM Cloud CDN
   orchestrationID: "1347f097-e475-4558-b2df-cba7f1eb2288",
   agentId: "7e78e8e6-27a7-4922-bb90-955c5367778e", // schedule_assistant
   agentEnvironmentId: "bf531e9c-706a-49ec-b67d-cd05e6d9df0b", // draft environment ID
@@ -28,43 +29,23 @@ declare global {
 
 export default function OrchestrateWidget() {
   const { data: session } = useSession() as { data: ExtendedSession | null };
-  const widgetContainerRef = useRef<HTMLDivElement>(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const chatInstanceRef = useRef<any>(null);
 
   useEffect(() => {
-    if (!session || !widgetContainerRef.current) {
+    if (!session) {
       return;
     }
 
     const initializeChat = async () => {
       try {
-        // For local Developer Edition, we can use a simple JWT structure
-        // In production, this would be generated server-side with proper signing
-        const userPayload = {
-          sub: session.user?.email || session.user?.name || "anonymous",
-          user_payload: {
-            name: session.user?.name || "",
-            custom_user_id: session.user?.email || session.user?.name || "",
-            sso_token: session.accessToken || "", // Keycloak access token for OAuth Token Exchange
-          },
-          context: {
-            wxo_username: session.user?.name || "",
-            wxo_email: session.user?.email || "",
-          },
-          iat: Math.floor(Date.now() / 1000),
-          exp: Math.floor(Date.now() / 1000) + (60 * 60), // 1 hour
-        };
-
-        // For local dev, we'll pass the payload directly
-        // In production, this would be a signed JWT
-        const jwtPayload = btoa(JSON.stringify(userPayload));
-
-        // Configure Orchestrate
+        // Configure Orchestrate - EXACTLY matching CLI-generated format
         window.wxOConfiguration = {
           orchestrationID: ORCHESTRATE_CONFIG.orchestrationID,
           hostURL: ORCHESTRATE_CONFIG.hostURL,
+          rootElementID: "root",
+          showLauncher: false,
           chatOptions: {
             agentId: ORCHESTRATE_CONFIG.agentId,
             agentEnvironmentId: ORCHESTRATE_CONFIG.agentEnvironmentId,
@@ -73,6 +54,7 @@ export default function OrchestrateWidget() {
               console.log("User context:", {
                 username: session.user?.name,
                 email: session.user?.email,
+                hasAccessToken: !!session.accessToken,
               });
               chatInstanceRef.current = chat;
               setIsLoaded(true);
@@ -84,41 +66,38 @@ export default function OrchestrateWidget() {
             },
           },
           layout: {
-            form: "custom",
-            customElement: widgetContainerRef.current,
+            form: "float",
+            showOrchestrateHeader: true,
           },
           style: {
             headerColor: "#0f62fe",
             primaryColor: "#0f62fe",
+            userMessageBackgroundColor: "#0f62fe",
+            showBackgroundGradient: true,
           },
-          security: {
-            // For local dev, pass the payload directly
-            // In production, use a properly signed JWT
-            jwtToken: `dev.${jwtPayload}.dev`,
-          },
+          // Pass the Keycloak access token for OAuth Token Exchange
+          token: session.accessToken,
         };
 
-        // Load Orchestrate script
-        const script = document.createElement("script");
-        script.src = `${ORCHESTRATE_CONFIG.hostURL}/wxoLoader.js?embed=true`;
-        script.async = true;
-        script.onload = () => {
-          console.log("Orchestrate script loaded from:", script.src);
-          // Initialize the loader after script loads
-          if ((window as any).wxoLoader) {
-            (window as any).wxoLoader.init();
-          }
-        };
-        script.onerror = () => {
-          console.error("Failed to load Orchestrate script from:", script.src);
-          setError("Failed to load Orchestrate chat script. Is the Orchestrate UI running on port 3001?");
-        };
-        document.body.appendChild(script);
+        // Load script EXACTLY as CLI generates it
+        setTimeout(() => {
+          const script = document.createElement("script");
+          script.src = `${window.wxOConfiguration.hostURL}/wxoLoader.js?embed=true`;
+          script.addEventListener("load", function () {
+            console.log("Orchestrate script loaded from:", script.src);
+            if ((window as any).wxoLoader) {
+              (window as any).wxoLoader.init();
+            }
+          });
+          script.addEventListener("error", () => {
+            console.error("Failed to load Orchestrate script from:", script.src);
+            setError("Failed to load Orchestrate chat script. Is the Orchestrate chat server running on port 3000?");
+          });
+          document.head.appendChild(script);
+        }, 0);
 
         return () => {
-          if (document.body.contains(script)) {
-            document.body.removeChild(script);
-          }
+          // Cleanup handled by component unmount
         };
       } catch (error) {
         console.error("Error initializing Orchestrate chat:", error);
@@ -219,10 +198,9 @@ export default function OrchestrateWidget() {
         </div>
       )}
       
-      <div 
-        ref={widgetContainerRef}
+      <div
+        id="root"
         className="flex-1 min-h-[500px] rounded-lg overflow-hidden"
-        id="orchestrate-widget-container"
       />
 
       {isLoaded && (
