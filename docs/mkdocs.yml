@@ -105,6 +105,7 @@ nav:
      - Development: frontend/development.md
   - watsonx Orchestrate:
     - Installation: orchestrate/installation.md
+    - API Use: "orchestrate/WebChat Widget API usage.md"
   - Troubleshooting:
     - Common Issues: troubleshooting/common-issues.md
     - Debugging: troubleshooting/debugging.md

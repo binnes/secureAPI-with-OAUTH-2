@@ -1,1 +1,1 @@
-ibm-watsonx-orchestrate==2.2.0
+ibm-watsonx-orchestrate==2.3.0
