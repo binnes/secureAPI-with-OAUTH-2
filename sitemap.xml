@@ -2,142 +2,146 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-02-06</lastmod>
     </url>
     <url>
          <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/api/authentication/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-02-06</lastmod>
     </url>
     <url>
          <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/api/endpoints/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-02-06</lastmod>
     </url>
     <url>
          <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/api/errors/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-02-06</lastmod>
     </url>
     <url>
          <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/api/openapi/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-02-06</lastmod>
     </url>
     <url>
          <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/architecture/oauth-flows/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-02-06</lastmod>
     </url>
     <url>
          <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/build/containers/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-02-06</lastmod>
     </url>
     <url>
          <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/build/maven/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-02-06</lastmod>
     </url>
     <url>
          <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/build/running/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-02-06</lastmod>
     </url>
     <url>
          <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/config/environment/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-02-06</lastmod>
     </url>
     <url>
          <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/config/security/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-02-06</lastmod>
     </url>
     <url>
          <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/config/server/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-02-06</lastmod>
     </url>
     <url>
          <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/config/ssl-certificates/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-02-06</lastmod>
     </url>
     <url>
          <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/deployment/github-pages/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-02-06</lastmod>
     </url>
     <url>
          <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/development/contributing/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-02-06</lastmod>
     </url>
     <url>
          <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/development/structure/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-02-06</lastmod>
     </url>
     <url>
          <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/frontend/api-integration/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-02-06</lastmod>
     </url>
     <url>
          <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/frontend/authentication/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-02-06</lastmod>
     </url>
     <url>
          <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/frontend/configuration/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-02-06</lastmod>
     </url>
     <url>
          <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/frontend/development/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-02-06</lastmod>
     </url>
     <url>
          <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/frontend/orchestrate-integration/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-02-06</lastmod>
     </url>
     <url>
          <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/frontend/overview/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-02-06</lastmod>
     </url>
     <url>
          <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/frontend/setup/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-02-06</lastmod>
     </url>
     <url>
          <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/getting-started/overview/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-02-06</lastmod>
     </url>
     <url>
          <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/getting-started/prerequisites/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-02-06</lastmod>
     </url>
     <url>
          <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/getting-started/quick-start/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-02-06</lastmod>
     </url>
     <url>
          <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/keycloak/client-setup/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-02-06</lastmod>
     </url>
     <url>
          <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/keycloak/frontend-client-setup/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-02-06</lastmod>
     </url>
     <url>
          <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/keycloak/groups-mapper/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-02-06</lastmod>
     </url>
     <url>
          <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/keycloak/installation/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-02-06</lastmod>
     </url>
     <url>
          <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/keycloak/realm-setup/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-02-06</lastmod>
     </url>
     <url>
          <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/keycloak/user-management/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-02-06</lastmod>
+    </url>
+    <url>
+         <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/orchestrate/WebChat%20Widget%20API%20usage/</loc>
+         <lastmod>2026-02-06</lastmod>
     </url>
     <url>
          <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/orchestrate/installation/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-02-06</lastmod>
     </url>
     <url>
          <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/troubleshooting/common-issues/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-02-06</lastmod>
     </url>
     <url>
          <loc>https://binnes.github.io/secureAPI-with-OAUTH-2/troubleshooting/debugging/</loc>
-         <lastmod>2026-01-30</lastmod>
+         <lastmod>2026-02-06</lastmod>
     </url>
 </urlset>
