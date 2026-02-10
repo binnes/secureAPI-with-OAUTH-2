@@ -85,6 +85,7 @@ nav:
     - Frontend Client Configuration: keycloak/frontend-client-setup.md
     - User Management: keycloak/user-management.md
     - Groups Claim Mapper: keycloak/groups-mapper.md
+    - Token Exchange Setup: keycloak/token-exchange-setup.md
   - API Reference:
     - Endpoints: api/endpoints.md
     - Authentication: api/authentication.md

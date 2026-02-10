@@ -258,8 +258,12 @@ Add audience claim to tokens:
 6. **Configure**:
    - **Name**: `audience`
    - **Included Client Audience**: `authentication-test-api`
+   - **Add to ID token**: ✗ OFF
    - **Add to access token**: ✓ ON
 7. **Click "Save"**
+
+!!! note "Token Exchange"
+    If you're using token exchange between clients, you'll also need to add an audience mapper to the source client (e.g., frontend) to include the target client (API) in its tokens. See [Token Exchange Setup](token-exchange-setup.md) for details.
 
 ## Troubleshooting
 
