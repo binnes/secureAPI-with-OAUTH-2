@@ -1472,6 +1472,34 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../token-exchange-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Token Exchange Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3118,9 +3146,14 @@
 <li><strong>Configure</strong>:</li>
 <li><strong>Name</strong>: <code>audience</code></li>
 <li><strong>Included Client Audience</strong>: <code>authentication-test-api</code></li>
+<li><strong>Add to ID token</strong>: ✗ OFF</li>
 <li><strong>Add to access token</strong>: ✓ ON</li>
 <li><strong>Click "Save"</strong></li>
 </ol>
+<div class="admonition note">
+<p class="admonition-title">Token Exchange</p>
+<p>If you're using token exchange between clients, you'll also need to add an audience mapper to the source client (e.g., frontend) to include the target client (API) in its tokens. See <a href="../token-exchange-setup/">Token Exchange Setup</a> for details.</p>
+</div>
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <h3 id="invalid-client-credentials">Invalid Client Credentials<a class="headerlink" href="#invalid-client-credentials" title="Permanent link">&para;</a></h3>
 <p>If you get "invalid_client" error:</p>
